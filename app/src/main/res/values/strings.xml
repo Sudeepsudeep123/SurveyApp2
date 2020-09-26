@@ -1,3 +1,32 @@
 <resources>
-    <string name="app_name">SurveyApp</string>
+    <string name="app_name">Survey Application</string>
+    <string name="content_desc_image">This is image </string>
+
+    <!--Errors-->
+    <string name="error_email_empty">Please enter your email</string>
+    <string name="error_name_empty">Please enter your name</string>
+    <string name="error_password_empty">Please enter your password</string>
+    <string name="error_username">Please enter your Username</string>
+    <string name="error_new_password_empty">Please enter your new password</string>
+    <string name="error_current_password_empty">Please enter your current password</string>
+    <string name="error_confirm_password_empty">Please enter your confirm password</string>
+    <string name="error_address_empty">Please enter your Address</string>
+    <string name="error_email_invalid">Please enter a valid email</string>
+    <string name="password_mismatch">Password mismatch</string>
+    <string name="blank_question">Blank question field is invalid.</string>
+    <string name="blank_answer">Blank answer field is invalid.</string>
+    <string name="blank_comment">Blank comment field is invalid.</string>
+    <string name="please_choose_category">Please choose category.</string>
+    <string name="no_internet">No Internet Connection</string>
+    <string name="title_activity_form">FormActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_form">Form</string>
+    <string name="menu_slideshow">Slideshow</string>
 </resources>
