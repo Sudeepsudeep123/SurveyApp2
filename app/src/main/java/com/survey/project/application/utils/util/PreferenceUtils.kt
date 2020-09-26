@@ -67,12 +67,68 @@ object PreferenceUtils {
     fun saveRentedLandValue(context: Context?, landRented: String) {
         val pref =
             context?.getSharedPreferences(PreferenceConstants.main_preference, Context.MODE_PRIVATE)
-        pref?.edit()?.putString(PreferenceConstants.rented_area, landRented)?.apply()
+        pref?.edit()?.putString(PreferenceConstants.rented_land, landRented)?.apply()
     }
 
     fun getRentedLandValue(context: Context?): String {
         val pref =
             context?.getSharedPreferences(PreferenceConstants.main_preference, Context.MODE_PRIVATE)
-        return pref?.getString(PreferenceConstants.rented_area, "") ?: ""
+        return pref?.getString(PreferenceConstants.rented_land, "") ?: ""
+    }
+
+    fun saveMonthlyIncome(context: Context?, monthlyIncome: String) {
+        val pref =
+            context?.getSharedPreferences(PreferenceConstants.main_preference, Context.MODE_PRIVATE)
+        pref?.edit()?.putString(PreferenceConstants.monthly_income, monthlyIncome)?.apply()
+    }
+
+    fun getMonthlyIncome(context: Context?): String {
+        val pref =
+            context?.getSharedPreferences(PreferenceConstants.main_preference, Context.MODE_PRIVATE)
+        return pref?.getString(PreferenceConstants.monthly_income, "") ?: ""
+    }
+
+    fun saveMonthlySaving(context: Context?, monthlySaving: String) {
+        val pref =
+            context?.getSharedPreferences(PreferenceConstants.main_preference, Context.MODE_PRIVATE)
+        pref?.edit()?.putString(PreferenceConstants.monthly_saving, monthlySaving)?.apply()
+    }
+
+    fun getMonthlySaving(context: Context?): String {
+        val pref =
+            context?.getSharedPreferences(PreferenceConstants.main_preference, Context.MODE_PRIVATE)
+        return pref?.getString(PreferenceConstants.monthly_saving, "") ?: ""
+    }
+
+    fun saveUnemployedCount(
+        context: Context?,
+        maleUnemployed: String,
+        femaleUnemployed: String,
+        thirdGenderUnemployed: String
+    ) {
+        val pref =
+            context?.getSharedPreferences(PreferenceConstants.main_preference, Context.MODE_PRIVATE)
+        pref?.edit()?.putString(PreferenceConstants.male_unemployed, maleUnemployed)?.apply()
+        pref?.edit()?.putString(PreferenceConstants.female_unemployed, femaleUnemployed)?.apply()
+        pref?.edit()?.putString(PreferenceConstants.third_gender_unemployed, thirdGenderUnemployed)
+            ?.apply()
+    }
+
+    fun getMaleUnemployedCount(context: Context?): String {
+        val pref =
+            context?.getSharedPreferences(PreferenceConstants.main_preference, Context.MODE_PRIVATE)
+        return pref?.getString(PreferenceConstants.male_unemployed, "") ?: ""
+    }
+
+    fun getFemaleUnemployedCount(context: Context?): String {
+        val pref =
+            context?.getSharedPreferences(PreferenceConstants.main_preference, Context.MODE_PRIVATE)
+        return pref?.getString(PreferenceConstants.female_unemployed, "") ?: ""
+    }
+
+    fun getThirdUnemployedCount(context: Context?): String {
+        val pref =
+            context?.getSharedPreferences(PreferenceConstants.main_preference, Context.MODE_PRIVATE)
+        return pref?.getString(PreferenceConstants.third_gender_unemployed, "") ?: ""
     }
 }

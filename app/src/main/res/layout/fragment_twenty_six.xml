@@ -39,19 +39,21 @@
             android:text="@string/next" />
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/txvQuestionTwentySix"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/lnlButtons"
-        android:layout_marginTop="@dimen/margin_eight"
-        android:text="@string/monthly_saving"
-        android:textSize="@dimen/text_size_twenty_four" />
+    <!--  <TextView
+          android:id="@+id/txvQuestionTwentySix"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_below="@+id/lnlButtons"
+          android:layout_marginTop="@dimen/margin_eight"
+          android:text="@string/monthly_saving"
+          android:textSize="@dimen/text_size_twenty_four" />-->
 
     <EditText
         android:id="@+id/edtSaving"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txvQuestionTwentySix"
+        android:layout_below="@+id/lnlButtons"
+        android:layout_marginTop="@dimen/margin_eight"
+        android:hint="@string/monthly_saving"
         android:inputType="number" />
 </RelativeLayout>

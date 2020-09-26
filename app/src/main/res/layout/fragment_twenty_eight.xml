@@ -62,19 +62,22 @@
                 android:id="@+id/edtMaleUnemployedCount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/male_unemployed" />
+                android:hint="@string/male_unemployed"
+                android:inputType="number" />
 
             <EditText
                 android:id="@+id/edtFemaleUnemployed"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/female_unemployed" />
+                android:hint="@string/female_unemployed"
+                android:inputType="number" />
 
             <EditText
                 android:id="@+id/edtThirdGenderUnemployed"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/third_gender_unemployed" />
+                android:hint="@string/third_gender_unemployed"
+                android:inputType="number" />
         </LinearLayout>
     </RelativeLayout>
 </ScrollView>

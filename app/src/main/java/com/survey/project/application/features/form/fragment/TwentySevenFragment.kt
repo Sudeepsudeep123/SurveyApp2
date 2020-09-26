@@ -9,7 +9,7 @@ import com.survey.project.application.R
 import com.survey.project.application.features.form.activity.FormActivity
 import com.survey.project.application.utils.constants.FragmentTagConstants
 import com.survey.project.application.utils.util.Utils
-import kotlinx.android.synthetic.main.fragment_twenty_eight.*
+import kotlinx.android.synthetic.main.fragment_twenty_seven.*
 
 class TwentySevenFragment  : Fragment(), View.OnClickListener {
     override fun onCreateView(
@@ -17,7 +17,7 @@ class TwentySevenFragment  : Fragment(), View.OnClickListener {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_twenty_eight, container, false)
+        return inflater.inflate(R.layout.fragment_twenty_seven, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
