@@ -56,49 +56,44 @@
             android:id="@+id/rdgSeventeen"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/txvQuestionSeventeen">
+            android:layout_below="@+id/txvQuestionSeventeen"
+            android:orientation="vertical">
 
-            <LinearLayout
+            <RadioButton
+                android:id="@+id/rdgHindu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:text="@string/hindu" />
 
-                <RadioButton
-                    android:id="@+id/rdgHindu"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/hindu" />
+            <RadioButton
+                android:id="@+id/rdgBuddhism"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/buddhism" />
 
-                <RadioButton
-                    android:id="@+id/rdgBuddhism"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/buddhism" />
+            <RadioButton
+                android:id="@+id/rdgChristian"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/christian" />
 
-                <RadioButton
-                    android:id="@+id/rdgChristian"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/christian" />
+            <RadioButton
+                android:id="@+id/rdgMuslim"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/muslim" />
 
-                <RadioButton
-                    android:id="@+id/rdgMuslim"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/muslim" />
+            <RadioButton
+                android:id="@+id/rdgKirati"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/kirati" />
 
-                <RadioButton
-                    android:id="@+id/rdgKirati"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/kirati" />
-
-                <RadioButton
-                    android:id="@+id/rdgOther"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/other" />
-            </LinearLayout>
+            <RadioButton
+                android:id="@+id/rdgOther"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/other" />
         </RadioGroup>
     </RelativeLayout>
 </ScrollView>

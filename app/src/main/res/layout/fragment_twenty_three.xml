@@ -57,7 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/lnlButtons"
             android:layout_marginTop="@dimen/margin_eight"
-            android:text="@string/area"
+            android:text="@string/rented_area"
             android:textSize="@dimen/text_size_twenty_four" />
         <!--options to be given-->
         <RadioGroup

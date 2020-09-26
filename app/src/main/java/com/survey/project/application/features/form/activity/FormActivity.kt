@@ -19,8 +19,8 @@ class FormActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_form)
-        showQuestion1()
-        // attachFirstFragment()
+        //  showQuestion1()
+        attachFirstFragment()
     }
 
     private fun attachFirstFragment() {

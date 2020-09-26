@@ -9,58 +9,54 @@
         android:paddingStart="16dp"
         android:paddingEnd="@dimen/margin_sixteen">
 
-    <TextView
-        android:id="@+id/txvHeading"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/margin_twenty_four"
-        android:text="@string/heading_fragments"
-        android:textAlignment="center"
-        android:textSize="@dimen/text_size_thirty" />
-
-    <LinearLayout
-        android:id="@+id/lnlButtons"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/txvHeading"
-        android:layout_marginTop="@dimen/margin_sixteen"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/btnPrevious"
-            android:layout_width="0dp"
+        <TextView
+            android:id="@+id/txvHeading"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/previous" />
-
-        <Button
-            android:id="@+id/btnNext"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_eight"
-            android:layout_weight="1"
-            android:text="@string/next" />
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/txvQuestionSixteen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/lnlButtons"
-        android:layout_marginTop="@dimen/margin_eight"
-        android:text="@string/question_sixteen"
-        android:textSize="@dimen/text_size_twenty_four" />
-
-    <RadioGroup
-        android:id="@+id/rdgSixteen"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/txvQuestionSixteen">
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/margin_twenty_four"
+            android:text="@string/heading_fragments"
+            android:textAlignment="center"
+            android:textSize="@dimen/text_size_thirty" />
 
         <LinearLayout
+            android:id="@+id/lnlButtons"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/txvHeading"
+            android:layout_marginTop="@dimen/margin_sixteen"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnPrevious"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/previous" />
+
+            <Button
+                android:id="@+id/btnNext"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_eight"
+                android:layout_weight="1"
+                android:text="@string/next" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txvQuestionSixteen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lnlButtons"
+            android:layout_marginTop="@dimen/margin_eight"
+            android:text="@string/ethnicity"
+            android:textSize="@dimen/text_size_twenty_four" />
+
+        <RadioGroup
+            android:id="@+id/rdgSixteen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txvQuestionSixteen"
             android:orientation="vertical">
 
             <RadioButton
@@ -177,7 +173,6 @@
                 android:layout_height="wrap_content"
                 android:text="@string/other" />
 
-        </LinearLayout>
-    </RadioGroup>
+        </RadioGroup>
     </RelativeLayout>
 </ScrollView>

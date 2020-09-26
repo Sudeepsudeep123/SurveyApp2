@@ -56,67 +56,62 @@
             android:id="@+id/rdgEighteen"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/txvQuestionEighteen">
+            android:layout_below="@+id/txvQuestionEighteen"
+            android:orientation="vertical">
 
-            <LinearLayout
+            <RadioButton
+                android:id="@+id/rdgNepali"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:text="@string/nepali" />
 
-                <RadioButton
-                    android:id="@+id/rdgNepali"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/nepali" />
+            <RadioButton
+                android:id="@+id/rdgNewari"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/newari" />
 
-                <RadioButton
-                    android:id="@+id/rdgNewari"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/newari" />
+            <RadioButton
+                android:id="@+id/rdgMagar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/magar" />
 
-                <RadioButton
-                    android:id="@+id/rdgMagar"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/magar" />
+            <RadioButton
+                android:id="@+id/rdgGurung"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/gurung" />
 
-                <RadioButton
-                    android:id="@+id/rdgGurung"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/gurung" />
+            <RadioButton
+                android:id="@+id/rdgTamang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/tamang" />
 
-                <RadioButton
-                    android:id="@+id/rdgTamang"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/tamang" />
+            <RadioButton
+                android:id="@+id/rdgMuslim"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/muslim" />
 
-                <RadioButton
-                    android:id="@+id/rdgMuslim"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/muslim" />
+            <RadioButton
+                android:id="@+id/rdgTharu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/tharu" />
 
-                <RadioButton
-                    android:id="@+id/rdgTharu"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/tharu" />
+            <RadioButton
+                android:id="@+id/rdgRai"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/rai" />
 
-                <RadioButton
-                    android:id="@+id/rdgRai"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/rai" />
-
-                <RadioButton
-                    android:id="@+id/rdgOther"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/other" />
-            </LinearLayout>
+            <RadioButton
+                android:id="@+id/rdgOther"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/other" />
         </RadioGroup>
     </RelativeLayout>
 </ScrollView>

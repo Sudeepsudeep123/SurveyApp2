@@ -9,9 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".features.form.activity.FormActivity"/>
+        <activity android:name=".features.login.LoginActivity" />
 
-        <activity android:name=".features.login.LoginActivity">
+        <activity android:name=".features.form.activity.FormActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,7 +22,7 @@
             android:name=".features.mainDrawer.DrawerActivity"
             android:label="@string/title_activity_form"
             android:theme="@style/AppTheme.NoActionBar" />
-     <!--   <activity android:name=".features.login.LoginActivity">-->
+        <!--   <activity android:name=".features.login.LoginActivity">-->
 
         <activity android:name=".features.signup.SignupActivity" />
         <activity android:name=".features.main.MainActivity">

@@ -35,7 +35,7 @@
     <string name="skip">Skip</string>
     <string name="heading_fragments">खण्ड कः पारिवारिक विवरण, आय तथा वसोवास</string>
 
-    <string name="question_sixteen">जातियताः</string>
+    <string name="ethnicity">जातियताः</string>
     <string name="brahman">व्राम्हृण</string>
     <string name="chhetri">क्षेत्री</string>
     <string name="newar">नेवार</string>
@@ -88,7 +88,7 @@
 
     <string name="rented_land">तपाईले जग्गा भाडामा दिनु भएको छ ?</string>
 
-    <string name="area">दिनु भएको भए क्षत्रफल ......</string>
+    <string name="rented_area">दिनु भएको भए क्षत्रफल ......</string>
     <string name="monthly_income">औसत मासिक पारिवारिक आम्दानी (हजारमा) …………</string>
     <string name="bank_account_present">परिवारको कुनै सदस्यको बैंक तथा वित्तिय संस्थामा खाता छ?</string>
     <string name="monthly_saving">औसत मासिक पारिवारिक बचत (हजारमा) …………</string>
