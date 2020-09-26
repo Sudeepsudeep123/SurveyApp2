@@ -156,4 +156,29 @@
     <string name="b54">नर्सरी फुल व्यवसायी</string> //plus other
 
     <string name="laalpurja">तपाईसँग जग्गाको लालपुर्जा छ ?</string> //30
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--    Section1-->
+    <string name="houseOwnerName">घरमुलीको नाम थर</string>
+    <string name="houseOwner">घरमुली</string>
+    <string name="wardNo">वार्ड नं</string>
+    <string name="gharNo">घर नं</string>
+    <string name="pariwarSankhya">जम्मा परिवार संख्या</string>
+    <string name="purushNo">पूरुष संख्य</string>
+    <string name="mahilaNo">महिला संख्य</string>
+    <string name="TesroNo">तेस्रो लिंगी संख्य</string>
+
+    <string name="purush">पूरुष </string>
+    <string name="mahila">महिला </string>
+    <string name="tesro">तेस्रो लिंगी </string>
+    <string name="pariwarMemberNaam">परिवार सदस्यको नाम दिनुहोस्</string>
+
+    <string name="bastiGauTol">बस्ती/गाउँ/टोलको नाम</string>
+
+    <string name="dad">बाबु</string>
+    <string name="mom">आमा</string>
+    <string name="chori">छोरी</string>
+    <string name="chora">छोरा/बुहारी</string>
+
 </resources>
