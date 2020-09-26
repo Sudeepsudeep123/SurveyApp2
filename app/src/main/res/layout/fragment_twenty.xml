@@ -56,11 +56,7 @@
             android:id="@+id/rdgTwenty"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/txvQuestionTwenty">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+            android:layout_below="@+id/txvQuestionTwenty"
                 android:orientation="vertical">
 
                 <RadioButton
@@ -89,7 +85,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/other" />
-            </LinearLayout>
         </RadioGroup>
     </RelativeLayout>
 </ScrollView>

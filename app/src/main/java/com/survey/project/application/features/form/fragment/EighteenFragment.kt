@@ -60,7 +60,7 @@ class EighteenFragment : Fragment(), View.OnClickListener {
         )
     }
 
-    fun saveValuesANdGoToNextFragment() {
+    private fun saveValuesANdGoToNextFragment() {
         var motherTongue = ""
         val selectedLanguage = rdgEighteen?.checkedRadioButtonId
         if (selectedLanguage != null && selectedLanguage != -1) {
@@ -72,7 +72,7 @@ class EighteenFragment : Fragment(), View.OnClickListener {
         goToNextFragment()
     }
 
-    fun getAndSetData() {
+    private fun getAndSetData() {
         when (PreferenceUtils.getMotherTongue(context)) {
             getString(R.string.nepali) -> rdgEighteen?.check(R.id.rdgNepali)
             getString(R.string.newari) -> rdgEighteen?.check(R.id.rdgNewari)
@@ -86,7 +86,5 @@ class EighteenFragment : Fragment(), View.OnClickListener {
             else -> {
             }
         }
-
     }
-
 }
