@@ -21,7 +21,7 @@ import kotlinx.android.synthetic.main.fragment_question5.btnPrevious
 import kotlinx.android.synthetic.main.fragment_question7.*
 
 class Question7Fragment : Fragment(), View.OnClickListener {
-    private lateinit var question7Fragment: Question7Fragment
+    private lateinit var question8Fragment: Question8Fragment
     var purushNumber = 0
     var mahilaNumber = 0
     var tesroNumber = 0
@@ -101,11 +101,6 @@ class Question7Fragment : Fragment(), View.OnClickListener {
             purushNumber = purush?.let { Integer.parseInt(it) }!!
             mahilaNumber = mahila?.let { Integer.parseInt(it) }!!
             tesroNumber = tesro?.let { Integer.parseInt(it) }!!
-
-
-//            if (name != "" || !name.equals(null)) {
-//                edtGharNo.setText(name)
-//            }
         } catch (ex: Exception) {
             Log.e("ex", ex.toString())
         }
@@ -122,12 +117,6 @@ class Question7Fragment : Fragment(), View.OnClickListener {
                 fragmentManager?.popBackStack()
             }
             btnNext -> {
-//                if (edtBastiGauTol.text.toString() == "") {
-//                    Toast.makeText(context, "Empty Field", Toast.LENGTH_SHORT).show()
-//                } else {
-//                    save()
-//                    showQuestion8()
-//                }
                 familyMemberList.clear()
                 for (name in familyMemberListEditText) {
                     if (name.text.toString() == "") {
@@ -145,7 +134,8 @@ class Question7Fragment : Fragment(), View.OnClickListener {
                 }
 
                 if (result1 == "Success") {
-                    Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show()
+                    save()
+                    showQuestion8()
                 }
                 else{
                     Toast.makeText(context, "Invalid", Toast.LENGTH_SHORT).show()
@@ -156,19 +146,22 @@ class Question7Fragment : Fragment(), View.OnClickListener {
     }
 
     private fun showQuestion8() {
-        if (!::question7Fragment.isInitialized)
-            question7Fragment = Question7Fragment()
+        if (!::question8Fragment.isInitialized)
+            question8Fragment = Question8Fragment()
         Router.attachFragment(
-            context as AppCompatActivity?, R.id.frmMain, question7Fragment,
+            context as AppCompatActivity?, R.id.frmMain, question8Fragment,
             FragmentTagConstants.question7Fragment, true
         )
     }
 
     private fun save() {
-        val prefs: SharedPreferences? =
-            context?.getSharedPreferences("Section1", Context.MODE_PRIVATE)
-        prefs?.edit()
-            ?.putString("gharNo", edtBastiGauTol.text.toString())
-            ?.apply();
+        val prefs: SharedPreferences? = context?.getSharedPreferences("Section1", Context.MODE_PRIVATE)
+        val set: MutableSet<String> = HashSet()
+        set.addAll(familyMemberList)
+        prefs?.edit()?.putStringSet("familyMemberName", set)?.apply()
+
+//        prefs?.edit()
+//            ?.putString("gharNo", edtBastiGauTol.text.toString())
+//            ?.apply()
     }
 }
