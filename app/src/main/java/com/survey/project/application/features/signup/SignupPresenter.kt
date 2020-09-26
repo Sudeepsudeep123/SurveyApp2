@@ -1,4 +1,4 @@
-package com.survey.project.application.features.Signup
+package com.survey.project.application.features.signup
 
 import com.survey.project.application.features.shared.model.SignupModel
 import com.hannesdorfmann.mosby3.mvp.MvpBasePresenter

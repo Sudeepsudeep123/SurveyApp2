@@ -10,10 +10,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
-import androidx.navigation.Navigation.findNavController
 import com.google.android.material.navigation.NavigationView
 import com.survey.project.application.R
-import com.survey.project.application.features.form.FormActivity
+import com.survey.project.application.features.form.activity.FormActivity
 import com.survey.project.application.features.mainDrawer.ui.home.HomeFragment
 import com.survey.project.application.utils.constants.FragmentTagConstants
 import com.survey.project.application.utils.router.Router
@@ -53,7 +52,8 @@ class DrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
 
             }
             R.id.nav_form -> {
-                var intent = Intent(this,FormActivity::class.java)
+                var intent = Intent(this,
+                    FormActivity::class.java)
                 startActivity(intent)
 
             }

@@ -8,7 +8,7 @@ import android.widget.Toast
 import com.hannesdorfmann.mosby3.mvp.MvpActivity
 import com.survey.project.application.R
 import com.survey.project.application.database.room.MainRoomDatabase
-import com.survey.project.application.features.Signup.SignupActivity
+import com.survey.project.application.features.signup.SignupActivity
 import com.survey.project.application.features.main.MainActivity
 import com.survey.project.application.features.mainDrawer.DrawerActivity
 import com.survey.project.application.features.shared.model.AreaModel

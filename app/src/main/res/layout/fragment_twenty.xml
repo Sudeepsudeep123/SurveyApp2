@@ -44,19 +44,19 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/txvQuestionTwentyOne"
+            android:id="@+id/txvQuestionTwenty"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/lnlButtons"
             android:layout_marginTop="@dimen/margin_eight"
-            android:text="@string/house_rented"
+            android:text="@string/house_ownership"
             android:textSize="@dimen/text_size_twenty_four" />
 
         <RadioGroup
-            android:id="@+id/rdgTwentyOne"
+            android:id="@+id/rdgTwenty"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/txvQuestionTwentyOne">
+            android:layout_below="@+id/txvQuestionTwenty">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -67,13 +67,28 @@
                     android:id="@+id/rdgTypeOne"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/yes_nepali" />
+                    android:text="@string/house_ownership_one" />
 
                 <RadioButton
                     android:id="@+id/rdgTypeTwo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/no_nepali" />
+                    android:text="@string/house_ownership_two" />
+                <RadioButton
+                    android:id="@+id/rdgTypeThree"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/house_ownership_three" />
+                <RadioButton
+                    android:id="@+id/rdgTypeFour"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/house_ownership_four" />
+                <RadioButton
+                    android:id="@+id/rdgTypeFive"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/other" />
             </LinearLayout>
         </RadioGroup>
     </RelativeLayout>

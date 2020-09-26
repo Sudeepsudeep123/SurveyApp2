@@ -153,5 +153,7 @@
     <string name="b51">पानी फिल्टर</string>
     <string name="b52">भेटनरी पसल तथा सेवा प्रदान</string>
     <string name="b53">फूल खेती</string>
-    <string name="b54">नर्सरी फुल व्यवसायी</string>
+    <string name="b54">नर्सरी फुल व्यवसायी</string> //plus other
+
+    <string name="laalpurja">तपाईसँग जग्गाको लालपुर्जा छ ?</string> //30
 </resources>

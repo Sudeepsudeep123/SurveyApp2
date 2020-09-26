@@ -1,4 +1,4 @@
-package com.survey.project.application.features.Signup
+package com.survey.project.application.features.signup
 
 import android.content.Intent
 import android.os.Bundle

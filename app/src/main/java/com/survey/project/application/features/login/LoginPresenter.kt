@@ -1,7 +1,7 @@
 package com.survey.project.application.features.login
 
 import com.hannesdorfmann.mosby3.mvp.MvpBasePresenter
-import com.survey.project.application.features.Signup.SignupInteractor
+import com.survey.project.application.features.signup.SignupInteractor
 import com.survey.project.application.features.main.MainInteractor
 import com.survey.project.application.features.shared.model.AreaModel
 import com.survey.project.application.features.shared.model.SignupModel

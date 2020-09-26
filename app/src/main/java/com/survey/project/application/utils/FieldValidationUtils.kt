@@ -2,7 +2,7 @@ package com.survey.project.application.utils
 
 import android.util.Patterns
 import com.survey.project.application.R
-import com.survey.project.application.features.Signup.SignupView
+import com.survey.project.application.features.signup.SignupView
 import com.survey.project.application.features.login.LoginView
 import com.survey.project.application.features.main.MainView
 

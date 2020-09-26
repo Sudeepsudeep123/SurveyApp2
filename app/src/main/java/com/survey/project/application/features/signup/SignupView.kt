@@ -1,4 +1,4 @@
-package com.survey.project.application.features.Signup
+package com.survey.project.application.features.signup
 
 import com.survey.project.application.database.room.MainRoomDatabase
 import com.hannesdorfmann.mosby3.mvp.MvpView
