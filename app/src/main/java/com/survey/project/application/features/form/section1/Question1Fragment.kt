@@ -44,9 +44,6 @@ class Question1Fragment : Fragment(),View.OnClickListener {
         }catch(ex:Exception){
             Log.e("ex",ex.toString())
         }
-
-
-
     }
 
     private fun setListener() {
