@@ -56,25 +56,20 @@
             android:id="@+id/rdgTwentyOne"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/txvQuestionTwentyOne">
+            android:layout_below="@+id/txvQuestionTwentyOne"
+            android:orientation="vertical">
 
-            <LinearLayout
+            <RadioButton
+                android:id="@+id/rdgTypeOne"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:text="@string/yes_nepali" />
 
-                <RadioButton
-                    android:id="@+id/rdgTypeOne"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/yes_nepali" />
-
-                <RadioButton
-                    android:id="@+id/rdgTypeTwo"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/no_nepali" />
-            </LinearLayout>
+            <RadioButton
+                android:id="@+id/rdgTypeTwo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/no_nepali" />
         </RadioGroup>
     </RelativeLayout>
 </ScrollView>

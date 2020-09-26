@@ -51,4 +51,16 @@ object PreferenceUtils {
             context?.getSharedPreferences(PreferenceConstants.main_preference, Context.MODE_PRIVATE)
         return pref?.getString(PreferenceConstants.house_ownership, "") ?: ""
     }
+
+    fun saveRentedHouseValue(context: Context?, houseRented: String) {
+        val pref =
+            context?.getSharedPreferences(PreferenceConstants.main_preference, Context.MODE_PRIVATE)
+        pref?.edit()?.putString(PreferenceConstants.house_rented, houseRented)?.apply()
+    }
+
+    fun getRentedHouseValue(context: Context?): String {
+        val pref =
+            context?.getSharedPreferences(PreferenceConstants.main_preference, Context.MODE_PRIVATE)
+        return pref?.getString(PreferenceConstants.house_rented, "") ?: ""
+    }
 }
