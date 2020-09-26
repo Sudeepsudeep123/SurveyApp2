@@ -33,6 +33,7 @@
     <string name="previous">Previous</string>
     <string name="next">Next</string>
     <string name="skip">Skip</string>
+    <string name="empty_string"> </string>
     <string name="heading_fragments">खण्ड कः पारिवारिक विवरण, आय तथा वसोवास</string>
 
     <string name="ethnicity">जातियताः</string>

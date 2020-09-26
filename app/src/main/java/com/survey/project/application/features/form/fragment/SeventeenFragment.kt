@@ -78,7 +78,8 @@ class SeventeenFragment : Fragment(), View.OnClickListener {
             getString(R.string.muslim) -> rdgSeventeen?.check(R.id.rdgMuslim)
             getString(R.string.kirati) -> rdgSeventeen?.check(R.id.rdgKirati)
             getString(R.string.other) -> rdgSeventeen?.check(R.id.rdgOther)
-            else -> {
+            getString(R.string.empty_string) ->{}
+            else -> {rdgSeventeen?.check(R.id.rdgHindu)
             }
         }
     }
