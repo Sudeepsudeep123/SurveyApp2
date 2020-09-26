@@ -5,8 +5,6 @@
     android:layout_gravity="center"
     tools:context="com.survey.project.application.features.form.section1.Question1Fragment">
 
-    <!-- TODO: Update blank fragment layout -->
-
     <LinearLayout
         android:gravity="center"
         android:layout_width="match_parent"

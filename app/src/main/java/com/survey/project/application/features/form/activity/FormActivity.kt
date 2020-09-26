@@ -20,31 +20,30 @@ class FormActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_form)
         showQuestion1()
-       // attachFirstFragment()
+        // attachFirstFragment()
     }
 
     private fun attachFirstFragment() {
         if (!::sixteenFragment.isInitialized) {
             sixteenFragment =
                 SixteenFragment()
-            Log.e("here", "login")
-
-            Router.attachFragment(
-                this,
-                R.id.frmMain,
-                sixteenFragment,
-                FragmentTagConstants.sixtenFragmentTag,
-                true
-            )
         }
+        Router.attachFragment(
+            this,
+            R.id.frmMain,
+            sixteenFragment,
+            FragmentTagConstants.sixtenFragmentTag,
+            true
+        )
     }
 
     private fun showQuestion1() {
         if (!::question1Fragment.isInitialized)
             question1Fragment = Question1Fragment()
+
         Router.attachFragment(
-           this, R.id.frmMain, question1Fragment,
-            FragmentTagConstants.forgotPasswordFragmentTag, true
+            this, R.id.frmMain, question1Fragment,
+            FragmentTagConstants.question1Fragment, true
         )
     }
 

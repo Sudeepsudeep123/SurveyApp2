@@ -15,8 +15,6 @@ import com.survey.project.application.R
 import com.survey.project.application.utils.constants.FragmentTagConstants
 import com.survey.project.application.utils.router.Router
 import kotlinx.android.synthetic.main.fragment_question1.*
-
-
 private lateinit var myView: View
 
 class Question1Fragment : Fragment(),View.OnClickListener {
