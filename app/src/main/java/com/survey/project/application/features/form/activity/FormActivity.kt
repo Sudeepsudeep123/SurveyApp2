@@ -7,17 +7,20 @@ import androidx.fragment.app.Fragment
 import com.survey.project.application.R
 import com.survey.project.application.features.form.fragment.SixteenFragment
 import com.survey.project.application.features.form.fragment.SeventeenFragment
+import com.survey.project.application.features.form.section1.Question1Fragment
 import com.survey.project.application.utils.constants.FragmentTagConstants
 import com.survey.project.application.utils.router.Router
 
 class FormActivity : AppCompatActivity() {
     private lateinit var sixteenFragment: SixteenFragment
     private lateinit var seventeenFragment: SeventeenFragment
+    private lateinit var question1Fragment: Question1Fragment
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_form)
-
-        attachFirstFragment()
+        showQuestion1()
+       // attachFirstFragment()
     }
 
     private fun attachFirstFragment() {
@@ -36,20 +39,13 @@ class FormActivity : AppCompatActivity() {
         }
     }
 
-    fun attachSeventeenthFragment() {
-        //if (!::seventeenFragment.isInitialized) {
-        seventeenFragment =
-            SeventeenFragment()
-        Log.e("here", "login")
-
+    private fun showQuestion1() {
+        if (!::question1Fragment.isInitialized)
+            question1Fragment = Question1Fragment()
         Router.attachFragment(
-            this,
-            R.id.frmMain,
-            seventeenFragment,
-            FragmentTagConstants.seventeenFragmentTag,
-            true
+           this, R.id.frmMain, question1Fragment,
+            FragmentTagConstants.forgotPasswordFragmentTag, true
         )
-        //}
     }
 
     fun attachFragment(fragment: Fragment, fragmentTag: String) {
