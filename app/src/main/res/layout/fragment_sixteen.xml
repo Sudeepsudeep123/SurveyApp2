@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="16dp"
+        android:paddingEnd="@dimen/margin_sixteen">
+
+    <TextView
+        android:id="@+id/txvHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/margin_twenty_four"
+        android:text="@string/heading_fragments"
+        android:textAlignment="center"
+        android:textSize="@dimen/text_size_thirty" />
+
+    <LinearLayout
+        android:id="@+id/lnlButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txvHeading"
+        android:layout_marginTop="@dimen/margin_sixteen"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnPrevious"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/previous" />
+
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_eight"
+            android:layout_weight="1"
+            android:text="@string/next" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txvQuestionSixteen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lnlButtons"
+        android:layout_marginTop="@dimen/margin_eight"
+        android:text="@string/question_sixteen"
+        android:textSize="@dimen/text_size_twenty_four" />
+
+    <RadioGroup
+        android:id="@+id/rdgSixteen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txvQuestionSixteen">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/rdgBrahmin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/brahman" />
+
+            <RadioButton
+                android:id="@+id/rdgChhetri"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/chhetri" />
+
+            <RadioButton
+                android:id="@+id/rdgNewar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/newar" />
+
+            <RadioButton
+                android:id="@+id/rdgGurung"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/gurung" />
+
+            <RadioButton
+                android:id="@+id/rdMagar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/magar" />
+
+            <RadioButton
+                android:id="@+id/rdgTamang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/tamang" />
+
+            <RadioButton
+                android:id="@+id/rdgThakuri"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/thakuri" />
+
+            <RadioButton
+                android:id="@+id/rdgDamai"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/damai" />
+
+            <RadioButton
+                android:id="@+id/rdgKami"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/kami" />
+
+            <RadioButton
+                android:id="@+id/rdgSarki"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sarki" />
+
+            <RadioButton
+                android:id="@+id/rdgBk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/bk" />
+
+            <RadioButton
+                android:id="@+id/rdgMuslim"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/muslim" />
+
+            <RadioButton
+                android:id="@+id/rdgYogi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/yogi" />
+
+            <RadioButton
+                android:id="@+id/rdgMajhi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/majhi" />
+
+            <RadioButton
+                android:id="@+id/rdgYadav"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/yadav" />
+
+            <RadioButton
+                android:id="@+id/rdgTharu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/tharu" />
+
+            <RadioButton
+                android:id="@+id/rdgChaudhary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/chaudhary" />
+
+            <RadioButton
+                android:id="@+id/rdgDanuwar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/danuwar" />
+
+            <RadioButton
+                android:id="@+id/rdgOther"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/other" />
+
+        </LinearLayout>
+    </RadioGroup>
+    </RelativeLayout>
+</ScrollView>

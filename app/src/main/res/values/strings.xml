@@ -29,4 +29,67 @@
     <string name="menu_home">Home</string>
     <string name="menu_form">Form</string>
     <string name="menu_slideshow">Slideshow</string>
+
+    <string name="previous">Previous</string>
+    <string name="next">Next</string>
+    <string name="skip">Skip</string>
+    <string name="heading_fragments">खण्ड कः पारिवारिक विवरण, आय तथा वसोवास</string>
+
+    <string name="question_sixteen">जातियताः</string>
+    <string name="brahman">व्राम्हृण</string>
+    <string name="chhetri">क्षेत्री</string>
+    <string name="newar">नेवार</string>
+    <string name="gurung">गुरुङ्ग</string>
+    <string name="magar">मगर</string>
+    <string name="tamang">तामाङ्ग</string>
+    <string name="thakuri">ठकुरी</string>
+    <string name="damai">दमाई</string>
+    <string name="kami">कामी</string>
+    <string name="sarki">सार्की</string>
+    <string name="bk">बि.क./सुनार</string>
+    <string name="muslim">मुसलमान</string>
+    <string name="yogi">योगी/गिरी/सन्यासी/भारती/बन</string>
+    <string name="majhi">माझी</string>
+    <string name="yadav">यादव</string>
+    <string name="tharu">थारु</string>
+    <string name="chaudhary">चौधरी</string>
+    <string name="danuwar">दनुवार</string>
+    <string name="other">अन्य</string>
+
+    <string name="religion">धर्मः</string>
+    <string name="hindu">हिन्दु</string>
+    <string name="buddhism">वौद्ध</string>
+    <string name="christian">क्रिश्चीयन</string>
+    <string name="kirati">किराती</string>
+
+    <string name="language">मातृभाषाः</string>
+    <string name="nepali">नेपाली</string>
+    <string name="newari">नेवारी</string>
+    <string name="limbu">लिम्बु</string>
+    <string name="rai">राई</string>
+
+    <string name="hosue_type">घरको प्रकार तथा किसिमः</string>
+    <string name="hosue_type_one">कच्ची र झूप्रो</string>
+    <string name="hosue_type_two"> ढुंगा, माटो र खरको छाना</string>
+    <string name="hosue_type_three">ढुंगा, माटो र टिनको छाना/ढुंगाको छाना</string>
+    <string name="hosue_type_four">प्लाष्टर गरिएको र टिनको छाना</string>
+    <string name="hosue_type_five">इटा र ढलानको छाना</string>
+    <string name="hosue_type_six"> ढलान (फे्रम स्ट्रक्चर)</string>
+
+    <string name="house_ownership">घरको स्वामित्व</string>
+    <string name="house_ownership_one">निजी/आफ्नै घर</string>
+    <string name="house_ownership_two">बहालमा</string>
+    <string name="house_ownership_three">अरुसंग मिलेर बसेको</string>
+    <string name="house_ownership_four">सुकुम्बासी</string>
+
+    <string name="house_rented">तपाईले घर भाडामा दिनु भएको छ ?</string>
+    <string name="yes_nepali">छ</string>
+    <string name="no_nepali">छैन</string>
+
+    <string name="rented_land">तपाईले जग्गा भाडामा दिनु भएको छ ?</string>
+
+    <string name="area">दिनु भएको भए क्षत्रफल ......</string>
+    <string name="monthly_income">औसत मासिक पारिवारिक आम्दानी (हजारमा) …………</string>
 </resources>
+
+
