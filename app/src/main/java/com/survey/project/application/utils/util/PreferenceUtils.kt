@@ -171,5 +171,29 @@ object PreferenceUtils {
         return pref?.getString(PreferenceConstants.lalpurja, "") ?: ""
     }
 
+    fun saveHouseType(context: Context?, houseType: String) {
+        val pref =
+            context?.getSharedPreferences(PreferenceConstants.main_preference, Context.MODE_PRIVATE)
+        pref?.edit()?.putString(PreferenceConstants.house_type, houseType)
+            ?.apply()
+    }
 
+    fun getHouseType(context: Context?): String {
+        val pref =
+            context?.getSharedPreferences(PreferenceConstants.main_preference, Context.MODE_PRIVATE)
+        return pref?.getString(PreferenceConstants.house_type, "") ?: ""
+    }
+
+    fun saveHouseCount(context: Context?, count: Int) {
+        val pref =
+            context?.getSharedPreferences(PreferenceConstants.main_preference, Context.MODE_PRIVATE)
+        pref?.edit()?.putInt(PreferenceConstants.count, count)
+            ?.apply()
+    }
+
+    fun getHouseCount(context: Context?): Int {
+        val pref =
+            context?.getSharedPreferences(PreferenceConstants.main_preference, Context.MODE_PRIVATE)
+        return pref?.getInt(PreferenceConstants.count, 0) ?: 0
+    }
 }

@@ -60,36 +60,43 @@
             android:orientation="vertical">
 
             <CheckBox
+                android:id="@+id/chb1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/hosue_type_one" />
 
             <CheckBox
+                android:id="@+id/chb2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/hosue_type_two" />
 
             <CheckBox
+                android:id="@+id/chb3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/hosue_type_three" />
 
             <CheckBox
+                android:id="@+id/chb4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/hosue_type_four" />
 
             <CheckBox
+                android:id="@+id/chb5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/hosue_type_five" />
 
             <CheckBox
+                android:id="@+id/chb6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/hosue_type_six" />
 
             <CheckBox
+                android:id="@+id/chb7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/other" />
