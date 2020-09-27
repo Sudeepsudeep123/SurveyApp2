@@ -157,6 +157,8 @@
     <string name="b54">नर्सरी फुल व्यवसायी</string> //plus other
 
     <string name="select_one">Please select one option.</string>
+    <string name="enter_value">Please enter the value.</string>
+    <string name="all_field_empty">All fields cannot be empty.</string>
 
     <string name="laalpurja">तपाईसँग जग्गाको लालपुर्जा छ ?</string> //30
 

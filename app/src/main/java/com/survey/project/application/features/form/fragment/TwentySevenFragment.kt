@@ -45,12 +45,21 @@ class TwentySevenFragment  : Fragment(), View.OnClickListener {
         Utils.popBackStack(FragmentTagConstants.twentySevenFragmentTag, activity)
     }
 
-    private fun goToNextFragment() {
+    private fun goToNextFragmentTwentyEight() {
         val fragment =
             TwentyEightFragment()
         (activity as FormActivity)?.attachFragment(
             fragment,
             FragmentTagConstants.twentyEightFragmentTag
+        )
+    }
+
+    private fun goToNextFragmentTwentyNine() {
+        val fragment =
+            TwentyNIneFragment()
+        (activity as FormActivity)?.attachFragment(
+            fragment,
+            FragmentTagConstants.twentyNineFragmentTag
         )
     }
 
@@ -62,7 +71,11 @@ class TwentySevenFragment  : Fragment(), View.OnClickListener {
                 view?.findViewById<View>(selectedBankAccPresent) as RadioButton
             unEmployedYesOrNo = selectedRentedLandRadioButton.text.toString()
             PreferenceUtils.saveAnyoneUnemployedInFam(context, unEmployedYesOrNo)
-            goToNextFragment()
+            if (unEmployedYesOrNo == getString(R.string.yes_nepali)){
+                goToNextFragmentTwentyEight()
+            }else{
+                goToNextFragmentTwentyNine()
+            }
         } else {
             Toast.makeText(context, getString(R.string.select_one), Toast.LENGTH_SHORT).show()
         }

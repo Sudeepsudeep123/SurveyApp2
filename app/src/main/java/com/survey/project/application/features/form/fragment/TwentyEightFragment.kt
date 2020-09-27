@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.survey.project.application.R
 import com.survey.project.application.features.form.activity.FormActivity
@@ -56,9 +57,18 @@ class TwentyEightFragment : Fragment(), View.OnClickListener {
         val maleUnemployed = edtMaleUnemployedCount?.text.toString()
         val femaleUnemployed = edtFemaleUnemployed?.text.toString()
         val thirdGenderUnemployed = edtThirdGenderUnemployed?.text.toString()
-        val combination = "$maleUnemployed/$femaleUnemployed/$thirdGenderUnemployed"
-        PreferenceUtils.saveUnemployedCount(context, maleUnemployed, femaleUnemployed, thirdGenderUnemployed)
-        goToNextFragment()
+
+        if ((maleUnemployed.isEmpty() || maleUnemployed.isBlank()) && (femaleUnemployed.isEmpty() || femaleUnemployed.isBlank()) && (thirdGenderUnemployed.isEmpty() || thirdGenderUnemployed.isBlank())) {
+            Toast.makeText(context, getString(R.string.all_field_empty), Toast.LENGTH_SHORT).show()
+        } else {
+            PreferenceUtils.saveUnemployedCount(
+                context,
+                maleUnemployed,
+                femaleUnemployed,
+                thirdGenderUnemployed
+            )
+            goToNextFragment()
+        }
     }
 
     private fun getAndSetData() {

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.survey.project.application.R
 import com.survey.project.application.features.form.activity.FormActivity
@@ -54,8 +55,12 @@ class TwentySixFragment : Fragment(), View.OnClickListener {
 
     private fun saveValuesAndGoToNextFragment() {
         val income = edtSaving?.text.toString()
-        PreferenceUtils.saveMonthlySaving(context, income)
-        goToNextFragment()
+        if (!income.isNullOrEmpty()) {
+            PreferenceUtils.saveMonthlySaving(context, income)
+            goToNextFragment()
+        } else {
+            Toast.makeText(context, getString(R.string.enter_value), Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun getAndSetData() {
