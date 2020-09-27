@@ -135,13 +135,40 @@ object PreferenceUtils {
     fun saveIsBankAccountPresentValue(context: Context?, bank_account_present: String) {
         val pref =
             context?.getSharedPreferences(PreferenceConstants.main_preference, Context.MODE_PRIVATE)
-        pref?.edit()?.putString(PreferenceConstants.bank_account_present, bank_account_present)?.apply()
+        pref?.edit()?.putString(PreferenceConstants.bank_account_present, bank_account_present)
+            ?.apply()
     }
 
     fun isBankAccountPresentValue(context: Context?): String {
         val pref =
             context?.getSharedPreferences(PreferenceConstants.main_preference, Context.MODE_PRIVATE)
         return pref?.getString(PreferenceConstants.bank_account_present, "") ?: ""
+    }
+
+    fun saveAnyoneUnemployedInFam(context: Context?, umemployedValue: String) {
+        val pref =
+            context?.getSharedPreferences(PreferenceConstants.main_preference, Context.MODE_PRIVATE)
+        pref?.edit()?.putString(PreferenceConstants.unemployment_in_family, umemployedValue)
+            ?.apply()
+    }
+
+    fun getAnyoneUnemployedInFam(context: Context?): String {
+        val pref =
+            context?.getSharedPreferences(PreferenceConstants.main_preference, Context.MODE_PRIVATE)
+        return pref?.getString(PreferenceConstants.unemployment_in_family, "") ?: ""
+    }
+
+    fun saveLpValue(context: Context?, lalpurja: String) {
+        val pref =
+            context?.getSharedPreferences(PreferenceConstants.main_preference, Context.MODE_PRIVATE)
+        pref?.edit()?.putString(PreferenceConstants.lalpurja, lalpurja)
+            ?.apply()
+    }
+
+    fun getLpValue(context: Context?): String {
+        val pref =
+            context?.getSharedPreferences(PreferenceConstants.main_preference, Context.MODE_PRIVATE)
+        return pref?.getString(PreferenceConstants.lalpurja, "") ?: ""
     }
 
 
