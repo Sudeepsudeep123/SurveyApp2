@@ -18,7 +18,8 @@ object PreferenceConstants {
     const val male_unemployed = "male_unemployed"
     const val female_unemployed = "female_unemployed"
     const val third_gender_unemployed = "third_gender_unemployed"
-    const val business = "business"
+    const val businessType = "businessType"
     const val lalpurja = "lalpurja"
     const val count = "count"
+    const val businessCount = "businessCount"
 }

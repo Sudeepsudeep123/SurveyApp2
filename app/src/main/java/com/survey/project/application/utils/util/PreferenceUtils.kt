@@ -196,4 +196,30 @@ object PreferenceUtils {
             context?.getSharedPreferences(PreferenceConstants.main_preference, Context.MODE_PRIVATE)
         return pref?.getInt(PreferenceConstants.count, 0) ?: 0
     }
+
+    fun saveBusinessCount(context: Context?, count: Int) {
+        val pref =
+            context?.getSharedPreferences(PreferenceConstants.main_preference, Context.MODE_PRIVATE)
+        pref?.edit()?.putInt(PreferenceConstants.businessCount, count)
+            ?.apply()
+    }
+
+    fun getBusinessCount(context: Context?): Int {
+        val pref =
+            context?.getSharedPreferences(PreferenceConstants.main_preference, Context.MODE_PRIVATE)
+        return pref?.getInt(PreferenceConstants.businessCount, 0) ?: 0
+    }
+
+    fun saveBusinessType(context: Context?, businessType: String) {
+        val pref =
+            context?.getSharedPreferences(PreferenceConstants.main_preference, Context.MODE_PRIVATE)
+        pref?.edit()?.putString(PreferenceConstants.businessType, businessType)
+            ?.apply()
+    }
+
+    fun getBusinessType(context: Context?): String {
+        val pref =
+            context?.getSharedPreferences(PreferenceConstants.main_preference, Context.MODE_PRIVATE)
+        return pref?.getString(PreferenceConstants.businessType, "") ?: ""
+    }
 }

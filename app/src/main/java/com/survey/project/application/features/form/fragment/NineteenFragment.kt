@@ -58,7 +58,7 @@ class NineteenFragment : Fragment(), View.OnClickListener {
         )
     }
 
-    fun getSelectedAndSaveToPreference() {
+    private fun getSelectedAndSaveToPreference() {
         val result = StringBuilder()
         // result.append("Selected Items:")
         var i = 0
@@ -113,7 +113,6 @@ class NineteenFragment : Fragment(), View.OnClickListener {
                     getString(R.string.hosue_type_six) -> chb6.isChecked = true
                     getString(R.string.other) -> chb7.isChecked = true
                 }
-
             }
         }
     }
