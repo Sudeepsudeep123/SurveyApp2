@@ -67,14 +67,16 @@ class SixteenFragment : Fragment(), View.OnClickListener {
             val selectedEthnicityRadioButton =
                 view?.findViewById<View>(selectedEthnicity) as RadioButton
             ethnicity = selectedEthnicityRadioButton.text.toString()
+
+            PreferenceUtils.saveEthnicity(context, ethnicity)
+            goToNextFragment()
+        } else {
+            Toast.makeText(context, getString(R.string.select_one), Toast.LENGTH_SHORT).show()
         }
-        PreferenceUtils.saveEthnicity(context, ethnicity)
-        goToNextFragment()
-        //   Toast.makeText(context, ethnicity, Toast.LENGTH_SHORT).show()
     }
 
-    private fun getAndSetData(){
-        when (PreferenceUtils.getEthnicity(context)){
+    private fun getAndSetData() {
+        when (PreferenceUtils.getEthnicity(context)) {
             getString(R.string.brahman) -> rdgSixteen.check(R.id.rdgBrahmin)
             getString(R.string.chhetri) -> rdgSixteen.check(R.id.rdgChhetri)
             getString(R.string.newar) -> rdgSixteen.check(R.id.rdgNewar)
@@ -92,7 +94,8 @@ class SixteenFragment : Fragment(), View.OnClickListener {
             getString(R.string.chaudhary) -> rdgSixteen.check(R.id.rdgChaudhary)
             getString(R.string.danuwar) -> rdgSixteen.check(R.id.rdgDanuwar)
             getString(R.string.other) -> rdgSixteen.check(R.id.rdgOther)
-            else -> {}
+            else -> {
+            }
         }
     }
 }

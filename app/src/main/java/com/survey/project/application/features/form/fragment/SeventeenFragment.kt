@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.RadioButton
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.survey.project.application.R
 import com.survey.project.application.features.form.activity.FormActivity
@@ -65,9 +66,12 @@ class SeventeenFragment : Fragment(), View.OnClickListener {
             val selectedReligionRadioButton =
                 view?.findViewById<View>(selectedReligion) as RadioButton
             religion = selectedReligionRadioButton.text.toString()
+
+            PreferenceUtils.saveReligion(context, religion)
+            goToNextFragment()
+        } else {
+            Toast.makeText(context, getString(R.string.select_one), Toast.LENGTH_SHORT).show()
         }
-        PreferenceUtils.saveReligion(context, religion)
-        goToNextFragment()
     }
 
     private fun getAndSetData() {
@@ -78,8 +82,10 @@ class SeventeenFragment : Fragment(), View.OnClickListener {
             getString(R.string.muslim) -> rdgSeventeen?.check(R.id.rdgMuslim)
             getString(R.string.kirati) -> rdgSeventeen?.check(R.id.rdgKirati)
             getString(R.string.other) -> rdgSeventeen?.check(R.id.rdgOther)
-            getString(R.string.empty_string) ->{}
-            else -> {rdgSeventeen?.check(R.id.rdgHindu)
+            getString(R.string.empty_string) -> {
+            }
+            else -> {
+                rdgSeventeen?.check(R.id.rdgHindu)
             }
         }
     }

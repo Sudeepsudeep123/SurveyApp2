@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.RadioButton
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.survey.project.application.R
 import com.survey.project.application.features.form.activity.FormActivity
@@ -60,9 +61,12 @@ class TwentyFragment : Fragment(), View.OnClickListener {
             val selectedLanguageRadioButton =
                 view?.findViewById<View>(selectedOwnership) as RadioButton
             houseOwnership = selectedLanguageRadioButton.text.toString()
+
+            PreferenceUtils.saveHouseOwnership(context, houseOwnership)
+            goToNextFragment()
+        } else {
+            Toast.makeText(context, getString(R.string.select_one), Toast.LENGTH_SHORT).show()
         }
-        PreferenceUtils.saveHouseOwnership(context, houseOwnership)
-        goToNextFragment()
     }
 
     private fun getAndSetData() {
