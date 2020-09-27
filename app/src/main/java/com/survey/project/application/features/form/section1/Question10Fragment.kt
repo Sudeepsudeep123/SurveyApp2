@@ -4,30 +4,30 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.CheckBox
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
 import com.survey.project.application.R
 import com.survey.project.application.utils.constants.FragmentTagConstants
 import com.survey.project.application.utils.router.Router
-import kotlinx.android.synthetic.main.fragment_question9.*
+import kotlinx.android.synthetic.main.fragment_question10.*
 
 
-class Question9Fragment : Fragment(), View.OnClickListener {
-    private lateinit var question10Fragment: Question10Fragment
+class Question10Fragment : Fragment() , View.OnClickListener {
+    private lateinit var question11Fragment: Question11Fragment
     var familyMemberListCheckBox: MutableList<CheckBox> = ArrayList()
     var familyMemberList: MutableList<String> = ArrayList()
-    var familyMemberStayList: MutableList<String> = ArrayList()
+    var familyMemberNotStayList: MutableList<String> = ArrayList()
 
     private lateinit var myView: View
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
         if (!::myView.isInitialized)
-            myView = inflater.inflate(R.layout.fragment_question9, container, false)
+            myView = inflater.inflate(R.layout.fragment_question10, container, false)
         return myView
     }
 
@@ -40,21 +40,14 @@ class Question9Fragment : Fragment(), View.OnClickListener {
 
     private fun makeForm() {
         familyMemberList.reverse()
-//        val radioGroup = RadioGroup(context)
-//        val rb = arrayOfNulls<RadioButton>(familyMemberList.size)
         val cb = arrayOfNulls<CheckBox>(familyMemberList.size)
 
 
         for (i in 0 until familyMemberList.size) {
-
-//            rb[i] = RadioButton(context)
-//            rb[i]?.text = familyMemberList[i]
-//            radioGroup.addView(rb[i]);
-
             cb[i] = CheckBox(context)
             cb[i]?.text = familyMemberList[i]
             cb[i]?.let { familyMemberListCheckBox.add(it) }
-            llDynamicMemberStay.addView(cb[i])
+            llDynamicMemberNotStay.addView(cb[i])
 
         }
 
@@ -86,25 +79,25 @@ class Question9Fragment : Fragment(), View.OnClickListener {
                 fragmentManager?.popBackStack()
             }
             btnNext -> {
-                familyMemberStayList.clear()
+                familyMemberNotStayList.clear()
                 for (member in familyMemberListCheckBox) {
                     if (member.isChecked) {
-                        familyMemberStayList.add(member.toString())
+                        familyMemberNotStayList.add(member.toString())
                         Log.e("fam Member", member.text.toString())
                     }
                 }
                 save()
-                showQuestion10()
+                showQuestion11()
             }
         }
     }
 
-    private fun showQuestion10() {
-        if (!::question10Fragment.isInitialized)
-            question10Fragment = Question10Fragment()
+    private fun showQuestion11() {
+        if (!::question11Fragment.isInitialized)
+            question11Fragment = Question11Fragment()
         Router.attachFragment(
-            context as AppCompatActivity?, R.id.frmMain, question10Fragment,
-            FragmentTagConstants.question10Fragment, true
+            context as AppCompatActivity?, R.id.frmMain, question11Fragment,
+            FragmentTagConstants.question11Fragment, true
         )
     }
 
@@ -113,7 +106,7 @@ class Question9Fragment : Fragment(), View.OnClickListener {
         val prefs: SharedPreferences? =
             context?.getSharedPreferences("Section1", Context.MODE_PRIVATE)
         val set: MutableSet<String> = HashSet()
-        set.addAll(familyMemberStayList)
-        prefs?.edit()?.putStringSet("familyMemberStay", set)?.apply()
+        set.addAll(familyMemberNotStayList)
+        prefs?.edit()?.putStringSet("familyMemberNotStay", set)?.apply()
     }
 }

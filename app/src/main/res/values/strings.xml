@@ -154,14 +154,16 @@
     <string name="b51">पानी फिल्टर</string>
     <string name="b52">भेटनरी पसल तथा सेवा प्रदान</string>
     <string name="b53">फूल खेती</string>
-    <string name="b54">नर्सरी फुल व्यवसायी</string> //plus other
+    <string name="b54">नर्सरी फुल व्यवसायी</string>
+    //plus other
 
     <string name="select_one">Please select one option.</string>
     <string name="enter_value">Please enter the value.</string>
     <string name="all_field_empty">All fields cannot be empty.</string>
     <string name="invalid">Invalid</string>
 
-    <string name="laalpurja">तपाईसँग जग्गाको लालपुर्जा छ ?</string> //30
+    <string name="laalpurja">तपाईसँग जग्गाको लालपुर्जा छ ?</string>
+    //30
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
@@ -181,6 +183,10 @@
     <string name="pariwarMemberNaam">परिवार सदस्यको नाम दिनुहोस्</string>
 
     <string name="bastiGauTol">बस्ती/गाउँ/टोलको नाम</string>
+    <string name="pariwarMemberAge">परिवार सदस्यका उमेर</string>
+    <string name="pariwarSangaBasneMember">परिवार संगै बस्ने सदस्य</string>
+    <string name="pariwarSangaNaBasneMember">नपा बाहिर अन्य ठाउँमा बस्नेको सदस्य (विदेश बाहेक)</string>
+    <string name="MemberResidanceOthers">सदस्य बसेको अन्य स्थानिय तह </string>
 
     <string name="dad">बाबु</string>
     <string name="mom">आमा</string>

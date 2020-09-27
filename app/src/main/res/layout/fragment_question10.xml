@@ -2,7 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.survey.project.application.features.form.section1.Question8Fragment">
+    tools:context="com.survey.project.application.features.form.section1.Question9Fragment">
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,7 +16,7 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:gravity="center"
-            android:text="@string/pariwarMemberAge"
+            android:text="@string/pariwarSangaNaBasneMember"
             android:textSize="@dimen/normal_text_size" />
 
         <LinearLayout
@@ -41,10 +42,11 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/llDynamicMemberAge"
+            android:id="@+id/llDynamicMemberNotStay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
         </LinearLayout>
     </LinearLayout>
 

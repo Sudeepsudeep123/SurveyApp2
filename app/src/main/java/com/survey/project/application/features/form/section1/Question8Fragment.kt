@@ -19,12 +19,7 @@ import com.survey.project.application.utils.router.Router
 import kotlinx.android.synthetic.main.fragment_question8.*
 
 class Question8Fragment : Fragment(), View.OnClickListener {
-    private lateinit var question9Fragment: Question7Fragment
-    var purushNumber = 0
-    var mahilaNumber = 0
-    var tesroNumber = 0
-    var result1 = ""
-    var gharMuliNaam: String? = ""
+    private lateinit var question9Fragment: Question9Fragment
     var familyMemberListEditText: MutableList<EditText> = ArrayList()
     var familyMemberList: MutableList<String> = ArrayList()
     var familyMemberAgeList: MutableList<String> = ArrayList()
@@ -111,10 +106,10 @@ class Question8Fragment : Fragment(), View.OnClickListener {
 
     private fun showQuestion8() {
         if (!::question9Fragment.isInitialized)
-            question9Fragment = Question7Fragment()
+            question9Fragment = Question9Fragment()
         Router.attachFragment(
             context as AppCompatActivity?, R.id.frmMain, question9Fragment,
-            FragmentTagConstants.question7Fragment, true
+            FragmentTagConstants.question8Fragment, true
         )
     }
 
