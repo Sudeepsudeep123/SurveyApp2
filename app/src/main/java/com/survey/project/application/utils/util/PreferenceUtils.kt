@@ -131,4 +131,18 @@ object PreferenceUtils {
             context?.getSharedPreferences(PreferenceConstants.main_preference, Context.MODE_PRIVATE)
         return pref?.getString(PreferenceConstants.third_gender_unemployed, "") ?: ""
     }
+
+    fun saveIsBankAccountPresentValue(context: Context?, bank_account_present: String) {
+        val pref =
+            context?.getSharedPreferences(PreferenceConstants.main_preference, Context.MODE_PRIVATE)
+        pref?.edit()?.putString(PreferenceConstants.bank_account_present, bank_account_present)?.apply()
+    }
+
+    fun isBankAccountPresentValue(context: Context?): String {
+        val pref =
+            context?.getSharedPreferences(PreferenceConstants.main_preference, Context.MODE_PRIVATE)
+        return pref?.getString(PreferenceConstants.bank_account_present, "") ?: ""
+    }
+
+
 }

@@ -59,30 +59,25 @@
             android:layout_marginTop="@dimen/margin_eight"
             android:text="@string/bank_account_present"
             android:textSize="@dimen/text_size_twenty_four" />
-        <!--options to be given-->
+
         <RadioGroup
             android:id="@+id/rdgTwentyFive"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/txvQuestionTwentyFive">
+            android:layout_below="@+id/txvQuestionTwentyFive"
+            android:orientation="vertical">
 
-            <LinearLayout
+            <RadioButton
+                android:id="@+id/rdgTypeOne"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:text="@string/yes_nepali" />
 
-                <RadioButton
-                    android:id="@+id/rdgTypeOne"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/yes_nepali" />
-
-                <RadioButton
-                    android:id="@+id/rdgTypeTwo"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/no_nepali" />
-            </LinearLayout>
+            <RadioButton
+                android:id="@+id/rdgTypeTwo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/no_nepali" />
         </RadioGroup>
     </RelativeLayout>
 </ScrollView>

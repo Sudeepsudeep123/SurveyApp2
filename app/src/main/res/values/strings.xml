@@ -156,6 +156,8 @@
     <string name="b53">फूल खेती</string>
     <string name="b54">नर्सरी फुल व्यवसायी</string> //plus other
 
+    <string name="select_one">Please select one option.</string>
+
     <string name="laalpurja">तपाईसँग जग्गाको लालपुर्जा छ ?</string> //30
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
