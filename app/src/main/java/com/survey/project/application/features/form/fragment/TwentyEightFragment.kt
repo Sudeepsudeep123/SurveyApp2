@@ -60,6 +60,8 @@ class TwentyEightFragment : Fragment(), View.OnClickListener {
 
         if ((maleUnemployed.isEmpty() || maleUnemployed.isBlank()) && (femaleUnemployed.isEmpty() || femaleUnemployed.isBlank()) && (thirdGenderUnemployed.isEmpty() || thirdGenderUnemployed.isBlank())) {
             Toast.makeText(context, getString(R.string.all_field_empty), Toast.LENGTH_SHORT).show()
+        } else if (maleUnemployed == "0" || femaleUnemployed == "0" || thirdGenderUnemployed == "0") {
+            Toast.makeText(context, getString(R.string.invalid), Toast.LENGTH_SHORT).show()
         } else {
             PreferenceUtils.saveUnemployedCount(
                 context,
