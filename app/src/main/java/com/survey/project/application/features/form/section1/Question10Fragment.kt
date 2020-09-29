@@ -39,6 +39,7 @@ class Question10Fragment : Fragment() , View.OnClickListener {
     }
 
     private fun makeForm() {
+        llDynamicMemberNotStay.removeAllViews()
         familyMemberList.reverse()
         val cb = arrayOfNulls<CheckBox>(familyMemberList.size)
 

@@ -40,6 +40,7 @@ class Question9Fragment : Fragment(), View.OnClickListener {
 
     private fun makeForm() {
         familyMemberList.reverse()
+        llDynamicMemberStay.removeAllViews()
 //        val radioGroup = RadioGroup(context)
 //        val rb = arrayOfNulls<RadioButton>(familyMemberList.size)
         val cb = arrayOfNulls<CheckBox>(familyMemberList.size)

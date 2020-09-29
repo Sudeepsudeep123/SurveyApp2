@@ -187,6 +187,7 @@
     <string name="pariwarSangaBasneMember">परिवार संगै बस्ने सदस्य</string>
     <string name="pariwarSangaNaBasneMember">नपा बाहिर अन्य ठाउँमा बस्नेको सदस्य (विदेश बाहेक)</string>
     <string name="MemberResidanceOthers">सदस्य बसेको अन्य स्थानिय तह </string>
+    <string name="mainOccupation">परिवारका सदस्यहरूको मुख्य पेशा </string>
 
     <string name="dad">बाबु</string>
     <string name="mom">आमा</string>

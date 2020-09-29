@@ -17,6 +17,9 @@ import com.survey.project.application.R
 import com.survey.project.application.utils.constants.FragmentTagConstants
 import com.survey.project.application.utils.router.Router
 import kotlinx.android.synthetic.main.fragment_question8.*
+import kotlinx.android.synthetic.main.fragment_question8.btnNext
+import kotlinx.android.synthetic.main.fragment_question8.btnPrevious
+import kotlinx.android.synthetic.main.fragment_question9.*
 
 class Question8Fragment : Fragment(), View.OnClickListener {
     private lateinit var question9Fragment: Question9Fragment
@@ -43,6 +46,7 @@ class Question8Fragment : Fragment(), View.OnClickListener {
 
     private fun makeForm() {
         familyMemberList.reverse()
+        llDynamicMemberAge.removeAllViews()
         for (i in 0 until familyMemberList.size) {
             var myEditText = EditText(context)
             myEditText.layoutParams = LinearLayout.LayoutParams(
