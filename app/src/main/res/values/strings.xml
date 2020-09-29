@@ -188,6 +188,9 @@
     <string name="pariwarSangaNaBasneMember">नपा बाहिर अन्य ठाउँमा बस्नेको सदस्य (विदेश बाहेक)</string>
     <string name="MemberResidanceOthers">सदस्य बसेको अन्य स्थानिय तह </string>
     <string name="mainOccupation">परिवारका सदस्यहरूको मुख्य पेशा </string>
+    <string name="mainTalent">तपाईको परिवारमा कस्तो किसिमको सिपयुक्त व्यक्तिहरु छन् ? </string>
+    <string name="maritalStatus">वैवाहिक स्थिती </string>
+    <string name="educationStatus">वतपाईको परिवारमा कति शिक्षत छन् र काता स्तरका छन्? </string>
 
     <string name="dad">बाबु</string>
     <string name="mom">आमा</string>

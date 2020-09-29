@@ -26,8 +26,8 @@ object DropdownHelper {
             llDynamicMemberNotStay.addView(textView)
 
             spinner[i] = Spinner(context)
-            val adapter =
-                context?.let { ArrayAdapter(it, R.layout.simple_spinner_item, listOfData) }
+            spinner[i]?.id = i
+            val adapter = context?.let { ArrayAdapter(it, R.layout.simple_spinner_item, listOfData) }
             spinner[i]?.adapter = adapter
             spinner[i]?.let { familyMemberListSpinner.add(it) }
             llDynamicMemberNotStay.addView(spinner[i])

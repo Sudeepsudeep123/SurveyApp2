@@ -41,15 +41,33 @@ class Question12Fragment : Fragment() , View.OnClickListener {
         setList()
         getData()
         makeForm()
-        
+
+        for(i  in 0 until  familyMemberListSpinner.size){
+            familyMemberListSpinner[i].onItemSelectedListener = object :
+                AdapterView.OnItemSelectedListener {
+                override fun onItemSelected(
+                    parent: AdapterView<*>,
+                    view: View, position: Int, id: Long
+                ) {
+                    Toast.makeText(context, listOfOccupation[position], Toast.LENGTH_SHORT).show()
+                    selectedItem = listOfOccupation[position]
+                    familyMemberMainOccupation.add(i,selectedItem)
+
+                }
+
+                override fun onNothingSelected(parent: AdapterView<*>) {
+
+                }
+            }
+        }
     }
 
     private fun setList() {
-        listOfOccupation.add("1")
-        listOfOccupation.add("2")
-        listOfOccupation.add("3")
-        listOfOccupation.add("4")
-        listOfOccupation.add("5")
+        listOfOccupation.add("Doctor")
+        listOfOccupation.add("Engineer")
+        listOfOccupation.add("Pilot")
+        listOfOccupation.add("Driver")
+        listOfOccupation.add("Programmer")
     }
 
     private fun makeForm() {
@@ -68,7 +86,7 @@ class Question12Fragment : Fragment() , View.OnClickListener {
             val prefs: SharedPreferences? =
                 context?.getSharedPreferences("Section1", Context.MODE_PRIVATE)
 
-            val set: Set<String> = prefs?.getStringSet("familyMemberLocalAddress", null) as Set<String>
+            val set: Set<String> = prefs?.getStringSet("familyMemberName", null) as Set<String>
             for (item in set) {
                 familyMemberList.add(item)
                 Log.e("item", item)
@@ -89,40 +107,11 @@ class Question12Fragment : Fragment() , View.OnClickListener {
                 fragmentManager?.popBackStack()
             }
             btnNext -> {
-                familyMemberMainOccupation.clear()
-
-                for (member in familyMemberListSpinner) {
-                    member.onItemSelectedListener = object :
-                        AdapterView.OnItemSelectedListener {
-                        override fun onItemSelected(
-                            parent: AdapterView<*>,
-                            view: View, position: Int, id: Long
-                        ) {
-                            Toast.makeText(context, listOfOccupation[position], Toast.LENGTH_SHORT).show()
-                            selectedItem = listOfOccupation[position]
-                            familyMemberMainOccupation.add(selectedItem)
-
-                        }
-                        override fun onNothingSelected(parent: AdapterView<*>) {
-
-                        }
-                    }
-                }
                 save()
-                showQuestion12()
+                showQuestion13()
             }
         }
     }
-
-    private fun showQuestion12() {
-        if (!::question13Fragment.isInitialized)
-            question13Fragment = Question13Fragment()
-        Router.attachFragment(
-            context as AppCompatActivity?, R.id.frmMain, question13Fragment,
-            FragmentTagConstants.question13Fragment, true
-        )
-    }
-
     private fun save() {
 
         val prefs: SharedPreferences? =
@@ -131,4 +120,15 @@ class Question12Fragment : Fragment() , View.OnClickListener {
         set.addAll(familyMemberMainOccupation)
         prefs?.edit()?.putStringSet("familyMemberMainOccupation", set)?.apply()
     }
+
+    private fun showQuestion13() {
+        if (!::question13Fragment.isInitialized)
+            question13Fragment = Question13Fragment()
+        Router.attachFragment(
+            context as AppCompatActivity?, R.id.frmMain, question13Fragment,
+            FragmentTagConstants.question13Fragment, true
+        )
+    }
+
+
 }

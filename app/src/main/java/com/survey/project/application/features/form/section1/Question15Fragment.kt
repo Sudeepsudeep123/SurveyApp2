@@ -1,60 +1,135 @@
 package com.survey.project.application.features.form.section1
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.Spinner
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.survey.project.application.R
+import com.survey.project.application.features.form.fragment.SixteenFragment
+import com.survey.project.application.utils.constants.FragmentTagConstants
+import com.survey.project.application.utils.helper.DropdownHelper
+import com.survey.project.application.utils.router.Router
+import kotlinx.android.synthetic.main.fragment_question15.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+class Question15Fragment : Fragment() , View.OnClickListener {
+    var listOfEducationalStatus: MutableList<String> = ArrayList()
+    private lateinit var question16Fragment: SixteenFragment
+    var familyMemberListSpinner: MutableList<Spinner> = ArrayList()
+    var familyMemberList: MutableList<String> = ArrayList()
+    var familyMemberEducationalStatus: MutableList<String> = ArrayList()
+    var selectedItem = ""
 
-/**
- * A simple [Fragment] subclass.
- * Use the [Question15Fragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class Question15Fragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private lateinit var myView: View
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+    ): View? {
+        if (!::myView.isInitialized)
+            myView = inflater.inflate(R.layout.fragment_question14, container, false)
+        return myView
+    }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setListener()
+        setList()
+        getData()
+        makeForm()
+
+        for(i  in 0 until  familyMemberListSpinner.size){
+            familyMemberListSpinner[i].onItemSelectedListener = object :
+                AdapterView.OnItemSelectedListener {
+                override fun onItemSelected(
+                    parent: AdapterView<*>,
+                    view: View, position: Int, id: Long
+                ) {
+                    Toast.makeText(context, listOfEducationalStatus[position], Toast.LENGTH_SHORT).show()
+                    selectedItem = listOfEducationalStatus[position]
+                    familyMemberEducationalStatus.add(i,selectedItem)
+
+                }
+
+                override fun onNothingSelected(parent: AdapterView<*>) {
+
+                }
+            }
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_question15, container, false)
+    private fun setList() {
+        listOfEducationalStatus.add("UnEducated")
+        listOfEducationalStatus.add("SEE")
+        listOfEducationalStatus.add("+2")
+        listOfEducationalStatus.add("Bachelors")
+        listOfEducationalStatus.add("Masters")
+        listOfEducationalStatus.add("Above")
+
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment Question15Fragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            Question15Fragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+    private fun makeForm() {
+        familyMemberList.reverse()
+        familyMemberListSpinner = DropdownHelper.dropDownHelper(
+            familyMemberList.size,
+            context,
+            familyMemberList,
+            llDynamicEducationStatus,
+            listOfEducationalStatus
+        )
+    }
+
+    private fun getData() {
+        try {
+            val prefs: SharedPreferences? =
+                context?.getSharedPreferences("Section1", Context.MODE_PRIVATE)
+
+            val set: Set<String> = prefs?.getStringSet("familyMemberName", null) as Set<String>
+            for (item in set) {
+                familyMemberList.add(item)
+                Log.e("item", item)
             }
+        } catch (ex: Exception) {
+            Log.e("ex", ex.toString())
+        }
+    }
+
+    private fun setListener() {
+        btnNext.setOnClickListener(this)
+        btnPrevious.setOnClickListener(this)
+    }
+
+    override fun onClick(view: View?) {
+        when (view) {
+            btnPrevious -> {
+                fragmentManager?.popBackStack()
+            }
+            btnNext -> {
+                save()
+                showQuestion16()
+            }
+        }
+    }
+
+    private fun showQuestion16() {
+        if (!::question16Fragment.isInitialized)
+            question16Fragment = SixteenFragment()
+        Router.attachFragment(
+            context as AppCompatActivity?, R.id.frmMain, question16Fragment,
+            FragmentTagConstants.sixtenFragmentTag, true
+        )
+    }
+
+    private fun save() {
+        val prefs: SharedPreferences? =
+            context?.getSharedPreferences("Section1", Context.MODE_PRIVATE)
+        val set: MutableSet<String> = HashSet()
+        set.addAll(familyMemberEducationalStatus)
+        prefs?.edit()?.putStringSet("familyMemberEducationalStatus", set)?.apply()
     }
 }

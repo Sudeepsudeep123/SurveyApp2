@@ -17,6 +17,9 @@ import com.survey.project.application.utils.constants.FragmentTagConstants
 import com.survey.project.application.utils.helper.DropdownHelper
 import com.survey.project.application.utils.router.Router
 import kotlinx.android.synthetic.main.fragment_question10.*
+import kotlinx.android.synthetic.main.fragment_question10.btnNext
+import kotlinx.android.synthetic.main.fragment_question10.btnPrevious
+import kotlinx.android.synthetic.main.fragment_question3.*
 
 class Question11Fragment : Fragment(), View.OnClickListener {
     var listOfWard: MutableList<String> = ArrayList()
@@ -41,6 +44,25 @@ class Question11Fragment : Fragment(), View.OnClickListener {
         setList()
         getData()
         makeForm()
+
+        for(i  in 0 until  familyMemberListSpinner.size){
+            familyMemberListSpinner[i].onItemSelectedListener = object :
+                AdapterView.OnItemSelectedListener {
+                override fun onItemSelected(
+                    parent: AdapterView<*>,
+                    view: View, position: Int, id: Long
+                ) {
+                    Toast.makeText(context, listOfWard[position], Toast.LENGTH_SHORT).show()
+                    selectedItem = listOfWard[position]
+                    familyMemberLocalAddress.add(i,selectedItem)
+
+                }
+
+                override fun onNothingSelected(parent: AdapterView<*>) {
+
+                }
+            }
+        }
     }
 
     private fun setList() {
@@ -105,25 +127,6 @@ class Question11Fragment : Fragment(), View.OnClickListener {
                 fragmentManager?.popBackStack()
             }
             btnNext -> {
-                familyMemberLocalAddress.clear()
-
-                for (member in familyMemberListSpinner) {
-                    member.onItemSelectedListener = object :
-                        AdapterView.OnItemSelectedListener {
-                        override fun onItemSelected(
-                            parent: AdapterView<*>,
-                            view: View, position: Int, id: Long
-                        ) {
-                            Toast.makeText(context, listOfWard[position], Toast.LENGTH_SHORT).show()
-                            selectedItem = listOfWard[position]
-                            familyMemberLocalAddress.add(selectedItem)
-
-                        }
-                        override fun onNothingSelected(parent: AdapterView<*>) {
-
-                        }
-                    }
-                }
                 save()
                 showQuestion12()
             }
@@ -141,8 +144,7 @@ class Question11Fragment : Fragment(), View.OnClickListener {
 
     private fun save() {
 
-        val prefs: SharedPreferences? =
-            context?.getSharedPreferences("Section1", Context.MODE_PRIVATE)
+        val prefs: SharedPreferences? = context?.getSharedPreferences("Section1", Context.MODE_PRIVATE)
         val set: MutableSet<String> = HashSet()
         set.addAll(familyMemberLocalAddress)
         prefs?.edit()?.putStringSet("familyMemberLocalAddress", set)?.apply()
