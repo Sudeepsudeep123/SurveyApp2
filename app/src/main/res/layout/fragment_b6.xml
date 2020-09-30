@@ -53,54 +53,155 @@
             android:textSize="@dimen/text_size_twenty_four" />
 
         <LinearLayout
-            android:id="@+id/lnlB5"
+            android:id="@+id/lnlB6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/txvQuestionB6"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/txvInCountry"
+                android:id="@+id/txvGhareluKamdar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/in_country"
+                android:text="@string/b6a"
                 android:textSize="@dimen/text_size_fourteen" />
 
             <EditText
-                android:id="@+id/edtCountrySon"
+                android:id="@+id/edtGhareluKamdarSon"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/son"
+                android:inputType="number"
                 android:textSize="@dimen/text_size_fourteen" />
 
             <EditText
-                android:id="@+id/edtCountryDaughter"
+                android:id="@+id/edtGhareluKamdarDaughter"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/daughter"
+                android:inputType="number"
                 android:textSize="@dimen/text_size_fourteen" />
 
             <TextView
-                android:id="@+id/txvOutsideCountry"
+                android:id="@+id/txvKarkhana"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="@string/outside_country"
+                android:text="@string/b6b"
                 android:textSize="@dimen/text_size_fourteen" />
 
             <EditText
-                android:id="@+id/edtForeignSon"
+                android:id="@+id/edtKarkhanaSon"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/son"
+                android:inputType="number"
                 android:textSize="@dimen/text_size_fourteen" />
 
             <EditText
-                android:id="@+id/edtForeignDaughter"
+                android:id="@+id/edtKarkhanaDaughter"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/daughter"
+                android:inputType="number"
                 android:textSize="@dimen/text_size_fourteen" />
+
+            <TextView
+                android:id="@+id/txvByapar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/b6c"
+                android:textSize="@dimen/text_size_fourteen" />
+
+            <EditText
+                android:id="@+id/edtByaparSon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/son"
+                android:inputType="number"
+                android:textSize="@dimen/text_size_fourteen" />
+
+            <EditText
+                android:id="@+id/edtByaparDaughter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/daughter"
+                android:inputType="number"
+                android:textSize="@dimen/text_size_fourteen" />
+
+            <TextView
+                android:id="@+id/txvKrishi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/b6d"
+                android:textSize="@dimen/text_size_fourteen" />
+
+            <EditText
+                android:id="@+id/edtKrishiSon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/son"
+                android:inputType="number"
+                android:textSize="@dimen/text_size_fourteen" />
+
+            <EditText
+                android:id="@+id/edtKrishiDaughter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/daughter"
+                android:inputType="number"
+                android:textSize="@dimen/text_size_fourteen" />
+
+            <TextView
+                android:id="@+id/txvKaryalaya"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/b6e"
+                android:textSize="@dimen/text_size_fourteen" />
+
+            <EditText
+                android:id="@+id/edtKaryalayaSon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/son"
+                android:inputType="number"
+                android:textSize="@dimen/text_size_fourteen" />
+
+            <EditText
+                android:id="@+id/edtKaryalayaDaughter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/daughter"
+                android:inputType="number"
+                android:textSize="@dimen/text_size_fourteen" />
+
+            <TextView
+                android:id="@+id/txvCircus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/b6f"
+                android:textSize="@dimen/text_size_fourteen" />
+
+            <EditText
+                android:id="@+id/edtCircusSon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/son"
+                android:inputType="number"
+                android:textSize="@dimen/text_size_fourteen" />
+
+            <EditText
+                android:id="@+id/edtCircusDaughter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/daughter"
+                android:inputType="number"
+                android:textSize="@dimen/text_size_fourteen" />
+
         </LinearLayout>
     </RelativeLayout>
 </ScrollView>

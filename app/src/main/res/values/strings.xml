@@ -165,6 +165,7 @@
 
     <string name="laalpurja">तपाईसँग जग्गाको लालपुर्जा छ ?</string>
 
+    <!--Section B-->
     <string name="question_b1">तपाईको परिवारमा १ वर्षभित्र मृत्यु भएका सदस्यको विवरण दिनुहोस(छैन भने स्कीप जाने) </string>
     <string name="question_b2">तपाईले छोरा छोरीलाई बिद्यालय पठाउनु भएको छ ?</string>
     <string name="question_b3">बालबच्चालाई कून स्कूलमा पढाउनु हुन्छ ?</string>
@@ -191,6 +192,19 @@
     <string name="b6d">कृषि तथा पशुपालन फर्म</string>
     <string name="b6e">कार्यालय तथा संघसंस्था</string>
     <string name="b6f">सर्कस</string>
+
+    <string name="mental_illnes">मानसिक अपांग</string>
+    <string name="autism">अटिजम</string>
+    <string name="red">रातो</string>
+    <string name="blue">निलो</string>
+    <string name="yellow">पहेलो</string>
+    <string name="white">सेतो</string>
+
+    <string name="tb">क्षयरोग</string>
+    <string name="cancer">क्यान्सर</string>
+    <string name="hiv">एच.आई.भि. एड्स</string>
+    <string name="sugar">चिनी रोग</string>
+    <string name="bp">ब्लड प्रेसर</string>
 
     //30
 
@@ -226,7 +240,7 @@
     <string name="chori">छोरी</string>
     <string name="chora">छोरा/बुहारी</string>
 
-<!--    Sec 3-->
+    <!--    Sec 3-->
     <string name="section3">खण्ड गः सेवा तथा सुविधा</string>
     <string name="noOfHouse">तपाईको घर कति वटा छ ?</string>
     <string name="typeOfJug">तपाई बसेको घरको जग कस्तो प्रकारको छ ?</string>
