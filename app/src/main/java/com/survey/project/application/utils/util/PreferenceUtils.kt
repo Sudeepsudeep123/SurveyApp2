@@ -222,4 +222,48 @@ object PreferenceUtils {
             context?.getSharedPreferences(PreferenceConstants.main_preference, Context.MODE_PRIVATE)
         return pref?.getString(PreferenceConstants.businessType, "") ?: ""
     }
+
+    fun saveDeadCount(
+        context: Context?,
+        male: String,
+        female: String,
+        thirdGender: String
+    ) {
+        val pref =
+            context?.getSharedPreferences(
+                PreferenceConstants.section_b_preference,
+                Context.MODE_PRIVATE
+            )
+        pref?.edit()?.putString(PreferenceConstants.dead_count_male, male)?.apply()
+        pref?.edit()?.putString(PreferenceConstants.dead_count_female, female)?.apply()
+        pref?.edit()?.putString(PreferenceConstants.dead_count_third, thirdGender)
+            ?.apply()
+    }
+
+    fun getMaleDeadCount(context: Context?): String {
+        val pref =
+            context?.getSharedPreferences(
+                PreferenceConstants.section_b_preference,
+                Context.MODE_PRIVATE
+            )
+        return pref?.getString(PreferenceConstants.dead_count_male, "") ?: ""
+    }
+
+    fun getFemaleDeadCount(context: Context?): String {
+        val pref =
+            context?.getSharedPreferences(
+                PreferenceConstants.section_b_preference,
+                Context.MODE_PRIVATE
+            )
+        return pref?.getString(PreferenceConstants.dead_count_female, "") ?: ""
+    }
+
+    fun getThirdGenderDeadCount(context: Context?): String {
+        val pref =
+            context?.getSharedPreferences(
+                PreferenceConstants.section_b_preference,
+                Context.MODE_PRIVATE
+            )
+        return pref?.getString(PreferenceConstants.dead_count_third, "") ?: ""
+    }
 }

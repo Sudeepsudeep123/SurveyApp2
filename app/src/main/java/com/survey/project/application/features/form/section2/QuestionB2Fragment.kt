@@ -9,21 +9,21 @@ import com.survey.project.application.R
 import com.survey.project.application.utils.constants.FragmentTagConstants
 import com.survey.project.application.utils.util.PreferenceUtils
 import com.survey.project.application.utils.util.Utils
-import kotlinx.android.synthetic.main.fragment_b1.*
+import kotlinx.android.synthetic.main.fragment_b2.*
 
-class QuestionB1Fragment : Fragment(), View.OnClickListener {
+class QuestionB2Fragment : Fragment(), View.OnClickListener{
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_b1, container, false)
+        return inflater.inflate(R.layout.fragment_b2, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initListener()
-        getAndSetValues()
+        getAndSetData()
     }
 
     override fun onClick(view: View?) {
@@ -65,7 +65,7 @@ class QuestionB1Fragment : Fragment(), View.OnClickListener {
         btnPrevious?.setOnClickListener(this)
     }
 
-    private fun getAndSetValues() {
+    private fun getAndSetData() {
         val maleCount = PreferenceUtils.getMaleDeadCount(context)
         val femaleCount = PreferenceUtils.getFemaleDeadCount(context)
         val thirdGenderCount = PreferenceUtils.getThirdGenderDeadCount(context)

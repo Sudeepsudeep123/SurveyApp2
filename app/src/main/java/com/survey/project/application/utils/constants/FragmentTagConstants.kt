@@ -40,7 +40,7 @@ object FragmentTagConstants {
     const val question15Fragment = "question15Fragment"
     const val resetFragmentTag = "ResetFragment"
 
-//    Section3
+    //    Section3
     const val question1Sec3 = "question1Sec3"
     const val question2Sec3 = "question2Sec3"
     const val question3Sec3 = "question3Sec3"
@@ -53,5 +53,18 @@ object FragmentTagConstants {
     const val question10Sec3 = "question10Sec3"
     const val question11Sec3 = "question11Sec3"
 
-
+    //section2
+    const val questionB1 = "questionB1"
+    const val questionB2 = "questionB2"
+    const val questionB3 = "questionB3"
+    const val questionB4 = "questionB4"
+    const val questionB5 = "questionB5"
+    const val questionB6 = "questionB6"
+    const val questionB7 = "questionB7"
+    const val questionB8 = "questionB8"
+    const val questionB9 = "questionB9"
+    const val questionB10 = "questionB10"
+    const val questionB11 = "questionB11"
+    const val questionB12 = "questionB12"
+    const val questionB13 = "questionB13"
 }

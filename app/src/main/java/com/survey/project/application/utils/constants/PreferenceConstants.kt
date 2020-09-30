@@ -22,4 +22,9 @@ object PreferenceConstants {
     const val lalpurja = "lalpurja"
     const val count = "count"
     const val businessCount = "businessCount"
+
+    const val section_b_preference = "Section2"
+    const val dead_count_male = "dead_count_male"
+    const val dead_count_female = "dead_count_female"
+    const val dead_count_third = "dead_count_third"
 }
