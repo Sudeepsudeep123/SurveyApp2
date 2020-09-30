@@ -35,6 +35,7 @@
     <string name="skip">Skip</string>
     <string name="empty_string"> </string>
     <string name="heading_fragments">खण्ड कः पारिवारिक विवरण, आय तथा वसोवास</string>
+    <string name="heading_fragments_b">खण्ड खः मानविय तथा सामाजिक विकास – स्वास्थ्य</string>
 
     <string name="ethnicity">जातियताः</string>
     <string name="brahman">व्राम्हृण</string>
@@ -163,6 +164,34 @@
     <string name="invalid">Invalid</string>
 
     <string name="laalpurja">तपाईसँग जग्गाको लालपुर्जा छ ?</string>
+
+    <string name="question_b1">तपाईको परिवारमा १ वर्षभित्र मृत्यु भएका सदस्यको विवरण दिनुहोस(छैन भने स्कीप जाने) </string>
+    <string name="question_b2">तपाईले छोरा छोरीलाई बिद्यालय पठाउनु भएको छ ?</string>
+    <string name="question_b3">बालबच्चालाई कून स्कूलमा पढाउनु हुन्छ ?</string>
+    <string name="question_b4">तपाईका छोराछोरी बालश्रमिकको रुपमा काम गरिरहेका छन्?</string>
+    <string name="question_b5">यदि छन भने (संख्या उल्लेख गर्ने)  </string>
+    <string name="question_b6">सम्लग्न रहेको क्षेत्र </string>
+    <string name="question_b7">बिगत ५ बर्ष भित्र तपाईले आफ्ना छोरा छोरीको बिवाह १८ बर्ष अगावै गर्नु भएको छ ? </string>
+    <string name="question_b8">यदी छ भने कस्को </string>
+    <string name="question_b9">तपाईको परिवारमा कुनै ब्यक्ति अपांग छन् ?</string>
+    <string name="question_b10">यदि छ भने</string>
+    <string name="question_b11">यदि छ भनेकस्तो कार्ड पाउनु भएको छ ?</string>
+    <string name="question_b12">तपाईको परिवारको सदस्यलाई कुनै दीर्घ रोग लागेको छ ?(छैन भने स्कीप जाने)</string>
+    <string name="question_b13">यदि छ भने (संख्या उल्लेख गर्ने)</string>
+    <string name="community">सामूदायिक</string>
+    <string name="non_community">संस्थागत</string>
+    <string name="in_country">स्वदेसमा</string>
+    <string name="outside_country">बिदेसमा</string>
+    <string name="son">छोरा .......</string>
+    <string name="daughter">छोरी ....</string>
+
+    <string name="b6a">घरेलु कामदार</string>
+    <string name="b6b">उद्योग तथा कलकारखाना</string>
+    <string name="b6c">ब्यापार</string>
+    <string name="b6d">कृषि तथा पशुपालन फर्म</string>
+    <string name="b6e">कार्यालय तथा संघसंस्था</string>
+    <string name="b6f">सर्कस</string>
+
     //30
 
     <string name="hello_blank_fragment">Hello blank fragment</string>

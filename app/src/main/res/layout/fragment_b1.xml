@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="16dp"
+        android:paddingEnd="@dimen/margin_sixteen">
+
+        <TextView
+            android:id="@+id/txvHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/margin_twenty_four"
+            android:text="@string/heading_fragments_b"
+            android:textAlignment="center"
+            android:textSize="@dimen/text_size_thirty" />
+
+        <LinearLayout
+            android:id="@+id/lnlButtons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txvHeading"
+            android:layout_marginTop="@dimen/margin_sixteen"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnPrevious"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/previous" />
+
+            <Button
+                android:id="@+id/btnSkip"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_eight"
+                android:layout_weight="1"
+                android:text="@string/skip" />
+
+            <Button
+                android:id="@+id/btnNext"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_eight"
+                android:layout_weight="1"
+                android:text="@string/next" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txvQuestionB1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lnlButtons"
+            android:layout_marginTop="@dimen/margin_eight"
+            android:text="@string/question_b1"
+            android:textSize="@dimen/text_size_twenty_four" />
+
+        <LinearLayout
+            android:id="@+id/lnlB1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txvQuestionB1"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/edtMaleCount"
+                android:layout_width="match_parent"
+                android:inputType="number"
+                android:hint="@string/male_unemployed"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:id="@+id/edtFemaleCount"
+                android:layout_width="match_parent"
+                android:inputType="number"
+                android:hint="@string/female_unemployed"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:id="@+id/edtTHirdGenderCount"
+                android:layout_width="match_parent"
+                android:inputType="number"
+                android:hint="@string/third_gender_unemployed"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </RelativeLayout>
+</ScrollView>

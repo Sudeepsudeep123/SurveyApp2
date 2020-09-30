@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="16dp"
+        android:paddingEnd="@dimen/margin_sixteen">
+
+        <TextView
+            android:id="@+id/txvHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/margin_twenty_four"
+            android:text="@string/heading_fragments_b"
+            android:textAlignment="center"
+            android:textSize="@dimen/text_size_thirty" />
+
+        <LinearLayout
+            android:id="@+id/lnlButtons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txvHeading"
+            android:layout_marginTop="@dimen/margin_sixteen"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnPrevious"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/previous" />
+
+            <Button
+                android:id="@+id/btnNext"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_eight"
+                android:layout_weight="1"
+                android:text="@string/next" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txvQuestionB5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lnlButtons"
+            android:layout_marginTop="@dimen/margin_eight"
+            android:text="@string/question_b5"
+            android:textSize="@dimen/text_size_twenty_four" />
+
+        <LinearLayout
+            android:id="@+id/lnlB5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txvQuestionB5"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txvInCountry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/in_country"
+                android:textSize="@dimen/text_size_fourteen" />
+
+            <EditText
+                android:id="@+id/edtCountrySon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/son"
+                android:textSize="@dimen/text_size_fourteen" />
+
+            <EditText
+                android:id="@+id/edtCountryDaughter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/daughter"
+                android:textSize="@dimen/text_size_fourteen" />
+
+            <TextView
+                android:id="@+id/txvOutsideCountry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/outside_country"
+                android:layout_marginTop="16dp"
+                android:textSize="@dimen/text_size_fourteen" />
+
+            <EditText
+                android:id="@+id/edtForeignSon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/son"
+                android:textSize="@dimen/text_size_fourteen" />
+
+            <EditText
+                android:id="@+id/edtForeignDaughter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/daughter"
+                android:textSize="@dimen/text_size_fourteen" />
+        </LinearLayout>
+    </RelativeLayout>
+</ScrollView>

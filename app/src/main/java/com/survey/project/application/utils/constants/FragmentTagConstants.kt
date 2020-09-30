@@ -2,7 +2,6 @@ package com.survey.project.application.utils.constants
 
 object FragmentTagConstants {
 
-
     const val sixtenFragmentTag = "SixteenFragment"
     const val seventeenFragmentTag = "SeventeenFragment"
     const val eighteenFragmentTag = "EighteenFragment"
