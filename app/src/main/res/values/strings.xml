@@ -226,4 +226,22 @@
     <string name="chori">छोरी</string>
     <string name="chora">छोरा/बुहारी</string>
 
+<!--    Sec 3-->
+    <string name="section3">खण्ड गः सेवा तथा सुविधा</string>
+    <string name="noOfHouse">तपाईको घर कति वटा छ ?</string>
+    <string name="typeOfJug">तपाई बसेको घरको जग कस्तो प्रकारको छ ?</string>
+    <string name="paniKoSrot">तपाईको परिवारको खानेपानीको स्रोत कुन हो ?</string>
+    <string name="toilet">तपांइको आफ्नै शौचालय छ ?</string>
+    <string name="toiletType">शौचालयको प्रकार </string>
+    <string name="washHandAfterToilet">शौचालयको प्रयोग पछि साबुनपानीले हात धुने बानी छ ?</string>
+    <string name="electricity">तपांईको घरमा बिजूली जडान छ ?</string>
+
+    <string name="optionCookingFood">तपाईको घरमा खाना पकाउन प्रयोग हुने इन्धन कुन हो ?</string>
+    <string name="typeOfStove">तपाईको घरमा कस्तो प्रकारको चूल्हो प्रयोग गर्नुहुन्छ ?</string>
+    <string name="vechicle">तपाईको घरमा यातायातको साधन छ कि छैन ?</string>
+    <string name="typeOfVehicle">छ भने के छ ?</string>
+    <string name="cha">छ</string>
+    <string name="chaina">छैन</string>
+
+
 </resources>
