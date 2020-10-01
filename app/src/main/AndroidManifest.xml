@@ -9,15 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".features.form.section2.Section2Activity"></activity>
+
+        <activity android:name=".features.form.section2.Section2Activity"/>
         <activity android:name=".features.login.LoginActivity" />
-        <activity android:name=".features.form.activity.FormActivity">
+        <activity android:name=".features.form.activity.FormActivity"/>
+
+        <activity android:name=".features.form.activity.FormActivity3">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".features.mainDrawer.DrawerActivity"
             android:label="@string/title_activity_form"
