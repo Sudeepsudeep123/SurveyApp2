@@ -334,9 +334,11 @@ object PreferenceUtils {
                 Context.MODE_PRIVATE
             )
         pref?.edit()?.putString(PreferenceConstants.sonCountInCountry, sonCountry)?.apply()
-        pref?.edit()?.putString(PreferenceConstants.daughterCountInCountry, daughterCountry)?.apply()
+        pref?.edit()?.putString(PreferenceConstants.daughterCountInCountry, daughterCountry)
+            ?.apply()
         pref?.edit()?.putString(PreferenceConstants.sonCountInForeign, sonForeign)?.apply()
-        pref?.edit()?.putString(PreferenceConstants.daughterCountInForeign, daughterForeign)?.apply()
+        pref?.edit()?.putString(PreferenceConstants.daughterCountInForeign, daughterForeign)
+            ?.apply()
     }
 
     fun getSonCountInCountry(context: Context?): String {
@@ -373,5 +375,147 @@ object PreferenceUtils {
                 Context.MODE_PRIVATE
             )
         return pref?.getString(PreferenceConstants.daughterCountInForeign, "") ?: ""
+    }
+
+    fun saveSonDaughterLaborType(
+        context: Context?,
+        ghareluSon: String,
+        ghareluDaughter: String,
+        karkhanaSon: String,
+        karkhanaDaughter: String,
+        byaparSon: String,
+        byaparDaughter: String,
+        krishiSon: String,
+        krishiDaughter: String,
+        karyalayaSon: String,
+        karyalayaDaughter: String,
+        circusSon: String,
+        circusDaughter: String
+    ) {
+        val pref =
+            context?.getSharedPreferences(
+                PreferenceConstants.section_b_preference,
+                Context.MODE_PRIVATE
+            )
+        pref?.edit()?.putString(PreferenceConstants.ghareluKamdarSon, ghareluSon)?.apply()
+        pref?.edit()?.putString(PreferenceConstants.ghareluKamdarDaughter, ghareluDaughter)?.apply()
+        pref?.edit()?.putString(PreferenceConstants.karkhanaSon, karkhanaSon)?.apply()
+        pref?.edit()?.putString(PreferenceConstants.karkhanaDaughter, karkhanaDaughter)?.apply()
+        pref?.edit()?.putString(PreferenceConstants.byaparSon, byaparSon)?.apply()
+        pref?.edit()?.putString(PreferenceConstants.byaparDaughter, byaparDaughter)?.apply()
+        pref?.edit()?.putString(PreferenceConstants.krishiSon, krishiSon)?.apply()
+        pref?.edit()?.putString(PreferenceConstants.krishiDaughter, krishiDaughter)?.apply()
+        pref?.edit()?.putString(PreferenceConstants.karyalayaSon, karyalayaSon)?.apply()
+        pref?.edit()?.putString(PreferenceConstants.karyalayaDaughter, karyalayaDaughter)?.apply()
+        pref?.edit()?.putString(PreferenceConstants.circusSon, circusSon)?.apply()
+        pref?.edit()?.putString(PreferenceConstants.circusDaughter, circusDaughter)?.apply()
+    }
+
+    fun getGhareluSonCount(context: Context?): String {
+        val pref =
+            context?.getSharedPreferences(
+                PreferenceConstants.section_b_preference,
+                Context.MODE_PRIVATE
+            )
+        return pref?.getString(PreferenceConstants.ghareluKamdarSon, "") ?: ""
+    }
+
+    fun getGhareluDaughterCount(context: Context?): String {
+        val pref =
+            context?.getSharedPreferences(
+                PreferenceConstants.section_b_preference,
+                Context.MODE_PRIVATE
+            )
+        return pref?.getString(PreferenceConstants.ghareluKamdarDaughter, "") ?: ""
+    }
+
+    fun getKarkhanaSonCount(context: Context?): String {
+        val pref =
+            context?.getSharedPreferences(
+                PreferenceConstants.section_b_preference,
+                Context.MODE_PRIVATE
+            )
+        return pref?.getString(PreferenceConstants.karkhanaSon, "") ?: ""
+    }
+
+    fun getKarkhanaDaughterCount(context: Context?): String {
+        val pref =
+            context?.getSharedPreferences(
+                PreferenceConstants.section_b_preference,
+                Context.MODE_PRIVATE
+            )
+        return pref?.getString(PreferenceConstants.karkhanaDaughter, "") ?: ""
+    }
+
+    fun getByaparSonCount(context: Context?): String {
+        val pref =
+            context?.getSharedPreferences(
+                PreferenceConstants.section_b_preference,
+                Context.MODE_PRIVATE
+            )
+        return pref?.getString(PreferenceConstants.byaparSon, "") ?: ""
+    }
+
+    fun getByaparDaughterCount(context: Context?): String {
+        val pref =
+            context?.getSharedPreferences(
+                PreferenceConstants.section_b_preference,
+                Context.MODE_PRIVATE
+            )
+        return pref?.getString(PreferenceConstants.byaparDaughter, "") ?: ""
+    }
+
+    fun getkrishiSonCount(context: Context?): String {
+        val pref =
+            context?.getSharedPreferences(
+                PreferenceConstants.section_b_preference,
+                Context.MODE_PRIVATE
+            )
+        return pref?.getString(PreferenceConstants.krishiSon, "") ?: ""
+    }
+
+    fun getkrishiDaughterCount(context: Context?): String {
+        val pref =
+            context?.getSharedPreferences(
+                PreferenceConstants.section_b_preference,
+                Context.MODE_PRIVATE
+            )
+        return pref?.getString(PreferenceConstants.krishiDaughter, "") ?: ""
+    }
+
+    fun getKaryalayaSonCount(context: Context?): String {
+        val pref =
+            context?.getSharedPreferences(
+                PreferenceConstants.section_b_preference,
+                Context.MODE_PRIVATE
+            )
+        return pref?.getString(PreferenceConstants.karyalayaSon, "") ?: ""
+    }
+
+    fun getKaryalayaDaughterCount(context: Context?): String {
+        val pref =
+            context?.getSharedPreferences(
+                PreferenceConstants.section_b_preference,
+                Context.MODE_PRIVATE
+            )
+        return pref?.getString(PreferenceConstants.karyalayaDaughter, "") ?: ""
+    }
+
+    fun getCircusDaughterCount(context: Context?): String {
+        val pref =
+            context?.getSharedPreferences(
+                PreferenceConstants.section_b_preference,
+                Context.MODE_PRIVATE
+            )
+        return pref?.getString(PreferenceConstants.circusDaughter, "") ?: ""
+    }
+
+    fun getCircusSonCount(context: Context?): String {
+        val pref =
+            context?.getSharedPreferences(
+                PreferenceConstants.section_b_preference,
+                Context.MODE_PRIVATE
+            )
+        return pref?.getString(PreferenceConstants.circusSon, "") ?: ""
     }
 }
