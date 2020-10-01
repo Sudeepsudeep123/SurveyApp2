@@ -586,4 +586,186 @@ object PreferenceUtils {
             )
         return pref?.getString(PreferenceConstants.differentlyAbledInFam, "") ?: ""
     }
+
+    fun saveLongTermDiseaseInFam(context: Context?, longTermDisease: String) {
+        val pref =
+            context?.getSharedPreferences(
+                PreferenceConstants.section_b_preference,
+                Context.MODE_PRIVATE
+            )
+        pref?.edit()?.putString(PreferenceConstants.longTermDisease, longTermDisease)
+            ?.apply()
+    }
+
+    fun getLongTermDiseaseInFam(context: Context?): String {
+        val pref =
+            context?.getSharedPreferences(
+                PreferenceConstants.section_b_preference,
+                Context.MODE_PRIVATE
+            )
+        return pref?.getString(PreferenceConstants.longTermDisease, "") ?: ""
+    }
+
+    fun saveDiseasesInFam(context: Context?, mental: String, autism: String, other: String) {
+        val pref =
+            context?.getSharedPreferences(
+                PreferenceConstants.section_b_preference,
+                Context.MODE_PRIVATE
+            )
+        pref?.edit()?.putString(PreferenceConstants.mentalIllnes, mental)?.apply()
+        pref?.edit()?.putString(PreferenceConstants.autismCount, autism)?.apply()
+        pref?.edit()?.putString(PreferenceConstants.otherDiseaseCount, other)?.apply()
+    }
+
+    fun getMentalIllnessCount(context: Context?): String {
+        val pref =
+            context?.getSharedPreferences(
+                PreferenceConstants.section_b_preference,
+                Context.MODE_PRIVATE
+            )
+        return pref?.getString(PreferenceConstants.mentalIllnes, "") ?: ""
+    }
+
+    fun getAutismCount(context: Context?): String {
+        val pref =
+            context?.getSharedPreferences(
+                PreferenceConstants.section_b_preference,
+                Context.MODE_PRIVATE
+            )
+        return pref?.getString(PreferenceConstants.autismCount, "") ?: ""
+    }
+
+    fun getOtherCount(context: Context?): String {
+        val pref =
+            context?.getSharedPreferences(
+                PreferenceConstants.section_b_preference,
+                Context.MODE_PRIVATE
+            )
+        return pref?.getString(PreferenceConstants.otherDiseaseCount, "") ?: ""
+    }
+
+    fun getRedCardCount(context: Context?): String {
+        val pref =
+            context?.getSharedPreferences(
+                PreferenceConstants.section_b_preference,
+                Context.MODE_PRIVATE
+            )
+        return pref?.getString(PreferenceConstants.redCount, "") ?: ""
+    }
+
+    fun getBlueCardCount(context: Context?): String {
+        val pref =
+            context?.getSharedPreferences(
+                PreferenceConstants.section_b_preference,
+                Context.MODE_PRIVATE
+            )
+        return pref?.getString(PreferenceConstants.blueCount, "") ?: ""
+    }
+
+    fun getYellowCardCount(context: Context?): String {
+        val pref =
+            context?.getSharedPreferences(
+                PreferenceConstants.section_b_preference,
+                Context.MODE_PRIVATE
+            )
+        return pref?.getString(PreferenceConstants.yellowCount, "") ?: ""
+    }
+
+    fun getWhiteCardCount(context: Context?): String {
+        val pref =
+            context?.getSharedPreferences(
+                PreferenceConstants.section_b_preference,
+                Context.MODE_PRIVATE
+            )
+        return pref?.getString(PreferenceConstants.whiteCount, "") ?: ""
+    }
+
+    fun saveCardType(context: Context?, red: String, blue: String, yellow: String, white: String) {
+        val pref =
+            context?.getSharedPreferences(
+                PreferenceConstants.section_b_preference,
+                Context.MODE_PRIVATE
+            )
+        pref?.edit()?.putString(PreferenceConstants.redCount, red)?.apply()
+        pref?.edit()?.putString(PreferenceConstants.blueCount, blue)?.apply()
+        pref?.edit()?.putString(PreferenceConstants.yellowCount, yellow)?.apply()
+        pref?.edit()?.putString(PreferenceConstants.whiteCount, white)?.apply()
+    }
+
+    fun saveDisesesCount(
+        context: Context?,
+        tb: String,
+        cancer: String,
+        hiv: String,
+        sugar: String,
+        bp: String,
+        other: String
+    ) {
+        val pref =
+            context?.getSharedPreferences(
+                PreferenceConstants.section_b_preference,
+                Context.MODE_PRIVATE
+            )
+        pref?.edit()?.putString(PreferenceConstants.tbCount, tb)?.apply()
+        pref?.edit()?.putString(PreferenceConstants.cancerCount, cancer)?.apply()
+        pref?.edit()?.putString(PreferenceConstants.hivCount, hiv)?.apply()
+        pref?.edit()?.putString(PreferenceConstants.sugarCount, sugar)?.apply()
+        pref?.edit()?.putString(PreferenceConstants.bpCount, bp)?.apply()
+        pref?.edit()?.putString(PreferenceConstants.otherIllnessCount, other)?.apply()
+    }
+
+    fun getTbCount(context: Context?): String {
+        val pref =
+            context?.getSharedPreferences(
+                PreferenceConstants.section_b_preference,
+                Context.MODE_PRIVATE
+            )
+        return pref?.getString(PreferenceConstants.tbCount, "") ?: ""
+    }
+
+    fun getCancerCount(context: Context?): String {
+        val pref =
+            context?.getSharedPreferences(
+                PreferenceConstants.section_b_preference,
+                Context.MODE_PRIVATE
+            )
+        return pref?.getString(PreferenceConstants.cancerCount, "") ?: ""
+    }
+
+    fun getHivCount(context: Context?): String {
+        val pref =
+            context?.getSharedPreferences(
+                PreferenceConstants.section_b_preference,
+                Context.MODE_PRIVATE
+            )
+        return pref?.getString(PreferenceConstants.hivCount, "") ?: ""
+    }
+
+    fun getSugarCount(context: Context?): String {
+        val pref =
+            context?.getSharedPreferences(
+                PreferenceConstants.section_b_preference,
+                Context.MODE_PRIVATE
+            )
+        return pref?.getString(PreferenceConstants.sugarCount, "") ?: ""
+    }
+
+    fun getBpCount(context: Context?): String {
+        val pref =
+            context?.getSharedPreferences(
+                PreferenceConstants.section_b_preference,
+                Context.MODE_PRIVATE
+            )
+        return pref?.getString(PreferenceConstants.bpCount, "") ?: ""
+    }
+
+    fun getOtherIllnessCount(context: Context?): String {
+        val pref =
+            context?.getSharedPreferences(
+                PreferenceConstants.section_b_preference,
+                Context.MODE_PRIVATE
+            )
+        return pref?.getString(PreferenceConstants.otherIllnessCount, "") ?: ""
+    }
+
 }

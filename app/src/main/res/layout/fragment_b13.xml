@@ -60,46 +60,48 @@
             android:text="@string/question_b13"
             android:textSize="@dimen/text_size_twenty_four" />
 
-        <RadioGroup
+        <LinearLayout
             android:id="@+id/rdb13"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/txvQuestionB13"
             android:orientation="vertical">
 
-            <RadioButton
+            <EditText
                 android:id="@+id/rdbTb"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/tb" />
+                android:hint="@string/tb" />
 
-            <RadioButton
+            <EditText
                 android:id="@+id/rdbCancer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/female_unemployed"
-                android:text="@string/cancer" />
+                android:hint="@string/cancer" />
 
-            <RadioButton
+            <EditText
                 android:id="@+id/rdbHiv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/female_unemployed"
-                android:text="@string/hiv" />
+                android:hint="@string/hiv" />
 
-            <RadioButton
+            <EditText
                 android:id="@+id/rdbSugar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/female_unemployed"
-                android:text="@string/sugar" />
+                android:hint="@string/sugar" />
 
-            <RadioButton
+            <EditText
                 android:id="@+id/rdbBp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/female_unemployed"
-                android:text="@string/bp" />
-        </RadioGroup>
+                android:hint="@string/bp" />
+
+            <EditText
+                android:id="@+id/rdbOther"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/other" />
+        </LinearLayout>
     </RelativeLayout>
 </ScrollView>

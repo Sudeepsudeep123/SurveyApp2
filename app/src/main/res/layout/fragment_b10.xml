@@ -60,34 +60,30 @@
             android:text="@string/question_b10"
             android:textSize="@dimen/text_size_twenty_four" />
 
-        <RadioGroup
+        <LinearLayout
             android:id="@+id/lnlB10"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/txvQuestionB10"
             android:orientation="vertical">
 
-            <RadioButton
+            <EditText
                 android:id="@+id/edtMentalIllness"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/mental_illnes" />
+                android:hint="@string/mental_illnes" />
 
-            <RadioButton
+            <EditText
                 android:id="@+id/edtAutism"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/female_unemployed"
-                android:text="@string/autism" />
+                android:hint="@string/autism" />
 
-            <RadioButton
+            <EditText
                 android:id="@+id/edtOther"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/female_unemployed"
-                android:text="@string/other" />
-
-
-        </RadioGroup>
+                android:hint="@string/other" />
+        </LinearLayout>
     </RelativeLayout>
 </ScrollView>

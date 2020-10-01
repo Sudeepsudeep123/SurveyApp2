@@ -58,4 +58,12 @@ object PreferenceConstants {
     const val hivCount = "hivCount"
     const val sugarCount = "sugarCount"
     const val bpCount = "bpCount"
+    const val otherIllnessCount = "otherIllnessCount"
+    const val mentalIllnes = "mentalIllnes"
+    const val autismCount = "autismCount"
+    const val otherDiseaseCount = "otherDiseaseCount"
+    const val redCount = "redCount"
+    const val blueCount = "blueCount"
+    const val yellowCount = "yellowCount"
+    const val whiteCount = "whiteCount"
 }

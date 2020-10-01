@@ -60,39 +60,36 @@
             android:text="@string/question_b11"
             android:textSize="@dimen/text_size_twenty_four" />
 
-        <RadioGroup
+        <LinearLayout
             android:id="@+id/rdb11"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/txvQuestionB11"
             android:orientation="vertical">
 
-            <RadioButton
+            <EditText
                 android:id="@+id/rdbRed"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/red" />
+                android:hint="@string/red" />
 
-            <RadioButton
+            <EditText
                 android:id="@+id/rdbBlue"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/female_unemployed"
-                android:text="@string/blue" />
+                android:hint="@string/blue" />
 
-            <RadioButton
+            <EditText
                 android:id="@+id/rdbYellow"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/female_unemployed"
-                android:text="@string/yellow" />
+                android:hint="@string/yellow" />
 
-            <RadioButton
+            <EditText
                 android:id="@+id/rdbWhite"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/female_unemployed"
-                android:text="@string/white" />
-        </RadioGroup>
+                android:hint="@string/white" />
+        </LinearLayout>
     </RelativeLayout>
 </ScrollView>
