@@ -267,7 +267,7 @@ object PreferenceUtils {
         return pref?.getString(PreferenceConstants.dead_count_third, "") ?: ""
     }
 
-    fun saveSentKidsToSchool(context: Context?, sentVal : String){
+    fun saveSentKidsToSchool(context: Context?, sentVal: String) {
         val pref =
             context?.getSharedPreferences(
                 PreferenceConstants.section_b_preference,
@@ -276,7 +276,7 @@ object PreferenceUtils {
         pref?.edit()?.putString(PreferenceConstants.sent_kids_to_school, sentVal)?.apply()
     }
 
-    fun getSendKidsToSchool(context: Context?) : String{
+    fun getSendKidsToSchool(context: Context?): String {
         val pref =
             context?.getSharedPreferences(
                 PreferenceConstants.section_b_preference,
@@ -285,7 +285,7 @@ object PreferenceUtils {
         return pref?.getString(PreferenceConstants.sent_kids_to_school, "") ?: ""
     }
 
-    fun saveChildLaborValue(context: Context?, childLabor : String){
+    fun saveChildLaborValue(context: Context?, childLabor: String) {
         val pref =
             context?.getSharedPreferences(
                 PreferenceConstants.section_b_preference,
@@ -294,7 +294,7 @@ object PreferenceUtils {
         pref?.edit()?.putString(PreferenceConstants.childLabor, childLabor)?.apply()
     }
 
-    fun getChildLaborValue(context: Context?) : String{
+    fun getChildLaborValue(context: Context?): String {
         val pref =
             context?.getSharedPreferences(
                 PreferenceConstants.section_b_preference,
@@ -319,5 +319,59 @@ object PreferenceUtils {
                 Context.MODE_PRIVATE
             )
         return pref?.getString(PreferenceConstants.schoolType, "") ?: ""
+    }
+
+    fun saveSonDaughterCountInCountryAndForeign(
+        context: Context?,
+        sonCountry: String,
+        daughterCountry: String,
+        sonForeign: String,
+        daughterForeign: String
+    ) {
+        val pref =
+            context?.getSharedPreferences(
+                PreferenceConstants.section_b_preference,
+                Context.MODE_PRIVATE
+            )
+        pref?.edit()?.putString(PreferenceConstants.sonCountInCountry, sonCountry)?.apply()
+        pref?.edit()?.putString(PreferenceConstants.daughterCountInCountry, daughterCountry)?.apply()
+        pref?.edit()?.putString(PreferenceConstants.sonCountInForeign, sonForeign)?.apply()
+        pref?.edit()?.putString(PreferenceConstants.daughterCountInForeign, daughterForeign)?.apply()
+    }
+
+    fun getSonCountInCountry(context: Context?): String {
+        val pref =
+            context?.getSharedPreferences(
+                PreferenceConstants.section_b_preference,
+                Context.MODE_PRIVATE
+            )
+        return pref?.getString(PreferenceConstants.sonCountInCountry, "") ?: ""
+    }
+
+    fun getDaughterCountInCountry(context: Context?): String {
+        val pref =
+            context?.getSharedPreferences(
+                PreferenceConstants.section_b_preference,
+                Context.MODE_PRIVATE
+            )
+        return pref?.getString(PreferenceConstants.daughterCountInCountry, "") ?: ""
+    }
+
+    fun getSonCountInForeign(context: Context?): String {
+        val pref =
+            context?.getSharedPreferences(
+                PreferenceConstants.section_b_preference,
+                Context.MODE_PRIVATE
+            )
+        return pref?.getString(PreferenceConstants.sonCountInForeign, "") ?: ""
+    }
+
+    fun getDaughterCountInForeign(context: Context?): String {
+        val pref =
+            context?.getSharedPreferences(
+                PreferenceConstants.section_b_preference,
+                Context.MODE_PRIVATE
+            )
+        return pref?.getString(PreferenceConstants.daughterCountInForeign, "") ?: ""
     }
 }

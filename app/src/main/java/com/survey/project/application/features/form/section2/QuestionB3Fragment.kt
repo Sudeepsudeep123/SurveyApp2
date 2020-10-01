@@ -61,7 +61,7 @@ class QuestionB3Fragment : Fragment(), View.OnClickListener {
             QuestionB4Fragment()
         (activity as Section2Activity)?.attachFragment(
             b4Fragment,
-            FragmentTagConstants.questionB3
+            FragmentTagConstants.questionB4
         )
     }
 

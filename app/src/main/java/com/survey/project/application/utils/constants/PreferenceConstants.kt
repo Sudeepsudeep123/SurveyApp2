@@ -30,4 +30,8 @@ object PreferenceConstants {
     const val sent_kids_to_school = "sent_kids_to_school"
     const val schoolType = "schoolType"
     const val childLabor = "childLabor"
+    const val sonCountInCountry = "sonCountInCountry"
+    const val daughterCountInCountry = "daughterCountInCountry"
+    const val sonCountInForeign = "sonCountInForeign"
+    const val daughterCountInForeign = "daughterCountInForeign"
 }

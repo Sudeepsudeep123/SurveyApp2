@@ -57,11 +57,11 @@ class QuestionB4Fragment : Fragment(), View.OnClickListener {
     }
 
     private fun gotToNextFragment() {
-        val b4Fragment =
-            QuestionB4Fragment()
+        val b5Fragment =
+            QuestionB5Fragment()
         (activity as Section2Activity)?.attachFragment(
-            b4Fragment,
-            FragmentTagConstants.questionB3
+            b5Fragment,
+            FragmentTagConstants.questionB5
         )
     }
 
