@@ -518,4 +518,23 @@ object PreferenceUtils {
             )
         return pref?.getString(PreferenceConstants.circusSon, "") ?: ""
     }
+
+    fun getKidMarriedBefore18(context: Context?): String {
+        val pref =
+            context?.getSharedPreferences(
+                PreferenceConstants.section_b_preference,
+                Context.MODE_PRIVATE
+            )
+        return pref?.getString(PreferenceConstants.gotYourKidMarriedBefore18, "") ?: ""
+    }
+
+    fun savKidMarriedBefore18(context: Context?, kidMarriedVal: String) {
+        val pref =
+            context?.getSharedPreferences(
+                PreferenceConstants.section_b_preference,
+                Context.MODE_PRIVATE
+            )
+        pref?.edit()?.putString(PreferenceConstants.gotYourKidMarriedBefore18, kidMarriedVal)
+            ?.apply()
+    }
 }
