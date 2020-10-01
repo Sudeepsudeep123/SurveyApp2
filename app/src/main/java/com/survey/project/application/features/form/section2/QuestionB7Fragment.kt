@@ -66,7 +66,7 @@ class QuestionB7Fragment : Fragment(), View.OnClickListener {
             goYourKidMarriedBefore18 = selectedRadioButton.text.toString()
         }
 
-        PreferenceUtils.saveSentKidsToSchool(context, goYourKidMarriedBefore18)
+        PreferenceUtils.savKidMarriedBefore18(context, goYourKidMarriedBefore18)
         gotToNextFragment()
     }
 

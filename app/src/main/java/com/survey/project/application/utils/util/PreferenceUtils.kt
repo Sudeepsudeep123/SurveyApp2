@@ -537,4 +537,53 @@ object PreferenceUtils {
         pref?.edit()?.putString(PreferenceConstants.gotYourKidMarriedBefore18, kidMarriedVal)
             ?.apply()
     }
+
+    fun getSonMarriedBefore18(context: Context?): String {
+        val pref =
+            context?.getSharedPreferences(
+                PreferenceConstants.section_b_preference,
+                Context.MODE_PRIVATE
+            )
+        return pref?.getString(PreferenceConstants.sonMarriedBefore18, "") ?: ""
+    }
+
+    fun saveSonDaughterMarriedBefore18(context: Context?, son: String, daughter: String) {
+        val pref =
+            context?.getSharedPreferences(
+                PreferenceConstants.section_b_preference,
+                Context.MODE_PRIVATE
+            )
+        pref?.edit()?.putString(PreferenceConstants.sonMarriedBefore18, son)
+            ?.apply()
+        pref?.edit()?.putString(PreferenceConstants.daughterMarriedBefore18, daughter)
+            ?.apply()
+    }
+
+    fun getDaughterMarriedBefore18(context: Context?): String {
+        val pref =
+            context?.getSharedPreferences(
+                PreferenceConstants.section_b_preference,
+                Context.MODE_PRIVATE
+            )
+        return pref?.getString(PreferenceConstants.daughterMarriedBefore18, "") ?: ""
+    }
+
+    fun saveDifferentlyAbledInFam(context: Context?, differentlyAbledInFam: String) {
+        val pref =
+            context?.getSharedPreferences(
+                PreferenceConstants.section_b_preference,
+                Context.MODE_PRIVATE
+            )
+        pref?.edit()?.putString(PreferenceConstants.differentlyAbledInFam, differentlyAbledInFam)
+            ?.apply()
+    }
+
+    fun getDifferentlyAbledInFam(context: Context?): String {
+        val pref =
+            context?.getSharedPreferences(
+                PreferenceConstants.section_b_preference,
+                Context.MODE_PRIVATE
+            )
+        return pref?.getString(PreferenceConstants.differentlyAbledInFam, "") ?: ""
+    }
 }
