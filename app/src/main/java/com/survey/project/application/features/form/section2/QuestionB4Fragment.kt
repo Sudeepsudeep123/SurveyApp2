@@ -53,7 +53,7 @@ class QuestionB4Fragment : Fragment(), View.OnClickListener {
     }
 
     private fun goToPreviousFragment() {
-        Utils.popBackStack(FragmentTagConstants.questionB3, activity)
+        Utils.popBackStack(FragmentTagConstants.questionB4, activity)
     }
 
     private fun gotToNextFragment() {

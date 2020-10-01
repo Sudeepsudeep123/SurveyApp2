@@ -55,7 +55,7 @@ class QuestionB5Fragment : Fragment(), View.OnClickListener {
 
     private fun gotToNextFragment() {
         val b6Fragment =
-            QuestionB4Fragment()
+            QuestionB6Fragment()
         (activity as Section2Activity)?.attachFragment(
             b6Fragment,
             FragmentTagConstants.questionB6

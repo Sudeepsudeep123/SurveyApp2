@@ -17,7 +17,7 @@ class Section2Activity : AppCompatActivity() {
     }
 
     private fun showQuestionB1() {
-        if (::questionB1Fragment.isInitialized) {
+        if (!::questionB1Fragment.isInitialized) {
             questionB1Fragment = QuestionB1Fragment()
         }
         attachFragment(questionB1Fragment, FragmentTagConstants.questionB1)
