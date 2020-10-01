@@ -40,15 +40,15 @@ class QuestionB3Fragment : Fragment(), View.OnClickListener {
     }
 
     private fun saveValuesAndGoToNextFragment() {
-        var childLabor = ""
+        var schoolType = ""
         val selectedVal = lnlB2?.checkedRadioButtonId
         if (selectedVal != null && selectedVal != -1) {
             val selectedRadioButton = view?.findViewById<View>(selectedVal) as RadioButton
 
-            childLabor = selectedRadioButton.text.toString()
+            schoolType = selectedRadioButton.text.toString()
         }
 
-        PreferenceUtils.saveChildLaborValue(context, childLabor)
+        PreferenceUtils.saveSchoolType(context, schoolType)
         gotToNextFragment()
     }
 
@@ -71,9 +71,9 @@ class QuestionB3Fragment : Fragment(), View.OnClickListener {
     }
 
     private fun getAndSetData() {
-        when (PreferenceUtils.getChildLaborValue(context)) {
-            getString(R.string.yes_nepali) -> lnlB2?.check(R.id.edtYes)
-            getString(R.string.no_nepali) -> lnlB2?.check(R.id.edtNo)
+        when (PreferenceUtils.getSchoolType(context)) {
+            getString(R.string.community) -> lnlB2?.check(R.id.edtYes)
+            getString(R.string.non_community) -> lnlB2?.check(R.id.edtNo)
             else -> {
             }
         }

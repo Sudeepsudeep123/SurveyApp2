@@ -267,7 +267,7 @@ object PreferenceUtils {
         return pref?.getString(PreferenceConstants.dead_count_third, "") ?: ""
     }
 
-    fun saveSentKidsToSchool(context: Context?, sentVal: String) {
+    fun saveSentKidsToSchool(context: Context?, sentVal : String){
         val pref =
             context?.getSharedPreferences(
                 PreferenceConstants.section_b_preference,
@@ -276,7 +276,7 @@ object PreferenceUtils {
         pref?.edit()?.putString(PreferenceConstants.sent_kids_to_school, sentVal)?.apply()
     }
 
-    fun getSendKidsToSchool(context: Context?): String {
+    fun getSendKidsToSchool(context: Context?) : String{
         val pref =
             context?.getSharedPreferences(
                 PreferenceConstants.section_b_preference,
@@ -285,7 +285,7 @@ object PreferenceUtils {
         return pref?.getString(PreferenceConstants.sent_kids_to_school, "") ?: ""
     }
 
-    fun saveChildLaborValue(context: Context?, childLabor: String) {
+    fun saveChildLaborValue(context: Context?, childLabor : String){
         val pref =
             context?.getSharedPreferences(
                 PreferenceConstants.section_b_preference,
@@ -294,12 +294,30 @@ object PreferenceUtils {
         pref?.edit()?.putString(PreferenceConstants.childLabor, childLabor)?.apply()
     }
 
-    fun getChildLaborValue(context: Context?): String {
+    fun getChildLaborValue(context: Context?) : String{
         val pref =
             context?.getSharedPreferences(
                 PreferenceConstants.section_b_preference,
                 Context.MODE_PRIVATE
             )
         return pref?.getString(PreferenceConstants.childLabor, "") ?: ""
+    }
+
+    fun saveSchoolType(context: Context?, schoolType: String) {
+        val pref =
+            context?.getSharedPreferences(
+                PreferenceConstants.section_b_preference,
+                Context.MODE_PRIVATE
+            )
+        pref?.edit()?.putString(PreferenceConstants.schoolType, schoolType)?.apply()
+    }
+
+    fun getSchoolType(context: Context?): String {
+        val pref =
+            context?.getSharedPreferences(
+                PreferenceConstants.section_b_preference,
+                Context.MODE_PRIVATE
+            )
+        return pref?.getString(PreferenceConstants.schoolType, "") ?: ""
     }
 }
