@@ -27,4 +27,7 @@ object PreferenceConstants {
     const val dead_count_male = "dead_count_male"
     const val dead_count_female = "dead_count_female"
     const val dead_count_third = "dead_count_third"
+    const val sent_kids_to_school = "sent_kids_to_school"
+    const val schoolType = "schoolType"
+    const val childLabor = "childLabor"
 }

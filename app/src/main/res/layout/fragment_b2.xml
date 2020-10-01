@@ -61,7 +61,7 @@
             android:textSize="@dimen/text_size_twenty_four" />
 
         <RadioGroup
-            android:id="@+id/lnlB2"
+            android:id="@+id/rdgB2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/txvQuestionB2"
