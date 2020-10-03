@@ -193,7 +193,7 @@
                         android:id="@+id/txvQB5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/question_b3"
+                        android:text="@string/question_b5"
                         android:textColor="@android:color/holo_red_light" />
 
                     <TextView
@@ -205,7 +205,7 @@
                         tools:text="@string/in_country" />
 
                     <TextView
-                        android:id="@+id/txvIForeign"
+                        android:id="@+id/txvInForeign"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/txvInCountry"
