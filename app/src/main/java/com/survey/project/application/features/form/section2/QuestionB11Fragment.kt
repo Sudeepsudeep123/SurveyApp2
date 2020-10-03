@@ -57,11 +57,13 @@ class QuestionB11Fragment : Fragment(), View.OnClickListener {
     }
 
     private fun saveValuesAndGoToNextFragment() {
-        if (rdbRed?.text.toString().isNotBlank() && rdbRed?.text.toString().isNotEmpty() &&
-            rdbBlue?.text.toString().isNotEmpty() && rdbBlue?.text.toString().isNotEmpty() &&
-            rdbYellow?.text.toString().isNotEmpty() && rdbYellow?.text.toString().isNotEmpty() &&
-            rdbWhite?.text.toString().isNotEmpty() && rdbWhite?.text.toString().isNotEmpty()
+        if (rdbRed?.text.toString().isBlank() && rdbRed?.text.toString().isEmpty() &&
+            rdbBlue?.text.toString().isBlank() && rdbBlue?.text.toString().isEmpty() &&
+            rdbYellow?.text.toString().isBlank() && rdbYellow?.text.toString().isEmpty() &&
+            rdbWhite?.text.toString().isBlank() && rdbWhite?.text.toString().isEmpty()
         ) {
+            Toast.makeText(context, getString(R.string.invalid), Toast.LENGTH_SHORT).show()
+        } else {
             PreferenceUtils.saveCardType(
                 context,
                 rdbRed?.text.toString(),
@@ -70,8 +72,6 @@ class QuestionB11Fragment : Fragment(), View.OnClickListener {
                 rdbWhite?.text.toString()
             )
             gotToNextFragment()
-        } else {
-            Toast.makeText(context, getString(R.string.invalid), Toast.LENGTH_SHORT).show()
         }
     }
 

@@ -59,13 +59,15 @@ class QuestionB13Fragment : Fragment(), View.OnClickListener {
     }
 
     private fun saveValuesAndGoToNextFragment() {
-        if (rdbTb?.text.toString().isNotEmpty() && rdbTb?.text.toString().isNotBlank() &&
-            rdbCancer?.text.toString().isNotEmpty() && rdbCancer?.text.toString().isNotBlank() &&
-            rdbHiv?.text.toString().isNotEmpty() && rdbHiv?.text.toString().isNotBlank() &&
-            rdbSugar?.text.toString().isNotEmpty() && rdbSugar?.text.toString().isNotBlank() &&
-            rdbBp?.text.toString().isNotEmpty() && rdbBp?.text.toString().isNotBlank() &&
-            rdbOther?.text.toString().isNotEmpty() && rdbOther?.text.toString().isNotBlank()
+        if (rdbTb?.text.toString().isEmpty() && rdbTb?.text.toString().isBlank() &&
+            rdbCancer?.text.toString().isEmpty() && rdbCancer?.text.toString().isBlank() &&
+            rdbHiv?.text.toString().isEmpty() && rdbHiv?.text.toString().isBlank() &&
+            rdbSugar?.text.toString().isEmpty() && rdbSugar?.text.toString().isBlank() &&
+            rdbBp?.text.toString().isEmpty() && rdbBp?.text.toString().isBlank() &&
+            rdbOther?.text.toString().isEmpty() && rdbOther?.text.toString().isBlank()
         ) {
+            Toast.makeText(context, getString(R.string.invalid), Toast.LENGTH_SHORT).show()
+        } else {
             PreferenceUtils.saveDisesesCount(
                 context,
                 rdbTb?.text.toString(),
@@ -76,8 +78,6 @@ class QuestionB13Fragment : Fragment(), View.OnClickListener {
                 rdbOther?.text.toString()
             )
             gotToNextFragment()
-        } else {
-            Toast.makeText(context, getString(R.string.invalid), Toast.LENGTH_SHORT).show()
         }
     }
 

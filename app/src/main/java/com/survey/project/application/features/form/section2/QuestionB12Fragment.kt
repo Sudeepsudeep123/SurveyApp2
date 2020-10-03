@@ -60,6 +60,7 @@ class QuestionB12Fragment : Fragment(), View.OnClickListener {
     private fun initListener() {
         btnNext?.setOnClickListener(this)
         btnPrevious?.setOnClickListener(this)
+        btnSkip?.setOnClickListener(this)
     }
 
     private fun saveValuesAndGoToNextFragment() {

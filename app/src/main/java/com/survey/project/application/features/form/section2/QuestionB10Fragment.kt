@@ -57,11 +57,13 @@ class QuestionB10Fragment : Fragment(), View.OnClickListener {
     }
 
     private fun saveValuesAndGoToNextFragment() {
-        if (edtMentalIllness?.text.toString().isNotEmpty() && edtMentalIllness?.text.toString()
-                .isNotBlank() &&
-            edtAutism?.text.toString().isNotEmpty() && edtAutism?.text.toString().isNotBlank() &&
-            edtOther?.text.toString().isNotEmpty() && edtOther?.text.toString().isNotBlank()
+        if (edtMentalIllness?.text.toString().isEmpty() && edtMentalIllness?.text.toString()
+                .isBlank() &&
+            edtAutism?.text.toString().isEmpty() && edtAutism?.text.toString().isBlank() &&
+            edtOther?.text.toString().isEmpty() && edtOther?.text.toString().isBlank()
         ) {
+            Toast.makeText(context, getString(R.string.invalid), Toast.LENGTH_SHORT).show()
+        } else {
             PreferenceUtils.saveDiseasesInFam(
                 context,
                 edtMentalIllness?.text.toString(),
@@ -69,8 +71,6 @@ class QuestionB10Fragment : Fragment(), View.OnClickListener {
                 edtOther?.text.toString()
             )
             gotToNextFragment()
-        } else {
-            Toast.makeText(context, getString(R.string.invalid), Toast.LENGTH_SHORT).show()
         }
     }
 
