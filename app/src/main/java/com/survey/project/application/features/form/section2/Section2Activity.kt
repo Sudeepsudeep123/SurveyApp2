@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import com.survey.project.application.R
 import com.survey.project.application.utils.constants.FragmentTagConstants
 import com.survey.project.application.utils.router.Router
+import com.survey.project.application.utils.util.PreferenceUtils
 
 class Section2Activity : AppCompatActivity() {
     private lateinit var questionB1Fragment: QuestionB1Fragment
@@ -31,5 +32,10 @@ class Section2Activity : AppCompatActivity() {
             fragmentTag,
             true
         )
+    }
+
+    fun clearSecBPreference(){
+        PreferenceUtils.clearSharedPreferenceSectionB(this)
+        showQuestionB1()
     }
 }

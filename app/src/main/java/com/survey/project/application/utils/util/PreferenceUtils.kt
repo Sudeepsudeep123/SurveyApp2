@@ -768,4 +768,12 @@ object PreferenceUtils {
         return pref?.getString(PreferenceConstants.otherIllnessCount, "") ?: ""
     }
 
+    fun clearSharedPreferenceSectionB(context: Context?) {
+        val pref = context?.getSharedPreferences(
+            PreferenceConstants.section_b_preference,
+            Context.MODE_PRIVATE
+        )
+        pref?.edit()?.clear()?.apply()
+    }
+
 }

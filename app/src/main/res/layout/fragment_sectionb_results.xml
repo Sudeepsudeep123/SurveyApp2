@@ -10,7 +10,6 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:text="@string/summary_listing_title"
-        android:textColor="@color/colorPrimary"
         android:textSize="20sp" />
 
     <LinearLayout
@@ -50,29 +49,29 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            >
 
             <!-- q1-->
             <RelativeLayout
                 android:id="@+id/rllB1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@android:color/darker_gray"
+                android:background="@drawable/rll_bg"
+                android:elevation="5dp"
+                android:layout_margin="8dp"
                 android:padding="8dp">
 
                 <TextView
                     android:id="@+id/txvQB1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/question_b1"
-                    android:textColor="@color/crimson" />
+                    android:text="@string/question_b1" />
 
                 <TextView
                     android:id="@+id/txvMaleDead"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/txvQB1"
-                    android:textColor="@color/colorPrimary"
                     tools:text="1" />
 
                 <TextView
@@ -80,7 +79,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/txvMaleDead"
-                    android:textColor="@color/colorPrimary"
                     tools:text="2" />
 
                 <TextView
@@ -88,7 +86,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/txvFemaleDead"
-                    android:textColor="@color/colorPrimary"
                     tools:text="3" />
 
             </RelativeLayout>
@@ -103,23 +100,22 @@
                     android:id="@+id/rllQb2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:background="@android:color/darker_gray"
+                    android:background="@drawable/rll_bg"
+                    android:elevation="5dp"
+                    android:layout_margin="@dimen/ten_margin"
                     android:padding="8dp">
 
                     <TextView
                         android:id="@+id/txvQB2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/question_b2"
-                        android:textColor="@color/crimson" />
+                        android:text="@string/question_b2" />
 
                     <TextView
                         android:id="@+id/txvSentKidToSchool"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/txvQB2"
-                        android:textColor="@color/colorPrimary"
                         tools:text="1" />
                 </RelativeLayout>
 
@@ -128,23 +124,22 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/rllQb2"
-                    android:layout_marginTop="16dp"
-                    android:background="@android:color/darker_gray"
+                    android:background="@drawable/rll_bg"
+                    android:elevation="5dp"
+                    android:layout_margin="@dimen/ten_margin"
                     android:padding="8dp">
 
                     <TextView
                         android:id="@+id/txvQB3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/question_b3"
-                        android:textColor="@color/crimson" />
+                        android:text="@string/question_b3" />
 
                     <TextView
                         android:id="@+id/txvSchoolType"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/txvQB3"
-                        android:textColor="@color/colorPrimary"
                         tools:text="1" />
                 </RelativeLayout>
 
@@ -160,23 +155,22 @@
                     android:id="@+id/rllQb4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:background="@android:color/darker_gray"
+                    android:background="@drawable/rll_bg"
+                    android:elevation="5dp"
+                    android:layout_margin="@dimen/ten_margin"
                     android:padding="8dp">
 
                     <TextView
                         android:id="@+id/txvQB4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/question_b4"
-                        android:textColor="@color/crimson" />
+                        android:text="@string/question_b4" />
 
                     <TextView
                         android:id="@+id/txvChildLabor"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/txvQB4"
-                        android:textColor="@color/colorPrimary"
                         tools:text="1" />
                 </RelativeLayout>
 
@@ -185,23 +179,22 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/rllQb4"
-                    android:layout_marginTop="16dp"
-                    android:background="@android:color/darker_gray"
+                    android:background="@drawable/rll_bg"
+                    android:elevation="5dp"
+                    android:layout_margin="@dimen/ten_margin"
                     android:padding="8dp">
 
                     <TextView
                         android:id="@+id/txvQB5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/question_b5"
-                        android:textColor="@color/crimson" />
+                        android:text="@string/question_b5" />
 
                     <TextView
                         android:id="@+id/txvInCountry"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/txvQB5"
-                        android:textColor="@color/colorPrimary"
                         tools:text="@string/in_country" />
 
                     <TextView
@@ -209,7 +202,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/txvInCountry"
-                        android:textColor="@color/colorPrimary"
                         tools:text="@string/outside_country" />
                 </RelativeLayout>
 
@@ -218,23 +210,22 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/rllQb5"
-                    android:layout_marginTop="16dp"
-                    android:background="@android:color/darker_gray"
+                    android:background="@drawable/rll_bg"
+                    android:elevation="5dp"
+                    android:layout_margin="@dimen/ten_margin"
                     android:padding="8dp">
 
                     <TextView
                         android:id="@+id/txvQB6"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/question_b6"
-                        android:textColor="@color/crimson" />
+                        android:text="@string/question_b6" />
 
                     <TextView
                         android:id="@+id/txvGhareluKamdar"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/txvQB6"
-                        android:textColor="@color/colorPrimary"
                         tools:text="1" />
 
                     <TextView
@@ -242,7 +233,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/txvGhareluKamdar"
-                        android:textColor="@color/colorPrimary"
                         tools:text="1" />
 
                     <TextView
@@ -250,7 +240,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/txvKarkhana"
-                        android:textColor="@color/colorPrimary"
                         tools:text="1" />
 
                     <TextView
@@ -258,7 +247,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/txvByapar"
-                        android:textColor="@color/colorPrimary"
                         tools:text="1" />
 
                     <TextView
@@ -266,7 +254,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/txvKrishi"
-                        android:textColor="@color/colorPrimary"
                         tools:text="1" />
 
                     <TextView
@@ -274,7 +261,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/txvKaryalaya"
-                        android:textColor="@color/colorPrimary"
                         tools:text="1" />
                 </RelativeLayout>
             </RelativeLayout>
@@ -289,23 +275,22 @@
                     android:id="@+id/rllQb7"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:background="@android:color/darker_gray"
+                    android:background="@drawable/rll_bg"
+                    android:elevation="5dp"
+                    android:layout_margin="@dimen/ten_margin"
                     android:padding="8dp">
 
                     <TextView
                         android:id="@+id/txvQB7"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/question_b7"
-                        android:textColor="@color/crimson" />
+                        android:text="@string/question_b7"/>
 
                     <TextView
                         android:id="@+id/txvKidsMarriedBefire18"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/txvQB7"
-                        android:textColor="@color/colorPrimary"
                         tools:text="1" />
                 </RelativeLayout>
 
@@ -314,23 +299,22 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/rllQb7"
-                    android:layout_marginTop="16dp"
-                    android:background="@android:color/darker_gray"
+                    android:background="@drawable/rll_bg"
+                    android:elevation="5dp"
+                    android:layout_margin="@dimen/ten_margin"
                     android:padding="8dp">
 
                     <TextView
                         android:id="@+id/txvQB8"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/question_b8"
-                        android:textColor="@color/crimson" />
+                        android:text="@string/question_b8" />
 
                     <TextView
                         android:id="@+id/txvSonMarried"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/txvQB8"
-                        android:textColor="@color/colorPrimary"
                         tools:text="@string/son" />
 
                     <TextView
@@ -338,7 +322,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/txvSonMarried"
-                        android:textColor="@color/colorPrimary"
                         tools:text="@string/daughter" />
                 </RelativeLayout>
 
@@ -354,23 +337,22 @@
                     android:id="@+id/rllQb9"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:background="@android:color/darker_gray"
+                    android:background="@drawable/rll_bg"
+                    android:elevation="5dp"
+                    android:layout_margin="@dimen/ten_margin"
                     android:padding="8dp">
 
                     <TextView
                         android:id="@+id/txvQB9"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/question_b9"
-                        android:textColor="@color/crimson" />
+                        android:text="@string/question_b9"/>
 
                     <TextView
                         android:id="@+id/txvDissferentlyAbled"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/txvQB9"
-                        android:textColor="@color/colorPrimary"
                         tools:text="1" />
                 </RelativeLayout>
 
@@ -378,24 +360,23 @@
                     android:id="@+id/rllQb10"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
                     android:layout_below="@+id/rllQb9"
-                    android:background="@android:color/darker_gray"
+                    android:background="@drawable/rll_bg"
+                    android:elevation="5dp"
+                    android:layout_margin="@dimen/ten_margin"
                     android:padding="8dp">
 
                     <TextView
                         android:id="@+id/txvQB10"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/question_b10"
-                        android:textColor="@color/crimson" />
+                        android:text="@string/question_b10" />
 
                     <TextView
                         android:id="@+id/txvMentalIllness"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/txvQB10"
-                        android:textColor="@color/colorPrimary"
                         tools:text="@string/mental_illnes" />
 
                     <TextView
@@ -403,7 +384,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/txvMentalIllness"
-                        android:textColor="@color/colorPrimary"
                         tools:text="@string/mental_illnes" />
 
                     <TextView
@@ -411,7 +391,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/txvAustism"
-                        android:textColor="@color/colorPrimary"
                         tools:text="@string/mental_illnes" />
                 </RelativeLayout>
 
@@ -419,24 +398,23 @@
                     android:id="@+id/rllQb11"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
                     android:layout_below="@+id/rllQb10"
-                    android:background="@android:color/darker_gray"
+                    android:background="@drawable/rll_bg"
+                    android:elevation="5dp"
+                    android:layout_margin="@dimen/ten_margin"
                     android:padding="8dp">
 
                     <TextView
                         android:id="@+id/txvQB11"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/question_b11"
-                        android:textColor="@color/crimson" />
+                        android:text="@string/question_b11" />
 
                     <TextView
                         android:id="@+id/txvRed"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/txvQB11"
-                        android:textColor="@color/colorPrimary"
                         tools:text="@string/red" />
 
                     <TextView
@@ -444,7 +422,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/txvRed"
-                        android:textColor="@color/colorPrimary"
                         tools:text="@string/blue" />
 
                     <TextView
@@ -452,7 +429,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/txvBlue"
-                        android:textColor="@color/colorPrimary"
                         tools:text="@string/yellow" />
 
                     <TextView
@@ -460,7 +436,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/txvYellow"
-                        android:textColor="@color/colorPrimary"
                         tools:text="@string/white" />
                 </RelativeLayout>
             </RelativeLayout>
@@ -475,23 +450,22 @@
                     android:id="@+id/rllQb12"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:background="@android:color/darker_gray"
+                    android:background="@drawable/rll_bg"
+                    android:elevation="5dp"
+                    android:layout_margin="@dimen/ten_margin"
                     android:padding="8dp">
 
                     <TextView
                         android:id="@+id/txvQB12"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/question_b12"
-                        android:textColor="@color/crimson" />
+                        android:text="@string/question_b12"/>
 
                     <TextView
                         android:id="@+id/txvLongIllness"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/txvQB12"
-                        android:textColor="@color/colorPrimary"
                         tools:text="1" />
                 </RelativeLayout>
 
@@ -499,24 +473,23 @@
                     android:id="@+id/rllQb13"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
                     android:layout_below="@+id/rllQb12"
-                    android:background="@android:color/darker_gray"
+                    android:background="@drawable/rll_bg"
+                    android:elevation="5dp"
+                    android:layout_margin="@dimen/ten_margin"
                     android:padding="8dp">
 
                     <TextView
                         android:id="@+id/txvQB13"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/question_b13"
-                        android:textColor="@color/crimson" />
+                        android:text="@string/question_b13" />
 
                     <TextView
                         android:id="@+id/txvTv"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/txvQB13"
-                        android:textColor="@color/colorPrimary"
                         tools:text="1" />
 
                     <TextView
@@ -524,7 +497,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/txvTv"
-                        android:textColor="@color/colorPrimary"
                         tools:text="1" />
 
                     <TextView
@@ -532,7 +504,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/txvCancer"
-                        android:textColor="@color/colorPrimary"
                         tools:text="1" />
 
                     <TextView
@@ -540,7 +511,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/txvHiv"
-                        android:textColor="@color/colorPrimary"
                         tools:text="1" />
 
                     <TextView
@@ -548,7 +518,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/txvSugar"
-                        android:textColor="@color/colorPrimary"
                         tools:text="1" />
 
                     <TextView
@@ -556,7 +525,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/txvBp"
-                        android:textColor="@color/colorPrimary"
                         tools:text="1" />
                 </RelativeLayout>
             </RelativeLayout>

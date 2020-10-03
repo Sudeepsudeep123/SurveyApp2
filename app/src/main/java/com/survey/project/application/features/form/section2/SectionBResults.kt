@@ -1,6 +1,7 @@
 package com.survey.project.application.features.form.section2
 
 import android.app.Dialog
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,7 @@ import android.view.Window
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.survey.project.application.R
+import com.survey.project.application.features.form.activity.FormActivity3
 import com.survey.project.application.utils.constants.FragmentTagConstants
 import com.survey.project.application.utils.util.PreferenceUtils
 import kotlinx.android.synthetic.main.fragment_sectionb_results.*
@@ -47,11 +49,13 @@ class SectionBResults : Fragment(), View.OnClickListener {
         when (view) {
             btnCancel -> {
                 //clear Preference
-
+                (activity as Section2Activity)?.clearSecBPreference()
+                //PreferenceUtils.clearSharedPreferenceSectionB(context)
             }
             btnComplete -> {
                 //go to section C
                 //  goToPreviousFragment()
+                startActivity(Intent(context, FormActivity3::class.java))
             }
             rllB1 -> {
                 if (!::questionB1Fragment.isInitialized) {
@@ -187,6 +191,8 @@ class SectionBResults : Fragment(), View.OnClickListener {
         rllQb11?.setOnClickListener(this)
         rllQb12?.setOnClickListener(this)
         rllQb13?.setOnClickListener(this)
+        btnComplete?.setOnClickListener(this)
+        btnCancel?.setOnClickListener(this)
     }
 
     private fun getAndSetData() {
