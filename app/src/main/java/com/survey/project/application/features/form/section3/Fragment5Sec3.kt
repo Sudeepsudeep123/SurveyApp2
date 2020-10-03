@@ -4,21 +4,28 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import com.survey.project.application.R
 import com.survey.project.application.utils.constants.FragmentTagConstants
 import com.survey.project.application.utils.router.Router
+import kotlinx.android.synthetic.main.fragment_fragment2_sec3.*
 import kotlinx.android.synthetic.main.fragment_fragment5_sec3.*
+import kotlinx.android.synthetic.main.fragment_fragment5_sec3.btnNext
+import kotlinx.android.synthetic.main.fragment_fragment5_sec3.chkOption1
+import kotlinx.android.synthetic.main.fragment_fragment5_sec3.chkOption2
+import kotlinx.android.synthetic.main.fragment_fragment5_sec3.chkOption3
 
-class Fragment5Sec3 : Fragment() , View.OnClickListener {
+class Fragment5Sec3 : Fragment(), View.OnClickListener {
     private lateinit var question6Sec3: Fragment6Sec3
+    private lateinit var question4Sec3: Fragment4Sec3
     private lateinit var myView: View
     var chkValue: MutableList<String> = ArrayList()
-
+    var checked = ""
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
@@ -39,19 +46,22 @@ class Fragment5Sec3 : Fragment() , View.OnClickListener {
                 "Section3",
                 Context.MODE_PRIVATE
             )
-            val name = prefs?.getString("toiletType", "")
-            if (name != "" || name != null) {
-                if(name.equals(chkOption1.text.toString())){
-                    chkOption1.isChecked
+
+            val set: Set<String> = prefs?.getStringSet("toiletType", null) as Set<String>
+            for (name in set) {
+                Log.e("chkedvalue", name)
+                if (name == chkOption1.text.toString()) {
+                    chkOption1.isChecked = true
                 }
 
-                if(name.equals(chkOption2.text.toString())){
-                    chkOption2.isChecked
+                if (name == chkOption2.text.toString()) {
+                    chkOption2.isChecked = true
                 }
-                if(name.equals(chkOption3.text.toString())){
-                    chkOption3.isChecked
+                if (name == chkOption3.text.toString()) {
+                    chkOption3.isChecked = true
                 }
             }
+
         } catch (ex: Exception) {
             Log.e("ex", ex.toString())
         }
@@ -59,6 +69,7 @@ class Fragment5Sec3 : Fragment() , View.OnClickListener {
 
     private fun setListener() {
         btnNext.setOnClickListener(this)
+        btnPrevious5.setOnClickListener(this)
     }
 
     private fun save() {
@@ -78,21 +89,42 @@ class Fragment5Sec3 : Fragment() , View.OnClickListener {
         )
     }
 
+    private fun showQuestion4() {
+        if (!::question4Sec3.isInitialized)
+            question4Sec3 = Fragment4Sec3()
+        Router.attachFragment(
+            context as AppCompatActivity?, R.id.frmMain3, question4Sec3,
+            FragmentTagConstants.question4Sec3, true
+        )
+    }
+
     override fun onClick(view: View?) {
         when (view) {
             btnNext -> {
                 if (chkOption1.isChecked) {
                     chkValue.add(chkOption1.text.toString())
+                    save()
+                    checked = "1"
                 }
                 if (chkOption2.isChecked) {
                     chkValue.add(chkOption2.text.toString())
+                    save()
+                    checked = "1"
                 }
-
                 if (chkOption3.isChecked) {
                     chkValue.add(chkOption3.text.toString())
+                    save()
+                    checked = "1"
                 }
-                save()
-                showQuestion5()
+                if (checked == "1") {
+                    showQuestion5()
+                } else {
+                    Toast.makeText(context, "Please check any 1 item", Toast.LENGTH_SHORT).show()
+                }
+
+            }
+            btnPrevious5 -> {
+                fragmentManager?.popBackStack()
             }
         }
     }

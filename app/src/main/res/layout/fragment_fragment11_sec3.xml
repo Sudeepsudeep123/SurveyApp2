@@ -8,6 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:layout_marginStart="@dimen/ten_margin"
         android:orientation="vertical">
 
         <TextView
@@ -15,7 +16,7 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:gravity="center"
-            android:text="@string/typeOfVehicle"
+            android:text="@string/section3"
             android:textSize="@dimen/normal_text_size" />
 
         <LinearLayout
@@ -38,25 +39,31 @@
                 android:layout_margin="@dimen/ten_margin"
                 android:layout_weight="1"
                 android:text="@string/next" />
+
         </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/typeOfVehicle"
+            android:textSize="@dimen/normal_text_size" />
 
         <CheckBox
             android:id="@+id/chkOption1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="abc" />
+            android:text="Cycle" />
 
         <CheckBox
             android:id="@+id/chkOption2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="abc" />
+            android:text="MotorCycle" />
 
         <CheckBox
             android:id="@+id/chkOption3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="abc" />
+            android:text="Other" />
     </LinearLayout>
 
 </FrameLayout>

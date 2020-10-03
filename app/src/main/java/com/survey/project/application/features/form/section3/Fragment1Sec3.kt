@@ -40,7 +40,7 @@ class Fragment1Sec3 : Fragment() ,View.OnClickListener {
                 Context.MODE_PRIVATE
             )
             val name = prefs?.getString("noOfHouse", "")
-            if(name!="" || !name.equals(null)){
+            if(name!="" || name != null){
                 etNoOfHouse.setText(name)
             }
         }catch(ex:Exception){
@@ -77,7 +77,6 @@ class Fragment1Sec3 : Fragment() ,View.OnClickListener {
                 else{
                     save()
                     showQuestion2()
-
                 }
             }
         }
