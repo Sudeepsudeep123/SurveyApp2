@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.RadioButton
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.survey.project.application.R
 import com.survey.project.application.utils.constants.FragmentTagConstants
@@ -32,10 +33,13 @@ class QuestionB12Fragment : Fragment(), View.OnClickListener {
         when (view) {
             btnNext -> {
                 saveValuesAndGoToNextFragment()
-                //   goToNextFragment()
             }
             btnPrevious -> {
                 goToPreviousFragment()
+            }
+            btnSkip -> {
+                //show last list
+                Toast.makeText(context, "Skip clicked", Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -65,10 +69,14 @@ class QuestionB12Fragment : Fragment(), View.OnClickListener {
             val selectedRadioButton = view?.findViewById<View>(selectedVal) as RadioButton
 
             longTermDiseaseInFam = selectedRadioButton.text.toString()
+            PreferenceUtils.saveLongTermDiseaseInFam(context, longTermDiseaseInFam)
+            if (longTermDiseaseInFam == getString(R.string.yes_nepali)) {
+                gotToNextFragment()
+            } else {
+                //show last list
+                Toast.makeText(context, "Skip clicked", Toast.LENGTH_SHORT).show()
+            }
         }
-
-        PreferenceUtils.saveLongTermDiseaseInFam(context, longTermDiseaseInFam)
-        gotToNextFragment()
     }
 
     private fun getAndSetData() {
@@ -82,5 +90,6 @@ class QuestionB12Fragment : Fragment(), View.OnClickListener {
 
     private fun setUp() {
         txvQuestionB7?.text = getString(R.string.question_b12)
+        btnSkip?.visibility = View.VISIBLE
     }
 }

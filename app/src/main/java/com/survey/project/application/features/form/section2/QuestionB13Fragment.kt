@@ -12,7 +12,7 @@ import com.survey.project.application.utils.util.PreferenceUtils
 import com.survey.project.application.utils.util.Utils
 import kotlinx.android.synthetic.main.fragment_b13.*
 
-class QuestionB13Fragment : Fragment() , View.OnClickListener {
+class QuestionB13Fragment : Fragment(), View.OnClickListener {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -43,13 +43,14 @@ class QuestionB13Fragment : Fragment() , View.OnClickListener {
     }
 
     private fun gotToNextFragment() {
+        //show Last list
         Toast.makeText(context, "END", Toast.LENGTH_SHORT).show()
-       /* val b12Fragment =
-            QuestionB12Fragment()
-        (activity as Section2Activity)?.attachFragment(
-            b12Fragment,
-            FragmentTagConstants.questionB12
-        )*/
+        /* val b12Fragment =
+             QuestionB12Fragment()
+         (activity as Section2Activity)?.attachFragment(
+             b12Fragment,
+             FragmentTagConstants.questionB12
+         )*/
     }
 
     private fun initListener() {
@@ -58,16 +59,26 @@ class QuestionB13Fragment : Fragment() , View.OnClickListener {
     }
 
     private fun saveValuesAndGoToNextFragment() {
-        PreferenceUtils.saveDisesesCount(
-            context,
-            rdbTb?.text.toString(),
-            rdbCancer?.text.toString(),
-            rdbHiv?.text.toString(),
-            rdbSugar?.text.toString(),
-            rdbBp?.text.toString(),
-            rdbOther?.text.toString()
-        )
-        gotToNextFragment()
+        if (rdbTb?.text.toString().isNotEmpty() && rdbTb?.text.toString().isNotBlank() &&
+            rdbCancer?.text.toString().isNotEmpty() && rdbCancer?.text.toString().isNotBlank() &&
+            rdbHiv?.text.toString().isNotEmpty() && rdbHiv?.text.toString().isNotBlank() &&
+            rdbSugar?.text.toString().isNotEmpty() && rdbSugar?.text.toString().isNotBlank() &&
+            rdbBp?.text.toString().isNotEmpty() && rdbBp?.text.toString().isNotBlank() &&
+            rdbOther?.text.toString().isNotEmpty() && rdbOther?.text.toString().isNotBlank()
+        ) {
+            PreferenceUtils.saveDisesesCount(
+                context,
+                rdbTb?.text.toString(),
+                rdbCancer?.text.toString(),
+                rdbHiv?.text.toString(),
+                rdbSugar?.text.toString(),
+                rdbBp?.text.toString(),
+                rdbOther?.text.toString()
+            )
+            gotToNextFragment()
+        } else {
+            Toast.makeText(context, getString(R.string.invalid), Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun getAndSetData() {

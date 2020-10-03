@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.survey.project.application.R
 import com.survey.project.application.utils.constants.FragmentTagConstants
@@ -56,14 +57,22 @@ class QuestionB11Fragment : Fragment(), View.OnClickListener {
     }
 
     private fun saveValuesAndGoToNextFragment() {
-        PreferenceUtils.saveCardType(
-            context,
-            rdbRed?.text.toString(),
-            rdbBlue?.text.toString(),
-            rdbYellow?.text.toString(),
-            rdbWhite?.text.toString()
-        )
-        gotToNextFragment()
+        if (rdbRed?.text.toString().isNotBlank() && rdbRed?.text.toString().isNotEmpty() &&
+            rdbBlue?.text.toString().isNotEmpty() && rdbBlue?.text.toString().isNotEmpty() &&
+            rdbYellow?.text.toString().isNotEmpty() && rdbYellow?.text.toString().isNotEmpty() &&
+            rdbWhite?.text.toString().isNotEmpty() && rdbWhite?.text.toString().isNotEmpty()
+        ) {
+            PreferenceUtils.saveCardType(
+                context,
+                rdbRed?.text.toString(),
+                rdbBlue?.text.toString(),
+                rdbYellow?.text.toString(),
+                rdbWhite?.text.toString()
+            )
+            gotToNextFragment()
+        } else {
+            Toast.makeText(context, getString(R.string.invalid), Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun getAndSetData() {
