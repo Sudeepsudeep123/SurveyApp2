@@ -184,6 +184,8 @@
     <string name="in_country">स्वदेसमा</string>
     <string name="outside_country">बिदेसमा</string>
     <string name="son">छोरा .......</string>
+    <string name="son_count">छोरा : </string>
+    <string name="daughter_count">छोरी : </string>
     <string name="daughter">छोरी ....</string>
 
     <string name="b6a">घरेलु कामदार</string>

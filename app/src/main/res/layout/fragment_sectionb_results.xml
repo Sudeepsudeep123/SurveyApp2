@@ -65,7 +65,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/question_b1"
-                    android:textColor="@android:color/holo_red_light" />
+                    android:textColor="@color/crimson" />
 
                 <TextView
                     android:id="@+id/txvMaleDead"
@@ -112,7 +112,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/question_b2"
-                        android:textColor="@android:color/holo_red_light" />
+                        android:textColor="@color/crimson" />
 
                     <TextView
                         android:id="@+id/txvSentKidToSchool"
@@ -137,7 +137,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/question_b3"
-                        android:textColor="@android:color/holo_red_light" />
+                        android:textColor="@color/crimson" />
 
                     <TextView
                         android:id="@+id/txvSchoolType"
@@ -169,7 +169,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/question_b4"
-                        android:textColor="@android:color/holo_red_light" />
+                        android:textColor="@color/crimson" />
 
                     <TextView
                         android:id="@+id/txvChildLabor"
@@ -194,7 +194,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/question_b5"
-                        android:textColor="@android:color/holo_red_light" />
+                        android:textColor="@color/crimson" />
 
                     <TextView
                         android:id="@+id/txvInCountry"
@@ -227,7 +227,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/question_b6"
-                        android:textColor="@android:color/holo_red_light" />
+                        android:textColor="@color/crimson" />
 
                     <TextView
                         android:id="@+id/txvGhareluKamdar"
@@ -298,7 +298,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/question_b7"
-                        android:textColor="@android:color/holo_red_light" />
+                        android:textColor="@color/crimson" />
 
                     <TextView
                         android:id="@+id/txvKidsMarriedBefire18"
@@ -322,8 +322,8 @@
                         android:id="@+id/txvQB8"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/question_b3"
-                        android:textColor="@android:color/holo_red_light" />
+                        android:text="@string/question_b8"
+                        android:textColor="@color/crimson" />
 
                     <TextView
                         android:id="@+id/txvSonMarried"
@@ -363,7 +363,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/question_b9"
-                        android:textColor="@android:color/holo_red_light" />
+                        android:textColor="@color/crimson" />
 
                     <TextView
                         android:id="@+id/txvDissferentlyAbled"
@@ -379,6 +379,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
+                    android:layout_below="@+id/rllQb9"
                     android:background="@android:color/darker_gray"
                     android:padding="8dp">
 
@@ -387,7 +388,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/question_b10"
-                        android:textColor="@android:color/holo_red_light" />
+                        android:textColor="@color/crimson" />
 
                     <TextView
                         android:id="@+id/txvMentalIllness"
@@ -419,6 +420,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
+                    android:layout_below="@+id/rllQb10"
                     android:background="@android:color/darker_gray"
                     android:padding="8dp">
 
@@ -427,7 +429,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/question_b11"
-                        android:textColor="@android:color/holo_red_light" />
+                        android:textColor="@color/crimson" />
 
                     <TextView
                         android:id="@+id/txvRed"
@@ -482,7 +484,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/question_b12"
-                        android:textColor="@android:color/holo_red_light" />
+                        android:textColor="@color/crimson" />
 
                     <TextView
                         android:id="@+id/txvLongIllness"
@@ -498,6 +500,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
+                    android:layout_below="@+id/rllQb12"
                     android:background="@android:color/darker_gray"
                     android:padding="8dp">
 
@@ -506,7 +509,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/question_b13"
-                        android:textColor="@android:color/holo_red_light" />
+                        android:textColor="@color/crimson" />
 
                     <TextView
                         android:id="@+id/txvTv"

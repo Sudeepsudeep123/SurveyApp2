@@ -45,12 +45,12 @@ class QuestionB13Fragment : Fragment(), View.OnClickListener {
     private fun gotToNextFragment() {
         //show Last list
         Toast.makeText(context, "END", Toast.LENGTH_SHORT).show()
-        /* val b12Fragment =
-             QuestionB12Fragment()
-         (activity as Section2Activity)?.attachFragment(
-             b12Fragment,
-             FragmentTagConstants.questionB12
-         )*/
+        val resutsFragment =
+            SectionBResults()
+        (activity as Section2Activity)?.attachFragment(
+            resutsFragment,
+            FragmentTagConstants.sectionBResults
+        )
     }
 
     private fun initListener() {

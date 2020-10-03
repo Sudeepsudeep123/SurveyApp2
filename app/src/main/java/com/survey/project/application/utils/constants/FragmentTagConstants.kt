@@ -67,4 +67,5 @@ object FragmentTagConstants {
     const val questionB11 = "questionB11"
     const val questionB12 = "questionB12"
     const val questionB13 = "questionB13"
+    const val sectionBResults = "sectionBResults"
 }

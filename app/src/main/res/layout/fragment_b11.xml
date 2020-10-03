@@ -35,14 +35,6 @@
                 android:text="@string/previous" />
 
             <Button
-                android:id="@+id/btnSkip"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin_eight"
-                android:layout_weight="1"
-                android:text="@string/skip" />
-
-            <Button
                 android:id="@+id/btnNext"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"

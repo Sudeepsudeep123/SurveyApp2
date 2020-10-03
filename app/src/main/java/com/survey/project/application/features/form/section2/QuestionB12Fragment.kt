@@ -39,13 +39,23 @@ class QuestionB12Fragment : Fragment(), View.OnClickListener {
             }
             btnSkip -> {
                 //show last list
-                Toast.makeText(context, "Skip clicked", Toast.LENGTH_SHORT).show()
+                goToResultsFragment()
+                //Toast.makeText(context, "Skip clicked", Toast.LENGTH_SHORT).show()
             }
         }
     }
 
     private fun goToPreviousFragment() {
         Utils.popBackStack(FragmentTagConstants.questionB12, activity)
+    }
+
+    private fun goToResultsFragment() {
+        val resultsFrag =
+            SectionBResults()
+        (activity as Section2Activity)?.attachFragment(
+            resultsFrag,
+            FragmentTagConstants.sectionBResults
+        )
     }
 
     private fun gotToNextFragment() {
@@ -75,7 +85,8 @@ class QuestionB12Fragment : Fragment(), View.OnClickListener {
                 gotToNextFragment()
             } else {
                 //show last list
-                Toast.makeText(context, "Skip clicked", Toast.LENGTH_SHORT).show()
+                goToResultsFragment()
+                //Toast.makeText(context, "Skip clicked", Toast.LENGTH_SHORT).show()
             }
         }
     }
