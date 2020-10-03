@@ -1,6 +1,7 @@
 package com.survey.project.application.features.mainDrawer
 
 import android.content.Intent
+import android.content.res.Configuration
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
@@ -19,8 +20,9 @@ import com.survey.project.application.utils.router.Router
 import kotlinx.android.synthetic.main.activity_drawer.*
 
 class DrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
-    var mDrawerToggle: ActionBarDrawerToggle? = null
+   lateinit var mDrawerToggle: ActionBarDrawerToggle
     private lateinit var homeFragment: HomeFragment
+    lateinit var drawerLayout: DrawerLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,10 +30,15 @@ class DrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
+        drawerLayout = findViewById(R.id.drawer_layout)
+        mDrawerToggle = ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
+        drawerLayout.addDrawerListener(mDrawerToggle)
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setHomeButtonEnabled(true)
         nav_view.setNavigationItemSelectedListener(this)
 
     }
-
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
@@ -62,9 +69,25 @@ class DrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
             }
 
         }
-        val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
+    }
+
+    override fun onPostCreate(savedInstanceState: Bundle?) {
+        super.onPostCreate(savedInstanceState)
+        mDrawerToggle.syncState()
+    }
+
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+        mDrawerToggle.onConfigurationChanged(newConfig)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (mDrawerToggle.onOptionsItemSelected(item)) {
+            return true
+        }
+        return super.onOptionsItemSelected(item)
     }
 
 }

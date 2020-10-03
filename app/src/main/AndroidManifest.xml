@@ -11,10 +11,10 @@
         android:theme="@style/AppTheme">
 
         <activity android:name=".features.form.activity.FormActivity3" />
-        <activity android:name=".features.login.LoginActivity" />
+        <activity android:name=".features.form.section2.Section2Activity" />
         <activity android:name=".features.form.activity.FormActivity" />
 
-        <activity android:name=".features.form.section2.Section2Activity">
+        <activity android:name=".features.login.LoginActivity">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

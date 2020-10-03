@@ -72,7 +72,7 @@ class LoginActivity : MvpActivity<LoginView, LoginPresenter>(), LoginView,
                 this,
                 MainActivity::class.java
             )
-            intent.putExtra("username",userName)
+            intent.putExtra("username", userName)
             startActivity(intent)
 
         } else {
@@ -84,10 +84,10 @@ class LoginActivity : MvpActivity<LoginView, LoginPresenter>(), LoginView,
                     if (areaData[a].username.equals(userName)) {
 
                         var intentDrawer = Intent(this, DrawerActivity::class.java)
-                        intentDrawer.putExtra("username",userName)
-                        intentDrawer.putExtra("provence",areaData[a].provence)
-                        intentDrawer.putExtra("zone",areaData[a].zone)
-                        intentDrawer.putExtra("district",areaData[a].district)
+                        intentDrawer.putExtra("username", userName)
+                        intentDrawer.putExtra("provence", areaData[a].provence)
+                        intentDrawer.putExtra("zone", areaData[a].zone)
+                        intentDrawer.putExtra("district", areaData[a].district)
 
                         startActivity(intentDrawer)
                     } else {
@@ -95,7 +95,7 @@ class LoginActivity : MvpActivity<LoginView, LoginPresenter>(), LoginView,
                             this,
                             MainActivity::class.java
                         )
-                        intent.putExtra("username",userName)
+                        intent.putExtra("username", userName)
                         startActivity(intent)
                     }
                 }
