@@ -8,15 +8,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:layout_marginStart="@dimen/ten_margin"
         android:orientation="vertical">
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:gravity="center"
-            android:text="@string/washHandAfterToilet"
+            android:text="@string/section3"
+            android:textColor="#000000"
             android:textSize="@dimen/normal_text_size" />
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -39,7 +41,11 @@
                 android:layout_weight="1"
                 android:text="@string/next" />
         </LinearLayout>
-
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/washHandAfterToilet"
+            android:textSize="@dimen/normal_text_size" />
         <RadioGroup
             android:id="@+id/radWashHandOption"
             android:layout_width="match_parent"

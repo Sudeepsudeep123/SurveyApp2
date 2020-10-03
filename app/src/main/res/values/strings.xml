@@ -263,6 +263,13 @@
     <string name="typeOfVehicle">छ भने के छ ?</string>
     <string name="cha">छ</string>
     <string name="chaina">छैन</string>
+    <string name="matoRaDhunga">माटो र ढुङ्गा </string>
+    <string name="frameStructure">फ्रेम </string>
+
+
+    <string name="correctionText">कुनै प्रश्न को उत्तर सच्चौन परेमा स्क्रोल्ल गरी सोही प्रश्न म क्लिक गर्नुहोस  </string>
+    <string name="close">रद्ध गर्नुहोस  </string>
+    <string name="complete">पुरा गर्नुहोस  </string>
 
 
 </resources>

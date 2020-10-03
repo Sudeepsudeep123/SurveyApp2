@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.RadioButton
 import android.widget.RadioGroup
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.survey.project.application.R
@@ -52,12 +53,15 @@ class Fragment4Sec3 : Fragment() , View.OnClickListener {
                 Context.MODE_PRIVATE
             )
             val name = prefs?.getString("toilet", "")
-            if(name.equals(rbCha.text.toString())){
-                rbCha.isChecked
-            }
-            else{
-                rbChaina.isChecked
-            }
+                if (name == rbCha.text.toString()) {
+                    rbCha.isChecked = true
+                    selectedValue = name
+                }
+                else if(name == rbChaina.text.toString()) {
+                    rbChaina.isChecked = true
+                    selectedValue = name
+                }
+
         }catch(ex:Exception){
             Log.e("ex",ex.toString())
         }
@@ -65,6 +69,7 @@ class Fragment4Sec3 : Fragment() , View.OnClickListener {
 
     private fun setListener() {
         btnNext.setOnClickListener(this)
+        btnPrevious4.setOnClickListener(this)
     }
 
     private fun save() {
@@ -91,6 +96,7 @@ class Fragment4Sec3 : Fragment() , View.OnClickListener {
         )
     }
 
+
     override fun onClick(view: View?) {
         when (view) {
             btnNext -> {
@@ -98,10 +104,16 @@ class Fragment4Sec3 : Fragment() , View.OnClickListener {
                 if(selectedValue == "छ"){
                     showQuestion5()
                 }
-                else{
+                else if((selectedValue == "छैन")){
                     showQuestion6()
-
                 }
+                else{
+                    Toast.makeText(context,"Please choose one",Toast.LENGTH_SHORT).show()
+                }
+            }
+            btnPrevious4->{
+                fragmentManager?.popBackStack()
+
             }
         }
     }
