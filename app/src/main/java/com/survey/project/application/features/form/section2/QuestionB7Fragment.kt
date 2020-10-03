@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.RadioButton
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.survey.project.application.R
 import com.survey.project.application.utils.constants.FragmentTagConstants
@@ -31,7 +32,6 @@ class QuestionB7Fragment : Fragment(), View.OnClickListener {
         when (view) {
             btnNext -> {
                 saveValuesAndGoToNextFragment()
-                //   goToNextFragment()
             }
             btnPrevious -> {
                 goToPreviousFragment()
@@ -43,12 +43,21 @@ class QuestionB7Fragment : Fragment(), View.OnClickListener {
         Utils.popBackStack(FragmentTagConstants.questionB7, activity)
     }
 
-    private fun gotToNextFragment() {
+    private fun gotToB8Fragment() {
         val b8Fragment =
             QuestionB8Fragment()
         (activity as Section2Activity)?.attachFragment(
             b8Fragment,
             FragmentTagConstants.questionB8
+        )
+    }
+
+    private fun gotToB9Fragment() {
+        val b9Fragment =
+            QuestionB9Fragment()
+        (activity as Section2Activity)?.attachFragment(
+            b9Fragment,
+            FragmentTagConstants.questionB9
         )
     }
 
@@ -58,16 +67,22 @@ class QuestionB7Fragment : Fragment(), View.OnClickListener {
     }
 
     private fun saveValuesAndGoToNextFragment() {
-        var goYourKidMarriedBefore18 = ""
+        var gotYourKidMarriedBefore18 = ""
         val selectedVal = lnlB7?.checkedRadioButtonId
         if (selectedVal != null && selectedVal != -1) {
             val selectedRadioButton = view?.findViewById<View>(selectedVal) as RadioButton
 
-            goYourKidMarriedBefore18 = selectedRadioButton.text.toString()
-        }
+            gotYourKidMarriedBefore18 = selectedRadioButton.text.toString()
+            PreferenceUtils.savKidMarriedBefore18(context, gotYourKidMarriedBefore18)
 
-        PreferenceUtils.savKidMarriedBefore18(context, goYourKidMarriedBefore18)
-        gotToNextFragment()
+            if (gotYourKidMarriedBefore18 == getString(R.string.yes_nepali)) {
+                gotToB8Fragment()
+            } else {
+                gotToB9Fragment()
+            }
+        } else {
+            Toast.makeText(context, getString(R.string.select_one), Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun getAndSetData() {

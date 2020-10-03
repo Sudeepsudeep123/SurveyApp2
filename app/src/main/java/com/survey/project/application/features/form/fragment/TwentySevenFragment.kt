@@ -14,7 +14,7 @@ import com.survey.project.application.utils.util.PreferenceUtils
 import com.survey.project.application.utils.util.Utils
 import kotlinx.android.synthetic.main.fragment_twenty_seven.*
 
-class TwentySevenFragment  : Fragment(), View.OnClickListener {
+class TwentySevenFragment : Fragment(), View.OnClickListener {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -71,9 +71,9 @@ class TwentySevenFragment  : Fragment(), View.OnClickListener {
                 view?.findViewById<View>(selectedBankAccPresent) as RadioButton
             unEmployedYesOrNo = selectedRentedLandRadioButton.text.toString()
             PreferenceUtils.saveAnyoneUnemployedInFam(context, unEmployedYesOrNo)
-            if (unEmployedYesOrNo == getString(R.string.yes_nepali)){
+            if (unEmployedYesOrNo == getString(R.string.yes_nepali)) {
                 goToNextFragmentTwentyEight()
-            }else{
+            } else {
                 goToNextFragmentTwentyNine()
             }
         } else {

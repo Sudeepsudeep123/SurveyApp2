@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.survey.project.application.R
 import com.survey.project.application.utils.constants.FragmentTagConstants
@@ -30,7 +31,6 @@ class QuestionB8Fragment : Fragment(), View.OnClickListener {
         when (view) {
             btnNext -> {
                 saveValuesAndGoToNextFragment()
-                //   goToNextFragment()
             }
             btnPrevious -> {
                 goToPreviousFragment()
@@ -67,11 +67,15 @@ class QuestionB8Fragment : Fragment(), View.OnClickListener {
         val sonCountMarriedBefore18 = edtSon?.text.toString()
         val daughterCountMarriedBefore18 = edtDaughter?.text.toString()
 
-        PreferenceUtils.saveSonDaughterMarriedBefore18(
-            context,
-            sonCountMarriedBefore18,
-            daughterCountMarriedBefore18
-        )
-        gotToNextFragment()
+        if (sonCountMarriedBefore18.isNotBlank() && sonCountMarriedBefore18.isNotEmpty()) {
+            PreferenceUtils.saveSonDaughterMarriedBefore18(
+                context,
+                sonCountMarriedBefore18,
+                daughterCountMarriedBefore18
+            )
+            gotToNextFragment()
+        } else {
+            Toast.makeText(context, getString(R.string.invalid), Toast.LENGTH_SHORT).show()
+        }
     }
 }

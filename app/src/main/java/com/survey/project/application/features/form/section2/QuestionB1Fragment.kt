@@ -30,10 +30,12 @@ class QuestionB1Fragment : Fragment(), View.OnClickListener {
         when (view) {
             btnNext -> {
                 saveValuesAndGoToNextFragment()
-                //   goToNextFragment()
             }
             btnPrevious -> {
                 goToPreviousFragment()
+            }
+            btnSkip -> {
+                saveValuesAndGoToNextFragment()
             }
         }
     }

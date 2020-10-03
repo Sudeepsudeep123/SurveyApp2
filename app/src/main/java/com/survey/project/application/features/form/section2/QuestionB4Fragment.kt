@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.RadioButton
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.survey.project.application.R
 import com.survey.project.application.utils.constants.FragmentTagConstants
@@ -46,22 +47,36 @@ class QuestionB4Fragment : Fragment(), View.OnClickListener {
             val selectedRadioButton = view?.findViewById<View>(selectedVal) as RadioButton
 
             childLabor = selectedRadioButton.text.toString()
+            PreferenceUtils.saveChildLaborValue(context, childLabor)
+            if (childLabor == getString(R.string.yes_nepali)) {
+                gotToB5Fragment()
+            } else {
+                gotToB7Fragment()
+            }
+        } else {
+            Toast.makeText(context, getString(R.string.select_one), Toast.LENGTH_SHORT).show()
         }
-
-        PreferenceUtils.saveChildLaborValue(context, childLabor)
-        gotToNextFragment()
     }
 
     private fun goToPreviousFragment() {
         Utils.popBackStack(FragmentTagConstants.questionB4, activity)
     }
 
-    private fun gotToNextFragment() {
+    private fun gotToB5Fragment() {
         val b5Fragment =
             QuestionB5Fragment()
         (activity as Section2Activity)?.attachFragment(
             b5Fragment,
             FragmentTagConstants.questionB5
+        )
+    }
+
+    private fun gotToB7Fragment() {
+        val b7Fragment =
+            QuestionB7Fragment()
+        (activity as Section2Activity)?.attachFragment(
+            b7Fragment,
+            FragmentTagConstants.questionB7
         )
     }
 

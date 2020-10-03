@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.RadioButton
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.survey.project.application.R
 import com.survey.project.application.utils.constants.FragmentTagConstants
@@ -32,10 +33,13 @@ class QuestionB9Fragment : Fragment(), View.OnClickListener {
         when (view) {
             btnNext -> {
                 saveValuesAndGoToNextFragment()
-                //   goToNextFragment()
             }
             btnPrevious -> {
                 goToPreviousFragment()
+            }
+            btnSkip -> {
+                PreferenceUtils.saveDifferentlyAbledInFam(context, getString(R.string.no_nepali))
+                gotToB12Fragment()
             }
         }
     }
@@ -44,7 +48,7 @@ class QuestionB9Fragment : Fragment(), View.OnClickListener {
         Utils.popBackStack(FragmentTagConstants.questionB9, activity)
     }
 
-    private fun gotToNextFragment() {
+    private fun gotToB10Fragment() {
         val b10Fragment =
             QuestionB10Fragment()
         (activity as Section2Activity)?.attachFragment(
@@ -53,9 +57,19 @@ class QuestionB9Fragment : Fragment(), View.OnClickListener {
         )
     }
 
+    private fun gotToB12Fragment() {
+        val b12Fragment =
+            QuestionB12Fragment()
+        (activity as Section2Activity)?.attachFragment(
+            b12Fragment,
+            FragmentTagConstants.questionB12
+        )
+    }
+
     private fun initListener() {
         btnNext?.setOnClickListener(this)
         btnPrevious?.setOnClickListener(this)
+        btnSkip?.setOnClickListener(this)
     }
 
     private fun saveValuesAndGoToNextFragment() {
@@ -65,10 +79,17 @@ class QuestionB9Fragment : Fragment(), View.OnClickListener {
             val selectedRadioButton = view?.findViewById<View>(selectedVal) as RadioButton
 
             differentlyAbledInFam = selectedRadioButton.text.toString()
-        }
 
-        PreferenceUtils.saveDifferentlyAbledInFam(context, differentlyAbledInFam)
-        gotToNextFragment()
+            PreferenceUtils.saveDifferentlyAbledInFam(context, differentlyAbledInFam)
+
+            if (differentlyAbledInFam == getString(R.string.yes_nepali)) {
+                gotToB10Fragment()
+            } else {
+                gotToB12Fragment()
+            }
+        } else {
+            Toast.makeText(context, getString(R.string.select_one), Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun getAndSetData() {
@@ -82,5 +103,6 @@ class QuestionB9Fragment : Fragment(), View.OnClickListener {
 
     private fun setUp() {
         txvQuestionB7?.text = getString(R.string.question_b9)
+        btnSkip?.visibility = View.VISIBLE
     }
 }

@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.RadioButton
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.survey.project.application.R
 import com.survey.project.application.utils.constants.FragmentTagConstants
@@ -31,7 +32,6 @@ class QuestionB2Fragment : Fragment(), View.OnClickListener {
         when (view) {
             btnNext -> {
                 saveValuesAndGoToNextFragment()
-                //   goToNextFragment()
             }
             btnPrevious -> {
                 goToPreviousFragment()
@@ -46,17 +46,23 @@ class QuestionB2Fragment : Fragment(), View.OnClickListener {
             val selectedRadioButton = view?.findViewById<View>(selectedVal) as RadioButton
 
             sentKidsToSchool = selectedRadioButton.text.toString()
+            PreferenceUtils.saveSentKidsToSchool(context, sentKidsToSchool)
+            
+            if (sentKidsToSchool == getString(R.string.yes_nepali)){
+                gotToB3NextFragment()
+            }else{
+                gotToB4NextFragment()
+            }
+        }else{
+            Toast.makeText(context, getString(R.string.select_one), Toast.LENGTH_SHORT).show()
         }
-
-        PreferenceUtils.saveSentKidsToSchool(context, sentKidsToSchool)
-        gotToNextFragment()
     }
 
     private fun goToPreviousFragment() {
         Utils.popBackStack(FragmentTagConstants.questionB2, activity)
     }
 
-    private fun gotToNextFragment() {
+    private fun gotToB3NextFragment() {
         val b3Fragment =
             QuestionB3Fragment()
         (activity as Section2Activity)?.attachFragment(
@@ -65,6 +71,14 @@ class QuestionB2Fragment : Fragment(), View.OnClickListener {
         )
     }
 
+    private fun gotToB4NextFragment() {
+        val b4Fragment =
+            QuestionB4Fragment()
+        (activity as Section2Activity)?.attachFragment(
+            b4Fragment,
+            FragmentTagConstants.questionB4
+        )
+    }
     private fun initListener() {
         btnNext?.setOnClickListener(this)
         btnPrevious?.setOnClickListener(this)

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.survey.project.application.R
 import com.survey.project.application.utils.constants.FragmentTagConstants
@@ -43,14 +44,22 @@ class QuestionB5Fragment : Fragment(), View.OnClickListener {
         val sonCountInForeign = edtForeignSon?.text.toString()
         val daughterCountInForeign = edtForeignDaughter?.text.toString()
 
-        PreferenceUtils.saveSonDaughterCountInCountryAndForeign(
-            context,
-            sonCountInCountry,
-            daughterCountInCountry,
-            sonCountInForeign,
-            daughterCountInForeign
-        )
-        gotToNextFragment()
+        if (sonCountInCountry.isNotBlank() && sonCountInCountry.isNotEmpty() &&
+            daughterCountInCountry.isNotBlank() && daughterCountInCountry.isNotEmpty() &&
+            sonCountInForeign.isNotBlank() && sonCountInForeign.isNotEmpty() &&
+            daughterCountInForeign.isNotBlank() && daughterCountInForeign.isNotEmpty()
+        ) {
+            PreferenceUtils.saveSonDaughterCountInCountryAndForeign(
+                context,
+                sonCountInCountry,
+                daughterCountInCountry,
+                sonCountInForeign,
+                daughterCountInForeign
+            )
+            gotToNextFragment()
+        } else {
+            Toast.makeText(context, getString(R.string.invalid), Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun gotToNextFragment() {

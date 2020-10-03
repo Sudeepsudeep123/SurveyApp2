@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.survey.project.application.R
 import com.survey.project.application.utils.constants.FragmentTagConstants
@@ -71,21 +72,49 @@ class QuestionB6Fragment : Fragment(), View.OnClickListener {
     }
 
     private fun saveValuesAndGoToNextFragment() {
-        PreferenceUtils.saveSonDaughterLaborType(
-            context,
-            edtGhareluKamdarSon?.text.toString(),
-            edtGhareluKamdarDaughter?.text.toString(),
-            edtKarkhanaSon?.text.toString(),
-            edtKarkhanaDaughter?.text.toString(),
-            edtByaparSon?.text.toString(),
-            edtByaparDaughter?.text.toString(),
-            edtKrishiSon?.text.toString(),
-            edtKrishiDaughter?.text.toString(),
-            edtKaryalayaSon?.text.toString(),
-            edtKaryalayaDaughter?.text.toString(),
-            edtCircusSon?.text.toString(),
-            edtCircusDaughter?.text.toString()
-        )
-        gotToNextFragment()
+        if (edtGhareluKamdarSon.text.toString().isNotEmpty() && edtGhareluKamdarSon.text.toString()
+                .isNotBlank() &&
+            edtGhareluKamdarDaughter.text.toString()
+                .isNotEmpty() && edtGhareluKamdarDaughter.text.toString().isNotBlank() &&
+            edtKarkhanaSon.text.toString().isNotEmpty() && edtKarkhanaSon.text.toString()
+                .isNotBlank() &&
+            edtKarkhanaDaughter.text.toString().isNotEmpty() && edtKarkhanaDaughter.text.toString()
+                .isNotBlank() &&
+            edtByaparSon.text.toString().isNotEmpty() && edtByaparSon.text.toString()
+                .isNotBlank() &&
+            edtByaparDaughter.text.toString().isNotEmpty() && edtByaparDaughter.text.toString()
+                .isNotBlank() &&
+            edtKrishiSon.text.toString().isNotEmpty() && edtKrishiSon.text.toString()
+                .isNotBlank() &&
+            edtKrishiDaughter.text.toString().isNotEmpty() && edtKrishiDaughter.text.toString()
+                .isNotBlank() &&
+            edtKaryalayaSon.text.toString().isNotEmpty() && edtKaryalayaSon.text.toString()
+                .isNotBlank() &&
+            edtKaryalayaDaughter.text.toString()
+                .isNotEmpty() && edtKaryalayaDaughter.text.toString().isNotBlank() &&
+            edtCircusSon.text.toString().isNotEmpty() && edtCircusSon.text.toString()
+                .isNotBlank() &&
+            edtCircusDaughter.text.toString().isNotEmpty() && edtCircusDaughter.text.toString()
+                .isNotBlank()
+        ) {
+            PreferenceUtils.saveSonDaughterLaborType(
+                context,
+                edtGhareluKamdarSon?.text.toString(),
+                edtGhareluKamdarDaughter?.text.toString(),
+                edtKarkhanaSon?.text.toString(),
+                edtKarkhanaDaughter?.text.toString(),
+                edtByaparSon?.text.toString(),
+                edtByaparDaughter?.text.toString(),
+                edtKrishiSon?.text.toString(),
+                edtKrishiDaughter?.text.toString(),
+                edtKaryalayaSon?.text.toString(),
+                edtKaryalayaDaughter?.text.toString(),
+                edtCircusSon?.text.toString(),
+                edtCircusDaughter?.text.toString()
+            )
+            gotToNextFragment()
+        } else {
+            Toast.makeText(context, getString(R.string.invalid), Toast.LENGTH_SHORT).show()
+        }
     }
 }
