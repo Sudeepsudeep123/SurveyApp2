@@ -158,6 +158,24 @@ class SectionBResults : Fragment(), View.OnClickListener {
             rllQb10?.visibility = View.GONE
             rllQb11?.visibility = View.GONE
         }
-    }
 
+        val longTermIllness = PreferenceUtils.getLongTermDiseaseInFam(context)
+        txvLongIllness?.text = longTermIllness
+
+        if (longTermIllness == getString(R.string.yes_nepali)) {
+            rllQb13?.visibility = View.VISIBLE
+
+            txvTv?.text = getString(R.string.tb) + ": " + PreferenceUtils.getTbCount(context)
+            txvCancer?.text =
+                getString(R.string.cancer) + ": " + PreferenceUtils.getCancerCount(context)
+            txvHiv?.text = getString(R.string.hiv) + ": " + PreferenceUtils.getHivCount(context)
+            txvSugar?.text =
+                getString(R.string.sugar) + ": " + PreferenceUtils.getSugarCount(context)
+            txvBp?.text = getString(R.string.bp) + ": " + PreferenceUtils.getBpCount(context)
+            txvOtherLongTermIllness?.text =
+                getString(R.string.other) + ": " + PreferenceUtils.getOtherIllnessCount(context)
+        } else {
+            rllQb13?.visibility = View.GONE
+        }
+    }
 }
