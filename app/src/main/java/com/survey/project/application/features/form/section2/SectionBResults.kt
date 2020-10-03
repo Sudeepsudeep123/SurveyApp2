@@ -58,6 +58,7 @@ class SectionBResults : Fragment(), View.OnClickListener {
         val childLabor = PreferenceUtils.getChildLaborValue(context)
         txvChildLabor?.text = childLabor
 
+        //4,5,6
         if (childLabor == getString(R.string.yes_nepali)) {
             rllQb5?.visibility = View.VISIBLE
             rllQb6?.visibility = View.VISIBLE
@@ -112,5 +113,21 @@ class SectionBResults : Fragment(), View.OnClickListener {
             rllQb5?.visibility = View.GONE
             rllQb6?.visibility = View.GONE
         }
+
+        //7,8
+        val married = PreferenceUtils.getKidMarriedBefore18(context)
+        txvKidsMarriedBefire18.text = married
+
+        if(married == getString(R.string.yes_nepali)){
+            rllQb8?.visibility = View.VISIBLE
+            val sonMarried = PreferenceUtils.getSonMarriedBefore18(context)
+            val daughterMarried = PreferenceUtils.getDaughterMarriedBefore18(context)
+
+            txvSonMarried?.text = "${getString(R.string.son)}: $sonMarried"
+            txvDaughterMarried?.text = "${getString(R.string.daughter)}: $daughterMarried"
+        }else{
+            rllQb8?.visibility = View.GONE
+        }
     }
+
 }
