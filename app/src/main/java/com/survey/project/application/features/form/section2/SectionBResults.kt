@@ -118,15 +118,45 @@ class SectionBResults : Fragment(), View.OnClickListener {
         val married = PreferenceUtils.getKidMarriedBefore18(context)
         txvKidsMarriedBefire18.text = married
 
-        if(married == getString(R.string.yes_nepali)){
+        if (married == getString(R.string.yes_nepali)) {
             rllQb8?.visibility = View.VISIBLE
             val sonMarried = PreferenceUtils.getSonMarriedBefore18(context)
             val daughterMarried = PreferenceUtils.getDaughterMarriedBefore18(context)
 
             txvSonMarried?.text = "${getString(R.string.son)}: $sonMarried"
             txvDaughterMarried?.text = "${getString(R.string.daughter)}: $daughterMarried"
-        }else{
+        } else {
             rllQb8?.visibility = View.GONE
+        }
+
+        //9,10,11
+        val differentlyAbledInFam = PreferenceUtils.getDifferentlyAbledInFam(context)
+        txvDissferentlyAbled?.text = differentlyAbledInFam
+
+        if (differentlyAbledInFam == getString(R.string.yes_nepali)) {
+            rllQb10?.visibility = View.VISIBLE
+            rllQb11?.visibility = View.VISIBLE
+
+            txvMentalIllness?.text =
+                "${getString(R.string.mental_illnes)} : ${PreferenceUtils.getMentalIllnessCount(
+                    context
+                )}"
+            txvAustism?.text =
+                "${getString(R.string.mental_illnes)} : ${PreferenceUtils.getAutismCount(context)}"
+            txvOther?.text =
+                "${getString(R.string.mental_illnes)} : ${PreferenceUtils.getOtherCount(context)}"
+
+            //11
+            txvRed.text = "${getString(R.string.red)}: ${PreferenceUtils.getRedCardCount(context)}"
+            txvBlue.text =
+                "${getString(R.string.blue)}: ${PreferenceUtils.getBlueCardCount(context)}"
+            txvYellow.text =
+                "${getString(R.string.yellow)}: ${PreferenceUtils.getYellowCardCount(context)}"
+            txvOther.text =
+                "${getString(R.string.white)}: ${PreferenceUtils.getOtherCount(context)}"
+        } else {
+            rllQb10?.visibility = View.GONE
+            rllQb11?.visibility = View.GONE
         }
     }
 
