@@ -1,14 +1,18 @@
 package com.survey.project.application.features.form.section2
 
+import android.app.Dialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.Window
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.survey.project.application.R
 import com.survey.project.application.utils.constants.FragmentTagConstants
 import com.survey.project.application.utils.util.PreferenceUtils
 import kotlinx.android.synthetic.main.fragment_sectionb_results.*
+
 
 class SectionBResults : Fragment(), View.OnClickListener {
     lateinit var questionB1Fragment: QuestionB1Fragment
@@ -322,4 +326,5 @@ class SectionBResults : Fragment(), View.OnClickListener {
             rllQb13?.visibility = View.GONE
         }
     }
+
 }
