@@ -7,7 +7,6 @@ import com.survey.project.application.features.shared.model.AreaModel
 
 interface HomeView : MvpView {
     fun getAppDatabase(): MainRoomDatabase?
-    fun populateAreaModelInList(mainModel: List<AreaModel>)
     fun onFailure(message: String)
     fun populateLocationsInView(list: List<AreaModel>)
 }

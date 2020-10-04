@@ -75,11 +75,6 @@ class HomeFragment : BaseFragment<HomeView, HomePresenter>(), HomeView, View.OnC
 
     override fun getAppDatabase(): MainRoomDatabase? = MainRoomDatabase.getAppDatabase(context)
 
-    override fun populateAreaModelInList(mainModel: List<AreaModel>) {
-
-
-    }
-
     override fun onFailure(message: String) {
 
     }
@@ -92,15 +87,7 @@ class HomeFragment : BaseFragment<HomeView, HomePresenter>(), HomeView, View.OnC
 
     override fun onLocationClick(position: Int) {
         val area = areaList[position]
-        //chbAllCategories.isChecked = false
-     /*   val previousStatus = areaList[position].selected
 
-        // filterCategory = categoriesList[position].subCategory?.id
-
-        areaList.map { i ->
-            i.selected = false
-        }
-        areaList[position].selected = !previousStatus!!*/
         PreferenceUtils.saveLocation(
             context,
             "${area.area?.provence}  ${area.area?.zone}  ${area.area?.district}"

@@ -40,14 +40,6 @@ class HomeAdapter(
             holder.crvLocation?.background = context?.resources?.getDrawable(R.drawable.rll_bg)
         }
 
-        /* if (area.selected == true) {
-
-             holder.crvLocation?.background =
-                 context?.resources?.getDrawable(R.drawable.cardview_with_green_border)
-         } else {
-             holder.crvLocation?.background = context?.resources?.getDrawable(R.drawable.rll_bg)
-         }*/
-
         holder.crvLocation?.setOnClickListener {
 
             listener.onLocationClick(holder.adapterPosition)
