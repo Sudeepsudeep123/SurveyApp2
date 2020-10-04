@@ -776,4 +776,21 @@ object PreferenceUtils {
         pref?.edit()?.clear()?.apply()
     }
 
+    fun saveLoggedInStatus(context: Context?, status: Boolean) {
+        val pref =
+            context?.getSharedPreferences(
+                PreferenceConstants.section_b_preference,
+                Context.MODE_PRIVATE
+            )
+        pref?.edit()?.putBoolean(PreferenceConstants.isLoggedIn, status)?.apply()
+    }
+
+    fun getLoggedInStatus(context: Context?): Boolean {
+        val pref =
+            context?.getSharedPreferences(
+                PreferenceConstants.section_b_preference,
+                Context.MODE_PRIVATE
+            )
+        return pref?.getBoolean(PreferenceConstants.isLoggedIn, false) ?: false
+    }
 }

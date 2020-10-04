@@ -37,7 +37,6 @@ class DrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setHomeButtonEnabled(true)
         nav_view.setNavigationItemSelectedListener(this)
-
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {

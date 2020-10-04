@@ -12,6 +12,5 @@ data class AreaModel (
     var id: Int = 0,
 
     @SerializedName("Area")
-    var area: List<AreaData>? = null
-    
+    var area: AreaData? = null
 )

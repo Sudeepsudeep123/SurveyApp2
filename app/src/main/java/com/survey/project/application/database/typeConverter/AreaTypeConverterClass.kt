@@ -27,4 +27,24 @@ class AreaTypeConverterClass {
         val type = object : TypeToken<List<AreaData>?>() {}.type
         return Gson().fromJson(values, type)
     }
+
+    @TypeConverter
+    fun fromAreaLToString(value: AreaData?): String? {
+        if (value == null) {
+            return null
+        }
+
+        val gson = Gson()
+        val type = object : TypeToken<AreaData?>() {}.type
+        return gson.toJson(value, type)
+    }
+
+    @TypeConverter
+    fun fromStringToArea(values: String?): AreaData? {
+        if (values == null) {
+            return null
+        }
+        val type = object : TypeToken<AreaData>() {}.type
+        return Gson().fromJson(values, type)
+    }
 }

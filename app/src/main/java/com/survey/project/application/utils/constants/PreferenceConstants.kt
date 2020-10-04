@@ -66,4 +66,5 @@ object PreferenceConstants {
     const val blueCount = "blueCount"
     const val yellowCount = "yellowCount"
     const val whiteCount = "whiteCount"
+    const val isLoggedIn = "isLoggedIn"
 }

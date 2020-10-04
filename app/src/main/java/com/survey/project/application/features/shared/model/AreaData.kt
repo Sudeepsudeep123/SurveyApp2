@@ -6,6 +6,8 @@ import com.google.gson.annotations.SerializedName
 import com.survey.project.application.utils.constants.DbConstants
 
 data class AreaData (
+    @PrimaryKey(autoGenerate = true)
+    var id: Int = 0,
     @SerializedName("username")
     var username: String? = null,
 

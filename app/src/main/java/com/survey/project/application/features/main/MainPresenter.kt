@@ -22,7 +22,7 @@ class MainPresenter : MvpBasePresenter<MainView>() {
         super.detachView()
     }
 
-    fun submit(userName: String?, provence: String, zone: String, district: String) {
+    fun saveLocationToDb(userName: String?, provence: String, zone: String, district: String) {
         ifViewAttached { view ->
             if (FieldValidationUtils.areaValidation(
                     view,
@@ -35,15 +35,14 @@ class MainPresenter : MvpBasePresenter<MainView>() {
                     zone = zone,
                     district = district
                 )
-                var areaModel = AreaModel(area = listOf(mainData))
-                mainInteractor?.saveToDB(listOf(areaModel), view.getAppDatabase())
+                var areaModel = AreaModel(area = mainData)
+                mainInteractor?.saveLocationToDb(areaModel, view.getAppDatabase())
                     ?.subscribe({ mainModel ->
-                        view.onSuccess(mainModel as List<AreaModel>)
+                        view.onSuccess(mainModel as AreaModel)
                     },
                         { throwable ->
                             view.onFailure(throwable.localizedMessage ?: "")
                         })?.let { compositeDisposable?.add(it) }
-
             }
         }
     }
@@ -61,5 +60,4 @@ class MainPresenter : MvpBasePresenter<MainView>() {
                 })?.let { compositeDisposable?.add(it) }
         }
     }
-
 }

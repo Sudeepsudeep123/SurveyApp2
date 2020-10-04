@@ -6,7 +6,7 @@ import com.survey.project.application.features.shared.model.AreaModel
 import com.survey.project.application.features.shared.model.SignupModel
 
 interface MainView:MvpView {
-    fun onSuccess(mainModel: List<AreaModel>)
+    fun onSuccess(mainModel: AreaModel)
     fun onGetLocation(mainModel: List<AreaModel>)
     fun onFailure(message:String)
     fun getAppDatabase(): MainRoomDatabase?

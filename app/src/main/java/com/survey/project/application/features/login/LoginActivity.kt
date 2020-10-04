@@ -13,6 +13,7 @@ import com.survey.project.application.features.main.MainActivity
 import com.survey.project.application.features.mainDrawer.DrawerActivity
 import com.survey.project.application.features.shared.model.AreaModel
 import com.survey.project.application.features.shared.model.SignupModel
+import com.survey.project.application.utils.util.PreferenceUtils
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : MvpActivity<LoginView, LoginPresenter>(), LoginView,
@@ -23,6 +24,7 @@ class LoginActivity : MvpActivity<LoginView, LoginPresenter>(), LoginView,
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         setListener()
+        checkLoggedInStatus()
     }
 
     private fun setListener() {
@@ -35,8 +37,7 @@ class LoginActivity : MvpActivity<LoginView, LoginPresenter>(), LoginView,
             btnLogin -> {
                 userName = etUserName.editText?.text.toString()
                 password = etPassword.editText?.text.toString()
-                presenter.getDataFromDB(userName, password)
-
+                presenter.getUserFromDb(userName, password)
             }
             btnRegister -> {
                 val intent = Intent(
@@ -59,6 +60,7 @@ class LoginActivity : MvpActivity<LoginView, LoginPresenter>(), LoginView,
 //            )
 //            intent.putExtra("username", mainModel[0].username)
 //            startActivity(intent)
+            PreferenceUtils.saveLoggedInStatus(this, true)
             presenter.getLocationFromDB()
 
         } else {
@@ -74,31 +76,29 @@ class LoginActivity : MvpActivity<LoginView, LoginPresenter>(), LoginView,
             )
             intent.putExtra("username", userName)
             startActivity(intent)
-
         } else {
-
             for (a in 0 until mainModel?.size) {
                 var areaData = mainModel[a].area
-                for (a in 0 until areaData?.size!!) {
-                    Log.e("username", areaData[a].username)
-                    if (areaData[a].username.equals(userName)) {
+                //  for (a in 0 until areaData?.size!!) {
+                // Log.e("username", areaData[a].username ?: "khali cha")
+                if (areaData?.username.equals(userName)) {
 
-                        var intentDrawer = Intent(this, DrawerActivity::class.java)
-                        intentDrawer.putExtra("username", userName)
-                        intentDrawer.putExtra("provence", areaData[a].provence)
-                        intentDrawer.putExtra("zone", areaData[a].zone)
-                        intentDrawer.putExtra("district", areaData[a].district)
+                    var intentDrawer = Intent(this, DrawerActivity::class.java)
+                    intentDrawer.putExtra("username", userName)
+                    intentDrawer.putExtra("provence", areaData?.provence)
+                    intentDrawer.putExtra("zone", areaData?.zone)
+                    intentDrawer.putExtra("district", areaData?.district)
 
-                        startActivity(intentDrawer)
-                    } else {
-                        val intent = Intent(
-                            this,
-                            MainActivity::class.java
-                        )
-                        intent.putExtra("username", userName)
-                        startActivity(intent)
-                    }
+                    startActivity(intentDrawer)
+                } else {
+                    val intent = Intent(
+                        this,
+                        MainActivity::class.java
+                    )
+                    intent.putExtra("username", userName)
+                    startActivity(intent)
                 }
+                //    }
 
 
             }
@@ -114,6 +114,14 @@ class LoginActivity : MvpActivity<LoginView, LoginPresenter>(), LoginView,
     override fun getAppDatabase(): MainRoomDatabase? = MainRoomDatabase.getAppDatabase(this)
     override fun showToast(messageInt: Int) {
         Toast.makeText(this, messageInt, Toast.LENGTH_SHORT).show()
+    }
+
+    private fun checkLoggedInStatus() {
+        if (PreferenceUtils.getLoggedInStatus(this)) {
+            //goTo Other
+        } else {
+//stay in login
+        }
     }
 
 }

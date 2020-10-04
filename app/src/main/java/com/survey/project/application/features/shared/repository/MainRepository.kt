@@ -21,12 +21,12 @@ class MainRepository {
                     Log.e("Success", response.toString())
                     e.onSuccess((response))
                 }, {
-                    Log.d("errorMsg", it.message)
+                    Log.d("errorMsg", it.message ?: "khali cha")
                     e.onError(Throwable(it.localizedMessage))
                 })
         }
 
-    fun saveToDb(areaRequest: List<AreaModel>, appDatabase: MainRoomDatabase?): Single<List<AreaModel>>? =
+    fun saveLocationToDb(areaRequest: AreaModel, appDatabase: MainRoomDatabase?): Single<AreaModel>? =
         Completable.fromAction {
             appDatabase?.appdao()?.insertArea(areaRequest)
         }.toSingleDefault(areaRequest)

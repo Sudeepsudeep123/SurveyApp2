@@ -5,7 +5,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Toast
 import com.hannesdorfmann.mosby3.mvp.MvpActivity
 import com.survey.project.application.R
 import com.survey.project.application.database.room.MainRoomDatabase
@@ -31,7 +30,7 @@ class MainActivity : MvpActivity<MainView, MainPresenter>(), MainView,
         setContentView(R.layout.activity_main)
         setListener()
         userName = intent.getStringExtra("username") ?: ""
-        Log.e("userName", userName)
+        Log.e("userName", userName ?: "khali cha")
         provenceList.clear()
         setSpinnerData()
 //         presenter.getLocationFromDB()
@@ -43,7 +42,7 @@ class MainActivity : MvpActivity<MainView, MainPresenter>(), MainView,
             txvDistrict.text = "Choose District"
 
             setZoneList(item)
-           // Toast.makeText(this, "$item  $position", Toast.LENGTH_SHORT).show();
+            // Toast.makeText(this, "$item  $position", Toast.LENGTH_SHORT).show();
             txvProvience.text = item
         }
 
@@ -52,15 +51,14 @@ class MainActivity : MvpActivity<MainView, MainPresenter>(), MainView,
             txvDistrict.text = "Choose District"
             Log.e("item", item)
             setDistrictItems(item)
-           // Toast.makeText(this, "$item  $position", Toast.LENGTH_SHORT).show();
+            // Toast.makeText(this, "$item  $position", Toast.LENGTH_SHORT).show();
             txvZone.text = item
         }
 
         spinnerDialogDistrict?.bindOnSpinerListener { item, position ->
-          //  Toast.makeText(this, "$item  $position", Toast.LENGTH_SHORT).show();
+            //  Toast.makeText(this, "$item  $position", Toast.LENGTH_SHORT).show();
             txvDistrict.text = item
         }
-
     }
 
     private fun setSpinnerData() {
@@ -97,7 +95,6 @@ class MainActivity : MvpActivity<MainView, MainPresenter>(), MainView,
                 }
             }
         }
-
     }
 
     private fun setProvenceList(listOfProvence: HashMap<String, List<String>>) {
@@ -105,7 +102,6 @@ class MainActivity : MvpActivity<MainView, MainPresenter>(), MainView,
             Log.e("data", provence.key)
             provenceList.add(provence.key)
         }
-
     }
 
     private fun setListener() {
@@ -120,31 +116,26 @@ class MainActivity : MvpActivity<MainView, MainPresenter>(), MainView,
             txvProvience -> {
                 spinnerDialogProvence?.showSpinerDialog()
             }
-
             txvZone -> {
-
                 spinnerDialogZone?.showSpinerDialog()
             }
-
             txvDistrict -> {
                 spinnerDialogDistrict?.showSpinerDialog()
             }
-
             btnArea -> {
-                presenter.submit(
+                presenter.saveLocationToDb(
                     userName,
                     txvProvience.text.toString(),
                     txvZone.text.toString(),
                     txvDistrict.text.toString()
                 )
             }
-
         }
     }
 
     override fun createPresenter() = MainPresenter()
-    override fun onSuccess(mainModel: List<AreaModel>) {
-        if (mainModel is List<AreaModel>) {
+    override fun onSuccess(mainModel: AreaModel) {
+        //if (mainModel is List<AreaModel>) {
             Log.e("success", mainModel.toString())
             var intent = Intent(this, DrawerActivity::class.java)
 //            intent.putExtra(mainModel[0])
@@ -153,14 +144,14 @@ class MainActivity : MvpActivity<MainView, MainPresenter>(), MainView,
             intent.putExtra("district", txvDistrict.text.toString())
             intent.putExtra("userName", userName)
             startActivity(intent)
-        }
+       // }
     }
 
     override fun onGetLocation(mainModel: List<AreaModel>) {
         if (mainModel.isEmpty()) {
             setSpinnerData()
         } else {
-            if (mainModel[0].area?.get(0)?.username.equals(userName)) {
+            if (mainModel[0].area?.username.equals(userName)) {
                 startActivity(Intent(this, DrawerActivity::class.java))
             } else {
                 Log.e("here", "here")

@@ -15,7 +15,7 @@ interface AppDao {
     fun insert(signupModel: List<SignupModel>)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertArea(signupModel: List<AreaModel>)
+    fun insertArea(signupModel: AreaModel)
 
     @Query("SELECT * FROM ${DbConstants.userTable}")
     fun getData(): Single<List<SignupModel>>

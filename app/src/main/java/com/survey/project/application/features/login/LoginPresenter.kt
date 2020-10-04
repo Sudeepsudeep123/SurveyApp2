@@ -8,7 +8,7 @@ import com.survey.project.application.features.shared.model.SignupModel
 import com.survey.project.application.utils.FieldValidationUtils
 import io.reactivex.disposables.CompositeDisposable
 
-class LoginPresenter: MvpBasePresenter<LoginView>() {
+class LoginPresenter : MvpBasePresenter<LoginView>() {
     private var mainInteractor: SignupInteractor? = null
     private var compositeDisposable: CompositeDisposable? = null
     private var mainInteractor1: MainInteractor? = null
@@ -28,11 +28,11 @@ class LoginPresenter: MvpBasePresenter<LoginView>() {
         super.detachView()
     }
 
-    fun getDataFromDB(userName:String?,password:String?){
+    fun getUserFromDb(userName: String?, password: String?) {
         ifViewAttached { view ->
             if (FieldValidationUtils.loginValidation(
                     view,
-                    userName,password
+                    userName, password
                 )
             ) {
                 userName?.let {
@@ -46,7 +46,7 @@ class LoginPresenter: MvpBasePresenter<LoginView>() {
                                 view.onFailure(throwable.localizedMessage ?: "")
                             })?.let { compositeDisposable?.add(it) }
                     }
-                } //add disposable to compositeDisposable
+                }
             }
         }
     }

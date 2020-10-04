@@ -1,7 +1,6 @@
 package com.survey.project.application.features.shared.otherClasses
 
 object ProvenceZoneDistrict {
-
      val listOfProvence = HashMap<String, List<String>>()
      val listOfZone = HashMap<String, List<String>>()
 
