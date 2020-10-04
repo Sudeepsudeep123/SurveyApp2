@@ -6,11 +6,12 @@ import com.google.gson.annotations.SerializedName
 import com.survey.project.application.utils.constants.DbConstants
 
 @Entity(tableName = DbConstants.areaTable)
-data class AreaModel (
+data class AreaModel(
     @PrimaryKey(autoGenerate = true)
     @SerializedName("id")
     var id: Int = 0,
 
     @SerializedName("Area")
-    var area: AreaData? = null
+    var area: AreaData? = null,
+    var selected: Boolean? = false
 )

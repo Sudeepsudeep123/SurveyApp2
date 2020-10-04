@@ -16,10 +16,13 @@ import com.survey.project.application.database.room.MainRoomDatabase
 import com.survey.project.application.features.base.BaseFragment
 import com.survey.project.application.features.main.MainActivity
 import com.survey.project.application.features.shared.adapter.HomeAdapter
+import com.survey.project.application.features.shared.listener.OnLocationClickListener
 import com.survey.project.application.features.shared.model.AreaModel
+import com.survey.project.application.utils.util.PreferenceUtils
 import kotlinx.android.synthetic.main.fragment_home.*
 
-class HomeFragment : BaseFragment<HomeView, HomePresenter>(), HomeView, View.OnClickListener {
+class HomeFragment : BaseFragment<HomeView, HomePresenter>(), HomeView, View.OnClickListener,
+    OnLocationClickListener {
 
     private lateinit var homeViewModel: HomeViewModel
     var userName: String? = ""
@@ -37,17 +40,17 @@ class HomeFragment : BaseFragment<HomeView, HomePresenter>(), HomeView, View.OnC
     ): View? {
         homeViewModel = ViewModelProviders.of(this).get(HomeViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_home, container, false)
-   /*     val textView: TextView = root.findViewById(R.id.text_home)
-//        homeViewModel.text.observe(viewLifecycleOwner, Observer {
-//            textView.text = it
-//        })
-        userName = activity?.intent?.getStringExtra("username") ?: ""
-        provence = activity?.intent?.getStringExtra("provence") ?: ""
-        zone = activity?.intent?.getStringExtra("zone") ?: ""
-        district = activity?.intent?.getStringExtra("district") ?: ""
+        /*     val textView: TextView = root.findViewById(R.id.text_home)
+     //        homeViewModel.text.observe(viewLifecycleOwner, Observer {
+     //            textView.text = it
+     //        })
+             userName = activity?.intent?.getStringExtra("username") ?: ""
+             provence = activity?.intent?.getStringExtra("provence") ?: ""
+             zone = activity?.intent?.getStringExtra("zone") ?: ""
+             district = activity?.intent?.getStringExtra("district") ?: ""
 
-        textView.text = "$provence   $zone   $district"
-*/
+             textView.text = "$provence   $zone   $district"
+     */
         return root
     }
 
@@ -87,6 +90,24 @@ class HomeFragment : BaseFragment<HomeView, HomePresenter>(), HomeView, View.OnC
         homeAdapter?.notifyDataSetChanged()
     }
 
+    override fun onLocationClick(position: Int) {
+        val area = areaList[position]
+        //chbAllCategories.isChecked = false
+     /*   val previousStatus = areaList[position].selected
+
+        // filterCategory = categoriesList[position].subCategory?.id
+
+        areaList.map { i ->
+            i.selected = false
+        }
+        areaList[position].selected = !previousStatus!!*/
+        PreferenceUtils.saveLocation(
+            context,
+            "${area.area?.provence}  ${area.area?.zone}  ${area.area?.district}"
+        )
+        homeAdapter.notifyDataSetChanged()
+    }
+
     private fun initListener() {
         btnAddNew?.setOnClickListener(this)
     }
@@ -97,7 +118,7 @@ class HomeFragment : BaseFragment<HomeView, HomePresenter>(), HomeView, View.OnC
         rcvSurveyLocations.layoutManager = layoutManager
 
         rcvSurveyLocations?.isNestedScrollingEnabled = false
-        homeAdapter = HomeAdapter(context, areaList)
+        homeAdapter = HomeAdapter(context, areaList, this)
         rcvSurveyLocations?.adapter = homeAdapter
     }
 }

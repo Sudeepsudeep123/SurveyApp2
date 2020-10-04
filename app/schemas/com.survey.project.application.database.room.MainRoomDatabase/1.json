@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "d6732fda7620f1aee52078e186ecb56b",
+    "identityHash": "1a8f310486568c88e0f57fdb050b82ed",
     "entities": [
       {
         "tableName": "table_user",
@@ -89,7 +89,7 @@
       },
       {
         "tableName": "table_area",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `area` TEXT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `area` TEXT, `selected` INTEGER)",
         "fields": [
           {
             "fieldPath": "id",
@@ -101,6 +101,12 @@
             "fieldPath": "area",
             "columnName": "area",
             "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "selected",
+            "columnName": "selected",
+            "affinity": "INTEGER",
             "notNull": false
           }
         ],
@@ -117,7 +123,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'd6732fda7620f1aee52078e186ecb56b')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '1a8f310486568c88e0f57fdb050b82ed')"
     ]
   }
 }

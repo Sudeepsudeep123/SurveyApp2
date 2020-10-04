@@ -38,6 +38,7 @@ class SignupActivity : MvpActivity<SignupView, SignupPresenter>(), SignupView,
 
     override fun onFailure(message: String) {
         Log.e("failure", message)
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
     override fun getAppDatabase(): MainRoomDatabase? = MainRoomDatabase.getAppDatabase(this)

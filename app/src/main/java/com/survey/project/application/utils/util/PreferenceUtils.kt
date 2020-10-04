@@ -793,4 +793,22 @@ object PreferenceUtils {
             )
         return pref?.getBoolean(PreferenceConstants.isLoggedIn, false) ?: false
     }
+
+    fun saveLocation(context: Context?, location: String) {
+        val pref =
+            context?.getSharedPreferences(
+                PreferenceConstants.section_b_preference,
+                Context.MODE_PRIVATE
+            )
+        pref?.edit()?.putString(PreferenceConstants.selectedLocation, location)?.apply()
+    }
+
+    fun getLocation(context: Context?): String {
+        val pref =
+            context?.getSharedPreferences(
+                PreferenceConstants.section_b_preference,
+                Context.MODE_PRIVATE
+            )
+        return pref?.getString(PreferenceConstants.selectedLocation, "") ?: ""
+    }
 }
