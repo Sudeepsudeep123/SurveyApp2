@@ -13,7 +13,6 @@ class FormActivity3 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_form3)
         showQuestion1()
-
     }
 
     private fun showQuestion1() {
