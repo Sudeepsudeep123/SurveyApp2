@@ -249,7 +249,8 @@
     <string name="chora">छोरा/बुहारी</string>
     
     <!--Sec - D-->
-    <string name="natural_calamity">तपाइको घर नजिक प्राकृतिक प्रकोपको खतरा छ कि छैन ?</string>
+    <string name="section_d_title">खण्ड घः सुरक्षा तथा समावेशिकरण</string>
+    <string name="d1">तपाइको घर नजिक प्राकृतिक प्रकोपको खतरा छ कि छैन ?</string>
     <string name="dont_know">थाहा छैन</string>
     <string name="d2">छ भने कस्तो ?</string>
     <string name="landslide">पहिरो</string>

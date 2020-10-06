@@ -52,38 +52,44 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/txvQuestionD1"
+            android:id="@+id/txvQuestionD2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/lnlButtons"
             android:layout_marginTop="@dimen/margin_eight"
-            android:text="@string/d1"
+            android:text="@string/d2"
             android:textSize="@dimen/text_size_twenty_four" />
 
-        <RadioGroup
+        <LinearLayout
             android:id="@+id/lnlB1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/txvQuestionD1"
+            android:layout_below="@+id/txvQuestionD2"
             android:orientation="vertical">
 
-            <RadioButton
+            <CheckBox
                 android:id="@+id/rdbYes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/yes_nepali" />
+                android:text="@string/landslide" />
 
-            <RadioButton
+            <CheckBox
                 android:id="@+id/rdbNo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/no_nepali" />
+                android:text="@string/flood" />
 
-            <RadioButton
+            <CheckBox
                 android:id="@+id/rdbDontKnow"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/dont_know" />
-        </RadioGroup>
+                android:text="@string/mahamari" />
+
+            <CheckBox
+                android:id="@+id/rdbOther"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/other" />
+        </LinearLayout>
     </RelativeLayout>
 </ScrollView>
